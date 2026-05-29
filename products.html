@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог продукции | M International</title>
+    <style>
+        :root {
+            --primary-color: #1a0933;
+            --accent-color: #00b4d8;
+            --text-color: #333;
+            --light-bg: #f4f6f9;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        nav { background: var(--primary-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        nav .logo { color: white; font-size: 24px; font-weight: bold; text-decoration: none; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: #fff; text-decoration: none; font-size: 16px; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
+
+        .header-banner { background: linear-gradient(135deg, #1a0933 0%, #491778 100%); color: white; padding: 60px 5%; text-align: center; }
+        .header-banner h1 { font-size: 36px; margin-bottom: 10px; }
+
+        .container { padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
+        
+        /* Стили карточек продуктов */
+        .product-large { background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 40px; overflow: hidden; border-left: 6px solid var(--accent-color); display: flex; flex-direction: column; }
+        .product-header { background: #fdfbff; padding: 25px; border-bottom: 1px solid #eee; }
+        .product-header h2 { color: var(--primary-color); font-size: 28px; }
+        .product-header .tag { display: inline-block; background: #e0f7fa; color: #0077b6; padding: 5px 12px; border-radius: 15px; font-size: 14px; font-weight: bold; margin-top: 5px; }
+        .product-body { padding: 25px; }
+        .product-body p { color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 16px; }
+        
+        /* Состав трав */
+        .herbs-box { background: var(--light-bg); padding: 20px; border-radius: 8px; margin-top: 15px; }
+        .herbs-box h4 { color: var(--primary-color); margin-bottom: 10px; font-size: 16px; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        .herbs-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; list-style: none; }
+        .herbs-list li { color: #444; font-size: 14px; position: relative; padding-left: 20px; }
+        .herbs-list li::before { content: "🌱"; position: absolute; left: 0; top: 0; }
+
+        .btn-order { display: inline-block; background: #25d366; color: white; padding: 10px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: 0.3s; }
+        .btn-order:hover { background: #20ba5a; }
+
+        footer { background: #111; color: white; text-align: center; padding: 20px; font-size: 14px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">M International Team</a>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="products.html" class="active">Продукция</a></li>
+            <li><a href="marketing.html">Маркетинг</a></li>
+            <li><a href="index.html#about">О нас</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-banner">
+        <h1>Каталог Клеточного Питания</h1>
+        <p>Натуральные формулы опережающие время для восстановления каждой клетки организма</p>
+    </div>
+
+    <div class="container">
+
+        <div class="product-large">
+            <div class="product-header">
+                <h2>GreenMAX</h2>
+                <span class="tag">Очищение и Защита печени</span>
+            </div>
+            <div class="product-body">
+                <p>Инновационный продукт 3-в-1 для глубокого ухода за толстой кишкой. Богат фитонутриентами, содержит 100% чистую растительную клетчатку, пробиотики и антиоксиданты. Способствует комфортному выведению токсинов, нормализации сахара и холестерина, а также эффективному управлению весом.</p>
+                
+                <div class="herbs-box">
+                    <h4>Активный растительный состав:</h4>
+                    <ul class="herbs-list">
+                        <li>Экстракт расторопши (Силимарин)</li>
+                        <li>Хлорофилл (очищение крови)</li>
+                        <li>Шелуха подорожника (Псиллиум)</li>
+                        <li>Волокна сочного киви</li>
+                        <li>Моросил (экстракт сицилийского апельсина)</li>
+                        <li>Натуральный яблочный экстракт</li>
+                        <li>Запатентованный комплекс KiOnutrime-Cs</li>
+                        <li>Бенегут и Живые Пробиотики</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/77758501213?text=Хочу%20заказать%20GreenMAX" class="btn-order" target="_blank">Заказать / Консультация</a>
+            </div>
+        </div>
+
+        <div class="product-large">
+            <div class="product-header">
+                <h2>MiMAX</h2>
+                <span class="tag">Антиоксидантная защита и Омоложение</span>
+            </div>
+            <div class="product-body">
+                <p>Эликсир молодости для клеток. Мощная растительная смесь с высочайшим коэффициентом антиоксидантной активности. Защищает клетки от свободных радикалов, устраняет сухость и усталость глаз, снимает внутренние воспалительные процессы, укрепляет сердце и дарит мощный заряд энергии.</p>
+                
+                <div class="herbs-box">
+                    <h4>Активный растительный состав:</h4>
+                    <ul class="herbs-list">
+                        <li>Астаксантин (король антиоксидантов)</li>
+                        <li>Экстракт ягод облепихи</li>
+                        <li>Экстракт французской сосновой коры</li>
+                        <li>Экстракт дикой черники</li>
+                        <li>Ресвератрол (виноградные косточки)</li>
+                        <li>Полифенолы яблока</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/77758501213?text=Хочу%20заказать%20MiMAX" class="btn-order" target="_blank">Заказать / Консультация</a>
+            </div>
+        </div>
+
+        <div class="product-large">
+            <div class="product-header">
+                <h2>BluMAX</h2>
+                <span class="tag">Активация и Защита иммунитета</span>
+            </div>
+            <div class="product-body">
+                <p>Природный щит здоровья. Создан на основе уникальных микроводорослей для стимуляции выработки собственных защитных клеток организма. Отлично подходит как взрослым для снижения риска аллергий и болей в суставах, так и детям для здорового развития и защиты от сезонных вирусов.</p>
+                
+                <div class="herbs-box">
+                    <h4>Активный растительный состав:</h4>
+                    <ul class="herbs-list">
+                        <li>Сине-зеленые водоросли (AFA)</li>
+                        <li>Лечебный гриб Агарикус</li>
+                        <li>Экстракт натуральной Агавы</li>
+                        <li>Освежающий Лимон</li>
+                        <li>Природный экстракт Стевии</li>
+                        <li>Высокая концентрация Витамина С</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/77758501213?text=Хочу%20заказать%20BluMAX" class="btn-order" target="_blank">Заказать / Консультация</a>
+            </div>
+        </div>
+
+        <div class="product-large">
+            <div class="product-header">
+                <h2>FlexiMAX</h2>
+                <span class="tag">Здоровье Суставов и Костей</span>
+            </div>
+            <div class="product-body">
+                <p>Специализированный комплекс для восстановления опорно-двигательного аппарата. Обеспечивает естественную смазку суставов, быстро снижает болевые ощущения при ходьбе, блокирует воспаления и укрепляет костную ткань.</p>
+                
+                <div class="herbs-box">
+                    <h4>Активный растительный состав:</h4>
+                    <ul class="herbs-list">
+                        <li>Высокочистая Гиалуроновая кислота</li>
+                        <li>Экстракт лечебной куркумы</li>
+                        <li>Экстракт морского салата</li>
+                        <li>Натуральный экстракт кукурузы</li>
+                        <li>Экстракт апельсина</li>
+                        <li>Биодоступный Витамин Д</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/77758501213?text=Хочу%20заказать%20FlexiMAX" class="btn-order" target="_blank">Заказать / Консультация</a>
+            </div>
+        </div>
+
+        <div class="product-large">
+            <div class="product-header">
+                <h2>Ye-Katerina</h2>
+                <span class="tag">Женское здоровье и Баланс</span>
+            </div>
+            <div class="product-body">
+                <p>Мягкий и 100% натуральный травяной комплекс, разработанный специально для поддержания деликатного женского здоровья. Устраняет дискомфорт, выравнивает природный гормональный баланс и оказывает мощное антисептическое и успокаивающее действие.</p>
+                
+                <div class="herbs-box">
+                    <h4>Активный растительный состав:</h4>
+                    <ul class="herbs-list">
+                        <li>Касип Фатима (Labisia Pumila)</li>
+                        <li>Пуэрария Дольчатая (Pueraria Mirifica)</li>
+                        <li>Дубовые галлы (Quercus Infectoria)</li>
+                        <li>Экстракт ценного перца бетеля (Daun Sirih)</li>
+                        <li>Органический экстракт чеснока</li>
+                        <li>Экстракт горной лаванды</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/77758501213?text=Хочу%20заказать%20Ye-Katerina" class="btn-order" target="_blank">Заказать / Консультация</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Командный сайт партнеров M International. Продукция сертифицирована.</p>
+    </footer>
+
+</body>
+</html>
