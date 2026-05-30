@@ -3,94 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Маркетинг-план и Бизнес | M International</title>
+    <title>Финансовый Маркетинг | M International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a0933;
-            --accent-color: #00b4d8;
-            --text-color: #333;
-            --light-bg: #f8f9fa;
+            --nv-dark: #1A2A50;
+            --nv-mid: #22336A;
+            --pr-dark: #5B2D8E;
+            --gold: #C9A84A;
+            --gold-light: #F4E8C1;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         
-        nav { background: var(--primary-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        nav .logo { color: white; font-size: 24px; font-weight: bold; text-decoration: none; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: radial-gradient(circle at 50% 0%, #22336A 0%, #1A2A50 50%, #0F1A34 100%); color: #E2E8F0; font-family: 'Jost', sans-serif; min-height: 100vh; }
+        
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #FFF; }
+
+        nav { background: rgba(26, 42, 80, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-glass); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        nav .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #FFF; text-decoration: none; font-weight: bold; letter-spacing: 2px; }
+        nav .logo span { color: var(--gold); }
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { color: #fff; text-decoration: none; font-size: 16px; transition: 0.3s; }
-        nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 15px; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--gold); border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
 
-        .header-banner { background: linear-gradient(135deg, #1a0933 0%, #491778 100%); color: white; padding: 60px 5%; text-align: center; }
-        .header-banner h1 { font-size: 36px; margin-bottom: 10px; }
+        .header-banner { padding: 80px 5% 40px; text-align: center; }
+        .header-banner h1 { font-size: 44px; text-transform: uppercase; background: linear-gradient(135deg, #FFF 30%, var(--gold-light) 70%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .header-banner p { font-size: 16px; color: #A0AEC0; font-weight: 300; max-width: 600px; margin: 10px auto 0; }
 
-        .container { padding: 40px 5%; max-width: 1100px; margin: 0 auto; }
+        .container { padding: 20px 5% 60px; max-width: 1100px; margin: 0 auto; }
         
-        h2 { color: var(--primary-color); margin: 35px 0 15px 0; font-size: 26px; border-left: 5px solid var(--accent-color); padding-left: 12px; }
-        p { color: #555; line-height: 1.6; margin-bottom: 20px; font-size: 16px; }
+        h2 { font-size: 32px; color: var(--gold); margin: 40px 0 20px; border-bottom: 1px solid var(--border-glass); padding-bottom: 10px; }
+        p { color: #CBD5E0; line-height: 1.7; margin-bottom: 25px; font-weight: 300; }
 
-        /* Блок терминов */
-        .terms-box { background: #fff3cd; border: 1px solid #ffeeba; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
-        .terms-box h4 { color: #856404; margin-bottom: 10px; font-size: 16px; }
-        .terms-box ul { list-style-type: square; padding-left: 20px; color: #533f03; font-size: 14px; }
-        .terms-box ul li { margin-bottom: 5px; }
+        /* Справочник Luxury */
+        .terms-box { background: rgba(201, 168, 74, 0.05); border: 1px solid rgba(201, 168, 74, 0.2); padding: 25px; border-radius: 12px; margin-bottom: 40px; }
+        .terms-box h4 { font-family: 'Cormorant Garamond', serif; color: var(--gold); font-size: 22px; margin-bottom: 10px; }
+        .terms-box ul { list-style: none; }
+        .terms-box ul li { color: #E2E8F0; font-size: 14px; font-weight: 300; margin-bottom: 6px; }
+        .terms-box ul li strong { color: var(--gold-light); }
 
-        /* Таблицы */
-        .table-responsive { overflow-x: auto; margin-bottom: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-radius: 8px; }
-        table { width: 100%; border-collapse: collapse; background: white; text-align: left; }
-        th { background: var(--primary-color); color: white; padding: 15px; font-weight: 600; font-size: 15px; }
-        td { padding: 15px; border-bottom: 1px solid #eee; color: #444; font-size: 15px; }
-        tr:hover { background-color: #fcfaff; }
-        .highlight-row { background-color: #f1fcf6; font-weight: bold; }
+        /* Роскошные интерактивные таблицы */
+        .table-responsive { overflow-x: auto; margin-bottom: 40px; border: 1px solid var(--border-glass); border-radius: 16px; box-shadow: 0 10px 30px rgba(15, 26, 52, 0.4); background: rgba(26, 42, 80, 0.2); backdrop-filter: blur(10px); }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background: rgba(15, 26, 52, 0.6); color: var(--gold); padding: 18px; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-glass); }
+        td { padding: 18px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #E2E8F0; font-size: 15px; font-weight: 300; }
+        tr:hover { background-color: rgba(255, 255, 255, 0.02); }
+        .highlight-row { background-color: rgba(91, 45, 142, 0.15); border-left: 4px solid var(--gold); }
+        .highlight-row td { font-weight: 400; color: #FFF; }
 
-        /* Карточки бонусов */
-        .bonus-card { background: white; border: 1px solid #eef0f4; padding: 25px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); border-top: 3px solid var(--accent-color); }
-        .bonus-card h3 { color: var(--primary-color); margin-bottom: 10px; font-size: 20px; }
-        
-        .cta-box { background: #f1fcf6; border: 2px dashed #25d366; padding: 30px; text-align: center; border-radius: 12px; margin-top: 40px; }
-        .btn-join { display: inline-block; background: #25d366; color: white; padding: 12px 35px; text-decoration: none; border-radius: 25px; font-weight: bold; font-size: 18px; margin-top: 15px; transition: 0.3s; }
-        .btn-join:hover { background: #20ba5a; transform: scale(1.03); }
+        /* Люксовые блоки бонусов */
+        .bonus-card { background: var(--glass); border: 1px solid var(--border-glass); padding: 30px; border-radius: 16px; margin-bottom: 25px; backdrop-filter: blur(10px); transition: 0.3s; }
+        .bonus-card:hover { border-color: rgba(201, 168, 74, 0.2); background: rgba(255,255,255,0.05); }
+        .bonus-card h3 { font-size: 24px; color: #FFF; margin-bottom: 12px; display: flex; align-items: center; }
+        .bonus-card h3::before { content: "◆"; color: var(--gold); margin-right: 12px; font-size: 16px; }
 
-        footer { background: #111; color: white; text-align: center; padding: 20px; font-size: 14px; margin-top: 40px; }
+        /* Футуристичный финальный блок */
+        .cta-box { background: linear-gradient(135deg, rgba(91, 45, 142, 0.2) 0%, rgba(26, 42, 80, 0.5) 100%); border: 1px dashed var(--gold); padding: 40px; text-align: center; border-radius: 20px; margin-top: 60px; backdrop-filter: blur(10px); }
+        .cta-box h3 { font-size: 32px; color: var(--gold-light); margin-bottom: 10px; }
+        .btn-join { display: inline-block; background: linear-gradient(135deg, #C9A84A 0%, #AA8932 100%); color: #1A2A50; padding: 15px 40px; text-decoration: none; border-radius: 30px; font-weight: 600; font-size: 15px; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 20px; transition: 0.3s; box-shadow: 0 4px 15px rgba(201, 168, 74, 0.2); }
+        .btn-join:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(201, 168, 74, 0.4); }
+
+        footer { background: #0F1A34; border-top: 1px solid var(--border-glass); color: #718096; text-align: center; padding: 25px; font-size: 13px; margin-top: 60px; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="logo">M International Team</a>
+        <a href="index.html" class="logo">M <span>INTERNATIONAL</span></a>
         <ul>
             <li><a href="index.html">Главная</a></li>
             <li><a href="products.html">Продукция</a></li>
             <li><a href="marketing.html" class="active">Маркетинг</a></li>
-            <li><a href="index.html#about">О нас</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
         </ul>
     </nav>
 
     <div class="header-banner">
-        <h1>Бизнес-Платформа M International</h1>
-        <p>Детальный разбор маркетинг-плана, бизнес-пакетов и лидерских бонусов</p>
+        <h1>Финансовая Платформа</h1>
+        <p>Инновационный, сбалансированный и высокодоходный бинарный маркетинг нового поколения</p>
     </div>
 
     <div class="container">
         
         <div class="terms-box">
-            <h4>💡 Справочник партнера (Основные понятия):</h4>
+            <h4>💡 Глоссарий Бизнес-Платформы:</h4>
             <ul>
-                <li><strong>CP (Cash Point / Расчетная единица):</strong> Внутренняя валюта компании для фиксации стоимости продукции и начисления бонусов во всех странах мира.</li>
-                <li><strong>BV (Business Volume / Балловый объём):</strong> Цифровое значение каждого продукта, от которого рассчитываются все твои реферальные, бинарные и командные проценты.</li>
+                <li><strong>CP (Cash Point):</strong> Международный расчетный эквивалент для фиксирования стоимости и начисления бонусов.</li>
+                <li><strong>BV (Business Volume):</strong> Балловая ценность пакетов, служащая базисом для расчета ваших лидерских и бинарных чеков.</li>
             </ul>
         </div>
 
-        <h2>1. Стартовые пакеты и объем баллов</h2>
-        <p>Маркетинг компании гибкий — начать можно с любого пакета, а в дальнейшем сделать апгрейд (переход) на более высокий статус, просто доплатив разницу:</p>
+        <h2>1. Бизнес-Пакеты и Наполнение</h2>
+        <p>Регистрация на платформе адаптирована под любые финансовые цели — от личного потребления клеточного питания до построения глобального сетевого склада:</p>
 
         <div class="table-responsive">
             <table>
                 <thead>
                     <tr>
-                        <th>Бизнес-Пакет</th>
+                        <th>Бизнес-Статус</th>
                         <th>Стоимость (CP)</th>
                         <th>Объем баллов (BV)</th>
-                        <th>Количество продукции</th>
+                        <th>Продуктовое Наполнение</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -104,106 +123,88 @@
                         <td><strong>Gold</strong> (Золото)</td>
                         <td>550 CP</td>
                         <td>400 BV</td>
-                        <td>10 продуктов</td>
+                        <td>10 флагманских продуктов</td>
                     </tr>
                     <tr class="highlight-row">
-                        <td><strong>Mobile</strong> (Мобильный склад)</td>
+                        <td><strong>Mobile</strong> (Мобильный Дистрибьютор)</td>
                         <td>1100 CP</td>
                         <td>800 BV</td>
-                        <td>20 продуктов + Бонус 2-й линии!</td>
+                        <td>20 продуктов + Реферальный бонус со 2-й линии!</td>
                     </tr>
                     <tr>
-                        <td><strong>Supreme</strong> (Высший пакет)</td>
+                        <td><strong>Supreme</strong> (Высший Пакет)</td>
                         <td>3300 CP</td>
                         <td>2400 BV</td>
-                        <td>60 продуктов + Максимальные привилегии</td>
+                        <td>60 продуктов + Максимальные лимиты выплат</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <h2>2. Основные виды доходов и выплат</h2>
+        <h2>2. Премиальные Доходные Бонусы</h2>
         
         <div class="bonus-card">
-            <h3>🔹 Реферальный бонус (За личную рекомендацию)</h3>
-            <p>Выплачивается мгновенно за приглашение нового партнера. Составляет <strong>от 20% до 40% от BV</strong> объема его закупа. Чем выше ваш личный пакет, тем больше процент вы зарабатываете с одной и той же рекомендации.</p>
+            <h3>Реферальный бонус личных продаж</h3>
+            <p>Начисляется мгновенно. Партнер получает <strong>от 20% до 40% от BV</strong> за личную рекомендацию систем клеточного питания. Процент увеличивается соразмерно вашему личному бизнес-пакету.</p>
         </div>
 
         <div class="bonus-card">
-            <h3>🔹 Реферальный бонус от 2-й линии (Глубина)</h3>
-            <p>Это настоящий пассивный доход. Когда ваши лично приглашенные люди зовут своих знакомых, вы получаете <strong>5% от BV</strong>. Данный вид дохода открыт для пакетов <strong>Mobile</strong> и <strong>Supreme</strong>.</p>
+            <h3>Реферальный бонус второго поколения (Глубина)</h3>
+            <p>Премиальный пассивный доход в размере <strong>5% от BV</strong> за рекомендации, сделанные партнерами вашей первой линии. Открывается автоматически для статусов <strong>Mobile</strong> и <strong>Supreme</strong>.</p>
         </div>
 
-        <div class="bonus-card">
-            <h3>🔹 Бинарный и Переходной бонусы</h3>
-            <p>Начисляются за создание баланса оборотов в левой и правой ветках вашей команды. Система автоматически учитывает баллы на всю глубину структуры, обеспечивая стабильный еженедельный доход.</p>
-        </div>
-
-        <h2>3. Лидерский кумулятивный бонус (Пассив от пассива)</h2>
-        <p>Один из самых прибыльных бонусов компании, который выплачивается 1-го числа каждого месяца. Вы получаете <strong>2% от бинарного дохода</strong> партнеров вашей команды на огромную глубину поколений в зависимости от вашего лидерского ранга:</p>
+        <h2>3. Лидерский кумулятивный бонус (2% от бинара)</h2>
+        <p>Профессиональный пассивный чек, выплачиваемый 1-го числа каждого месяца. Вы получаете фиксированные <strong>2% от бинарных доходов всей вашей глубины</strong>. Масштаб охвата зависит от вашего ранга:</p>
 
         <div class="table-responsive">
             <table>
                 <thead>
                     <tr>
-                        <th>Ваш Лидерский Ранг</th>
-                        <th>Процент выплаты</th>
-                        <th>Глубина захвата поколений команды</th>
+                        <th>Ваш Лидерский Ранг в Системе</th>
+                        <th>Фиксированный %</th>
+                        <th>Глубина Охвата Структуры</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>Сапфир</strong></td>
                         <td>2%</td>
-                        <td>до 2-х поколений структуры</td>
+                        <td>до 2-х поколений команды включительно</td>
                     </tr>
                     <tr>
                         <td><strong>Рубин</strong></td>
                         <td>2%</td>
-                        <td>до 4-х поколений структуры</td>
+                        <td>до 4-х поколений команды включительно</td>
                     </tr>
                     <tr>
                         <td><strong>Изумруд</strong></td>
                         <td>2%</td>
-                        <td>до 6-и поколений структуры</td>
+                        <td>до 6-и поколений команды включительно</td>
                     </tr>
                     <tr>
                         <td><strong>Diamond Director</strong></td>
                         <td>2%</td>
-                        <td>до 8-и поколений структуры</td>
+                        <td>до 8-и поколений команды включительно</td>
                     </tr>
                     <tr class="highlight-row">
-                        <td><strong>Double Diamond Director</strong></td>
+                        <td><strong>Double Diamond Director / Crown President</strong></td>
                         <td>2%</td>
-                        <td>до 10-и поколений структуры</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Triple Diamond Director</strong> и выше</td>
-                        <td>2%</td>
-                        <td>до 10-и поколений структуры</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Crown President</strong> (Высший ранг)</td>
-                        <td>2%</td>
-                        <td>до 10-и поколений структуры</td>
+                        <td>Максимальные 10 поколений всей вашей структуры!</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <h2>4. Бонус за воспитание лидеров</h2>
-        <p>Компания M International ценит спонсоров, которые помогают своей команде расти. Когда ваш партнер закрывает новый квалификационный ранг (начиная со статуса Сапфир) в правой и левой группах, компания выплачивает вам солидный разовый денежный бонус за лидерское наставничество.</p>
-
         <div class="cta-box">
-            <h3>Запустите свой международный бизнес прямо сейчас!</h3>
-            <p>Мы предоставляем командные инструменты автоматизации, пошаговые инструкции для социальных сетей и полное сопровождение до ваших первых чеков.</p>
-            <a href="https://wa.me/77758501213?text=Здравствуйте!%20Хочу%20стать%20партнером%20M%20International" class="btn-join" target="_blank">Получить бизнес-план в WhatsApp</a>
+            <h3>Займите стратегическое место в бинаре</h3>
+            <p style="color: #CBD5E0;">Мы предоставляем готовую премиальную франшизу, пошаговые скрипты привлечения партнеров и персональное лидерское сопровождение.</p>
+            <a href="https://wa.me/77XXXXXXXXX?text=Здравствуйте!%20Хочу%20в%20команду%20M%20International" class="btn-join" target="_blank">Активировать Бизнес в WhatsApp</a>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Командный сайт партнеров M International. Маркетинг-план рассчитан согласно официальному регламенту компании.</p>
+        <p>&copy; 2026 M INTERNATIONAL. Все расчеты соответствуют официальному финансовому регламенту компании.</p>
     </footer>
 
 </body>
