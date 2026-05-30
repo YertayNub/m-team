@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты команды | M International</title>
+    <style>
+        :root {
+            --primary-color: #1a0933;
+            --accent-color: #00b4d8;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        nav { background: var(--primary-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        nav .logo { color: white; font-size: 24px; font-weight: bold; text-decoration: none; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: #fff; text-decoration: none; font-size: 16px; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
+
+        .header-banner { background: linear-gradient(135deg, #1a0933 0%, #491778 100%); color: white; padding: 60px 5%; text-align: center; }
+        .header-banner h1 { font-size: 36px; margin-bottom: 10px; }
+
+        .container { padding: 40px 5%; max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; }
+        
+        .contact-info { flex: 1; min-width: 300px; }
+        .contact-info h2 { color: var(--primary-color); margin-bottom: 20px; font-size: 26px; }
+        .contact-info p { color: #555; line-height: 1.6; margin-bottom: 25px; font-size: 16px; }
+        
+        /* Кнопки мессенджеров */
+        .social-btn { display: flex; align-items: center; width: 100%; max-width: 320px; padding: 14px 20px; border-radius: 8px; color: white; text-decoration: none; font-weight: bold; margin-bottom: 15px; transition: 0.3s; font-size: 16px; }
+        .social-btn.whatsapp { background: #25d366; }
+        .social-btn.whatsapp:hover { background: #1ebd56; transform: translateX(5px); }
+        .social-btn.telegram { background: #0088cc; }
+        .social-btn.telegram:hover { background: #0077b3; transform: translateX(5px); }
+        
+        /* Форма заявки */
+        .contact-form-box { flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border-top: 5px solid var(--accent-color); }
+        .contact-form-box h3 { color: var(--primary-color); margin-bottom: 15px; font-size: 22px; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; margin-bottom: 6px; color: #444; font-weight: 500; font-size: 14px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; outline: none; transition: 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--accent-color); box-shadow: 0 0 5px rgba(0, 180, 216, 0.3); }
+        
+        .btn-submit { width: 100%; background: var(--primary-color); color: white; padding: 14px; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-submit:hover { background: #32135e; }
+
+        footer { background: #111; color: white; text-align: center; padding: 20px; font-size: 14px; width: 100%; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">M International Team</a>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="products.html">Продукция</a></li>
+            <li><a href="marketing.html">Маркетинг</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="contacts.html" class="active">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-banner">
+        <h1>Связаться с нами</h1>
+        <p>Задай любой вопрос о продукте или бизнесе — мы всегда на связи!</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="contact-info">
+            <h2>Прямая связь с лидером</h2>
+            <p>Вы можете задать свой вопрос напрямую через удобный для вас мессенджер. Мы оперативно проконсультируем вас по поводу стоимости клеточного питания, вариантов доставки по Казахстану и СНГ или расскажем, как пройти официальную регистрацию.</p>
+            
+            <a href="https://wa.me/77758501213?text=Здравствуйте!%20Я%20с%20командного%20сайта." class="social-btn whatsapp" target="_blank">
+                💬 Написать в WhatsApp
+            </a>
+            
+            <a href="https://t.me/baxa021177" class="social-btn telegram" target="_blank">
+                ✈️ Написать в Telegram
+            </a>
+        </div>
+
+        <div class="contact-form-box">
+            <h3>Оставить заявку на консультацию</h3>
+            <p style="font-size:14px; color:#777; margin-bottom:15px;">Заполните форму, и мы свяжемся с вами в течение ближайшего времени.</p>
+            
+            <form onsubmit="alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время!'); return false;">
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" required placeholder="Иван">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Номер телефона (WhatsApp):</label>
+                    <input type="tel" id="phone" required placeholder="+7 (701) 000-00-00">
+                </div>
+                <div class="form-group">
+                    <label for="message">Ваш вопрос (необязательно):</label>
+                    <textarea id="message" rows="4" placeholder="Например: Хочу заказать GreenMAX или узнать подробнее о бизнесе."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Отправить заявку</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Командный сайт партнеров M International. Мы ответим на любые ваши вопросы.</p>
+    </footer>
+
+</body>
+</html>

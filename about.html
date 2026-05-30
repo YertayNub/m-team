@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нашей команде | M International</title>
+    <style>
+        :root {
+            --primary-color: #1a0933;
+            --accent-color: #00b4d8;
+            --text-color: #333;
+            --light-bg: #f4f6f9;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        nav { background: var(--primary-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        nav .logo { color: white; font-size: 24px; font-weight: bold; text-decoration: none; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: #fff; text-decoration: none; font-size: 16px; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
+
+        .header-banner { background: linear-gradient(135deg, #1a0933 0%, #491778 100%); color: white; padding: 60px 5%; text-align: center; }
+        .header-banner h1 { font-size: 36px; margin-bottom: 10px; }
+
+        .container { padding: 40px 5%; max-width: 1000px; margin: 0 auto; }
+        
+        .welcome-block { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 5px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .welcome-text { flex: 2; min-width: 300px; }
+        .welcome-text h2 { color: var(--primary-color); margin-bottom: 15px; font-size: 28px; }
+        .welcome-text p { color: #555; line-height: 1.7; margin-bottom: 15px; font-size: 16px; }
+        
+        h3 { color: var(--primary-color); margin: 40px 0 20px 0; font-size: 24px; border-left: 5px solid var(--accent-color); padding-left: 12px; }
+        
+        /* Фишки команды */
+        .system-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
+        .system-card { background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); border-top: 4px solid var(--primary-color); }
+        .system-card h4 { color: var(--primary-color); margin-bottom: 10px; font-size: 18px; }
+        .system-card p { color: #666; font-size: 14px; line-height: 1.6; }
+
+        .cta-box { background: #fdfbff; border: 1px solid #e1d8ed; padding: 30px; text-align: center; border-radius: 12px; margin-top: 50px; }
+        .btn-contact { display: inline-block; background: var(--accent-color); color: white; padding: 12px 35px; text-decoration: none; border-radius: 25px; font-weight: bold; font-size: 16px; margin-top: 15px; transition: 0.3s; }
+        .btn-contact:hover { background: #0077b6; }
+
+        footer { background: #111; color: white; text-align: center; padding: 20px; font-size: 14px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">M International Team</a>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="products.html">Продукция</a></li>
+            <li><a href="marketing.html">Маркетинг</a></li>
+            <li><a href="about.html" class="active">О нас</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-banner">
+        <h1>Наша Команда и Система Роста</h1>
+        <p>Мы создаем сообщество успешных, здоровых и финансово независимых лидеров</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="welcome-block">
+            <div class="welcome-text">
+                <h2>Добро пожаловать в команду лидеров!</h2>
+                <p>Приветствую тебя, будущий партнер! Если ты находишься на этом сайте, значит, ты ищешь надежные возможности для укрепления здоровья своей семьи и создания стабильного, независимого источника дохода.</p>
+                <p>Наша команда объединяет амбициозных профессионалов, предпринимателей и активных лидеров со всего Казахстана и стран СНГ. Мы выбрали <strong>M International</strong>, потому что это компания с безупречной репутацией из Малайзии, революционным сертифицированным продуктом клеточного питания и невероятно щедрым бинарным маркетинг-планом.</p>
+                <p>Мы не просто продаем продукт — мы строим международный бизнес на принципах взаимовыручки, честности и профессионализма.</p>
+            </div>
+        </div>
+
+        <h3>Наша пошаговая система обучения</h3>
+        <p>Главная проблема новичка в MLM — это вопрос: "Что мне делать завтра?". В нашей команде этот вопрос решен на 100%. Каждый партнер после регистрации получает доступ к готовой системе:</p>
+
+        <div class="system-grid">
+            <div class="system-card">
+                <h4>🚀 Быстрый старт</h4>
+                <p>Пошаговый разбор первых шагов: как правильно настроить свои ресурсы, как рассказывать о клеточном питании и делать предложения, которые бьют точно в цель.</p>
+            </div>
+            <div class="system-card">
+                <h4>📱 Онлайн-продвижение</h4>
+                <p>Обучение работе в социальных сетях и мессенджерах. Мы учим выстраивать личный бренд так, чтобы люди сами писали вам: "Хочу в команду" или "Как заказать GreenMAX?".</p>
+            </div>
+            <div class="system-card">
+                <h4>👥 Лидерское наставничество</h4>
+                <p>Регулярные командные созвоны, разборы маркетинг-плана, личные консультации и мощная поддержка на каждом этапе — от статуса новичка до закрытия высших рангов.</p>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>Давай строить этот бизнес вместе!</h3>
+            <p>В сетевом бизнесе важно оказаться в нужное время, в нужном месте и с правильной командой. Напиши нам, и мы поможем тебе сделать правильный первый шаг.</p>
+            <a href="contacts.html" class="btn-contact">Узнать подробнее о сотрудничестве</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Командный сайт партнеров M International. Развивайся вместе с лидерами.</p>
+    </footer>
+
+</body>
+</html>
