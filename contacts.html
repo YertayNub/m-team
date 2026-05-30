@@ -3,57 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты команды | M International</title>
+    <title>Центр Связи | M International</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a0933;
-            --accent-color: #00b4d8;
-            --text-color: #333;
-            --light-bg: #f8f9fa;
+            --nv-dark: #1A2A50;
+            --nv-mid: #22336A;
+            --pr-dark: #5B2D8E;
+            --gold: #C9A84A;
+            --gold-light: #F4E8C1;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         
-        nav { background: var(--primary-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        nav .logo { color: white; font-size: 24px; font-weight: bold; text-decoration: none; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: radial-gradient(circle at 50% 0%, #22336A 0%, #1A2A50 50%, #0F1A34 100%); color: #E2E8F0; font-family: 'Jost', sans-serif; min-height: 100vh; }
+        
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #FFF; }
+
+        nav { background: rgba(26, 42, 80, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-glass); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        nav .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #FFF; text-decoration: none; font-weight: bold; letter-spacing: 2px; }
+        nav .logo span { color: var(--gold); }
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { color: #fff; text-decoration: none; font-size: 16px; transition: 0.3s; }
-        nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 15px; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--gold); border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
 
-        .header-banner { background: linear-gradient(135deg, #1a0933 0%, #491778 100%); color: white; padding: 60px 5%; text-align: center; }
-        .header-banner h1 { font-size: 36px; margin-bottom: 10px; }
+        .header-banner { padding: 80px 5% 40px; text-align: center; }
+        .header-banner h1 { font-size: 44px; text-transform: uppercase; background: linear-gradient(135deg, #FFF 30%, var(--gold-light) 70%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .header-banner p { font-size: 16px; color: #A0AEC0; font-weight: 300; max-width: 600px; margin: 10px auto 0; }
 
-        .container { padding: 40px 5%; max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; }
+        .container { padding: 20px 5% 60px; max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; }
         
         .contact-info { flex: 1; min-width: 300px; }
-        .contact-info h2 { color: var(--primary-color); margin-bottom: 20px; font-size: 26px; }
-        .contact-info p { color: #555; line-height: 1.6; margin-bottom: 25px; font-size: 16px; }
+        .contact-info h2 { font-size: 32px; color: var(--gold); margin-bottom: 20px; }
+        .contact-info p { color: #CBD5E0; line-height: 1.8; margin-bottom: 30px; font-weight: 300; font-size: 16px; }
         
-        /* Кнопки мессенджеров */
-        .social-btn { display: flex; align-items: center; width: 100%; max-width: 320px; padding: 14px 20px; border-radius: 8px; color: white; text-decoration: none; font-weight: bold; margin-bottom: 15px; transition: 0.3s; font-size: 16px; }
-        .social-btn.whatsapp { background: #25d366; }
-        .social-btn.whatsapp:hover { background: #1ebd56; transform: translateX(5px); }
-        .social-btn.telegram { background: #0088cc; }
-        .social-btn.telegram:hover { background: #0077b3; transform: translateX(5px); }
+        /* Роскошные кнопки связи */
+        .social-btn { display: flex; align-items: center; justify-content: center; width: 100%; max-width: 340px; padding: 16px 25px; border-radius: 30px; color: white; text-decoration: none; font-weight: 600; margin-bottom: 18px; transition: 0.3s ease; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        .social-btn.whatsapp { background: linear-gradient(135deg, #25D366 0%, #1CBD56 100%); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2); }
+        .social-btn.whatsapp:hover { transform: translateX(5px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
+        .social-btn.telegram { background: linear-gradient(135deg, #0088CC 0%, #0077B3 100%); box-shadow: 0 4px 15px rgba(0, 136, 204, 0.2); }
+        .social-btn.telegram:hover { transform: translateX(5px); box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4); }
         
-        /* Форма заявки */
-        .contact-form-box { flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); border-top: 5px solid var(--accent-color); }
-        .contact-form-box h3 { color: var(--primary-color); margin-bottom: 15px; font-size: 22px; }
-        .form-group { margin-bottom: 18px; }
-        .form-group label { display: block; margin-bottom: 6px; color: #444; font-weight: 500; font-size: 14px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; outline: none; transition: 0.3s; }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--accent-color); box-shadow: 0 0 5px rgba(0, 180, 216, 0.3); }
+        /* Закрытая люкс-форма */
+        .contact-form-box { flex: 1; min-width: 300px; background: var(--glass); border: 1px solid var(--border-glass); padding: 40px; border-radius: 20px; backdrop-filter: blur(15px); box-shadow: 0 10px 30px rgba(15, 26, 52, 0.3); }
+        .contact-form-box h3 { font-size: 26px; color: #FFF; margin-bottom: 10px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--gold-light); font-weight: 400; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
         
-        .btn-submit { width: 100%; background: var(--primary-color); color: white; padding: 14px; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .btn-submit:hover { background: #32135e; }
+        .form-group input, .form-group textarea { width: 100%; padding: 14px; background: rgba(15, 26, 52, 0.5); border: 1px solid var(--border-glass); border-radius: 8px; font-size: 15px; color: #FFF; font-family: 'Jost', sans-serif; outline: none; transition: 0.3s; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); box-shadow: 0 0 8px rgba(201, 168, 74, 0.2); }
+        
+        .btn-submit { width: 100%; background: linear-gradient(135deg, #C9A84A 0%, #AA8932 100%); color: #1A2A50; padding: 16px; border: none; border-radius: 30px; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; }
+        .btn-submit:hover { background: linear-gradient(135deg, #D4B55B 0%, #C9A84A 100%); box-shadow: 0 4px 15px rgba(201, 168, 74, 0.3); }
 
-        footer { background: #111; color: white; text-align: center; padding: 20px; font-size: 14px; width: 100%; margin-top: 40px; }
+        footer { background: #0F1A34; border-top: 1px solid var(--border-glass); color: #718096; text-align: center; padding: 25px; font-size: 13px; width: 100%; margin-top: 60px; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="logo">M International Team</a>
+        <a href="index.html" class="logo">M <span>INTERNATIONAL</span></a>
         <ul>
             <li><a href="index.html">Главная</a></li>
             <li><a href="products.html">Продукция</a></li>
@@ -64,50 +77,50 @@
     </nav>
 
     <div class="header-banner">
-        <h1>Связаться с нами</h1>
-        <p>Задай любой вопрос о продукте или бизнесе — мы всегда на связи!</p>
+        <h1>Информационный Центр</h1>
+        <p>Задайте приватный вопрос по партнерству или получите экспертную консультацию по системам клеточного питания</p>
     </div>
 
     <div class="container">
         
         <div class="contact-info">
-            <h2>Прямая связь с лидером</h2>
-            <p>Вы можете задать свой вопрос напрямую через удобный для вас мессенджер. Мы оперативно проконсультируем вас по поводу стоимости клеточного питания, вариантов доставки по Казахстану и СНГ или расскажем, как пройти официальную регистрацию.</p>
+            <h2>Прямой Канал Связи</h2>
+            <p>Вы можете мгновенно связаться с топ-координатором команды через защищенные мессенджеры. Мы предоставим исчерпывающие данные о логистике по Казахстану и СНГ, поможем рассчитать маржинальность стартовых пакетов или проведем закрытую верифицированную регистрацию на официальной платформе.</p>
             
-            <a href="https://wa.me/77758501213?text=Здравствуйте!%20Я%20с%20командного%20сайта." class="social-btn whatsapp" target="_blank">
-                💬 Написать в WhatsApp
+            <a href="https://wa.me/77XXXXXXXXX?text=Здравствуйте!%20Я%20с%20командного%20сайта." class="social-btn whatsapp" target="_blank">
+                💬 Связаться в WhatsApp
             </a>
             
-            <a href="https://t.me/baxa021177" class="social-btn telegram" target="_blank">
+            <a href="https://t.me/ТВОЙ_ЮЗЕРНЕЙМ" class="social-btn telegram" target="_blank">
                 ✈️ Написать в Telegram
             </a>
         </div>
 
         <div class="contact-form-box">
-            <h3>Оставить заявку на консультацию</h3>
-            <p style="font-size:14px; color:#777; margin-bottom:15px;">Заполните форму, и мы свяжемся с вами в течение ближайшего времени.</p>
+            <h3>Экспресс-Заявка</h3>
+            <p style="font-size:14px; color:#A0AEC0; margin-bottom:20px; font-weight:300;">Оставьте ваши персональные данные для обратного звонка.</p>
             
-            <form onsubmit="alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время!'); return false;">
+            <form onsubmit="alert('Благодарим за доверие! Ваша заявка успешно верифицирована. Мы свяжемся с вами в ближайшее время.'); return false;">
                 <div class="form-group">
                     <label for="name">Ваше имя:</label>
-                    <input type="text" id="name" required placeholder="Иван">
+                    <input type="text" id="name" required placeholder="Александр">
                 </div>
                 <div class="form-group">
-                    <label for="phone">Номер телефона (WhatsApp):</label>
+                    <label for="phone">Контактный телефон (WhatsApp):</label>
                     <input type="tel" id="phone" required placeholder="+7 (701) 000-00-00">
                 </div>
                 <div class="form-group">
-                    <label for="message">Ваш вопрос (необязательно):</label>
-                    <textarea id="message" rows="4" placeholder="Например: Хочу заказать GreenMAX или узнать подробнее о бизнесе."></textarea>
+                    <label for="message">Ваш запрос:</label>
+                    <textarea id="message" rows="4" placeholder="Интересует покупка GreenMAX / Активация статуса Mobile..."></textarea>
                 </div>
-                <button type="submit" class="btn-submit">Отправить заявку</button>
+                <button type="submit" class="btn-submit">Отправить запрос</button>
             </form>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Командный сайт партнеров M International. Мы ответим на любые ваши вопросы.</p>
+        <p>&copy; 2026 M INTERNATIONAL. Конфиденциальность данных гарантирована.</p>
     </footer>
 
 </body>
