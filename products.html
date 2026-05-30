@@ -9,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --nv-dark: #1A2A50;      /* Глубокий темно-синий */
-            --nv-mid: #22336A;       /* Средний синий */
-            --pr-dark: #5B2D8E;      /* Королевский фиолетовый */
-            --gold: #C9A84A;         /* Благородное золото */
-            --gold-light: #F4E8C1;   /* Светлое золото */
+            --nv-dark: #1A2A50;
+            --nv-mid: #22336A;
+            --pr-dark: #5B2D8E;
+            --gold: #C9A84A;
+            --gold-light: #F4E8C1;
             --glass: rgba(255, 255, 255, 0.03);
             --border-glass: rgba(255, 255, 255, 0.08);
         }
@@ -21,19 +21,16 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: radial-gradient(circle at 50% 0%, #22336A 0%, #1A2A50 50%, #0F1A34 100%); color: #E2E8F0; font-family: 'Jost', sans-serif; min-height: 100vh; overflow-x: hidden; }
         
-        /* Роскошные заголовки */
         h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: 1px; color: #FFF; }
 
-        /* Навигация Luxury */
         nav { background: rgba(26, 42, 80, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-glass); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
         nav .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #FFF; text-decoration: none; font-weight: bold; letter-spacing: 2px; }
         nav .logo span { color: var(--gold); }
         nav ul { display: flex; list-style: none; align-items: center; }
         nav ul li { margin-left: 25px; }
-        nav ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 15px; font-weight: 400; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+        nav ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 15px; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
         nav ul li a:hover, nav ul li a.active { color: var(--gold); border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
 
-        /* Премиум Баннер */
         .header-banner { padding: 80px 5% 50px; text-align: center; position: relative; }
         .header-banner h1 { font-size: 48px; margin-bottom: 15px; text-transform: uppercase; background: linear-gradient(135deg, #FFF 30%, var(--gold-light) 70%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .header-banner p { font-size: 16px; color: #A0AEC0; font-weight: 300; letter-spacing: 1px; max-width: 600px; margin: 0 auto; }
@@ -41,45 +38,48 @@
 
         .container { padding: 20px 5% 60px; max-width: 1200px; margin: 0 auto; }
         
-        /* Сертификаты в стиле Luxury */
         .cert-section { background: linear-gradient(135deg, rgba(91, 45, 142, 0.2) 0%, rgba(26, 42, 80, 0.4) 100%); border: 1px solid var(--border-glass); padding: 30px; border-radius: 16px; margin-bottom: 50px; text-align: center; backdrop-filter: blur(10px); }
         .cert-section h2 { font-size: 30px; color: var(--gold); margin-bottom: 15px; }
         .cert-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
         .cert-badge { background: rgba(201, 168, 74, 0.1); color: var(--gold-light); padding: 8px 20px; border-radius: 30px; font-size: 13px; font-weight: 600; letter-spacing: 1px; border: 1px solid rgba(201, 168, 74, 0.3); text-transform: uppercase; }
 
-        /* Элитные Карточки Продуктов */
-        .product-large { background: var(--glass); border: 1px solid var(--border-glass); border-radius: 20px; margin-bottom: 50px; overflow: hidden; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); transition: transform 0.4s ease, box-shadow 0.4s ease; position: relative; }
+        /* Элитные Карточки Продуктов с сеткой для фото */
+        .product-large { background: var(--glass); border: 1px solid var(--border-glass); border-radius: 20px; margin-bottom: 50px; overflow: hidden; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); transition: transform 0.4s ease, box-shadow 0.4s ease; }
         .product-large:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(15, 26, 52, 0.5); border-color: rgba(201, 168, 74, 0.3); }
         
         .product-header { background: linear-gradient(90deg, rgba(91, 45, 142, 0.15) 0%, transparent 100%); padding: 30px; border-bottom: 1px solid var(--border-glass); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
         .product-header h2 { font-size: 36px; letter-spacing: 1.5px; }
-        .product-header .tag { background: linear-gradient(135deg, var(--pr-dark) 0%, #7B3FAE 100%); color: #FFF; padding: 6px 16px; border-radius: 30px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(91, 45, 142, 0.3); }
+        .product-header .tag { background: linear-gradient(135deg, var(--pr-dark) 0%, #7B3FAE 100%); color: #FFF; padding: 6px 16px; border-radius: 30px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
         
-        .product-body { padding: 35px; }
-        .product-body > p { color: #CBD5E0; line-height: 1.8; margin-bottom: 30px; font-size: 16px; font-weight: 300; }
+        /* Двухколоночный контент внутри продукта */
+        .product-content-layout { display: flex; flex-wrap: wrap; padding: 35px; gap: 40px; }
         
-        /* Сетка внутренних инфоблоков */
-        .info-block { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 25px; }
+        /* Блок с картинкой */
+        .product-image-container { flex: 1; min-width: 280px; display: flex; justify-content: center; align-items: start; }
+        .product-image-container img { width: 100%; max-width: 320px; height: auto; border-radius: 16px; border: 1px solid var(--border-glass); background: rgba(15, 26, 52, 0.3); padding: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); object-fit: contain; }
         
-        /* Состав трав */
+        /* Блок с текстом */
+        .product-text-container { flex: 2; min-width: 320px; }
+        .product-text-container > p { color: #CBD5E0; line-height: 1.8; margin-bottom: 30px; font-size: 16px; font-weight: 300; }
+        
+        .info-block { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 25px; }
+        
         .herbs-box { background: rgba(15, 26, 52, 0.4); border: 1px solid var(--border-glass); padding: 25px; border-radius: 12px; }
         .herbs-box h4 { font-family: 'Cormorant Garamond', serif; color: var(--gold); margin-bottom: 15px; font-size: 22px; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px; }
         .herbs-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; list-style: none; }
         .herbs-list li { color: #E2E8F0; font-size: 14px; font-weight: 300; padding-left: 22px; position: relative; }
         .herbs-list li::before { content: "✨"; position: absolute; left: 0; color: var(--gold); font-size: 12px; }
 
-        /* Инструкция */
         .use-box { background: rgba(91, 45, 142, 0.1); border: 1px solid rgba(123, 63, 174, 0.2); padding: 25px; border-radius: 12px; }
         .use-box h4 { font-family: 'Cormorant Garamond', serif; color: #FFF; margin-bottom: 15px; font-size: 22px; border-bottom: 1px solid rgba(123, 63, 174, 0.2); padding-bottom: 8px; }
         .use-box ul { list-style: none; }
         .use-box ul li { color: #CBD5E0; font-size: 14px; font-weight: 300; margin-bottom: 8px; padding-left: 20px; position: relative; }
         .use-box ul li::before { content: "✺"; position: absolute; left: 0; color: var(--gold); }
 
-        /* Золотая кнопка заказа */
         .btn-order { display: inline-block; background: linear-gradient(135deg, #C9A84A 0%, #AA8932 100%); color: #1A2A50; padding: 14px 35px; text-decoration: none; border-radius: 30px; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 30px; transition: 0.3s ease; box-shadow: 0 4px 15px rgba(201, 168, 74, 0.2); border: none; cursor: pointer; }
-        .btn-order:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201, 168, 74, 0.4); background: linear-gradient(135deg, #D4B55B 0%, #C9A84A 100%); }
+        .btn-order:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201, 168, 74, 0.4); }
 
-        footer { background: #0F1A34; border-top: 1px solid var(--border-glass); color: #718096; text-align: center; padding: 25px; font-size: 13px; margin-top: 60px; letter-spacing: 0.5px; }
+        footer { background: #0F1A34; border-top: 1px solid var(--border-glass); color: #718096; text-align: center; padding: 25px; font-size: 13px; margin-top: 60px; }
     </style>
 </head>
 <body>
@@ -104,7 +104,7 @@
 
         <div class="cert-section">
             <h2>Международный Знак Качества</h2>
-            <p style="font-weight: 300; color: #CBD5E0;">Производство сертифицировано по высочайшим мировым стандартам безопасности фармацевтической и пищевой промышленности:</p>
+            <p style="font-weight: 300; color: #CBD5E0;">Производство сертифицировано по высочайшим мировым стандартам безопасности:</p>
             <div class="cert-grid">
                 <div class="cert-badge">GMP Certified</div>
                 <div class="cert-badge">HACCP Compliant</div>
@@ -118,34 +118,38 @@
                 <h2>GreenMAX</h2>
                 <span class="tag">Очищение & Детокс</span>
             </div>
-            <div class="product-body">
-                <p>Эксклюзивное решение для глубокого очищения ЖКТ. Продукт мягко освобождает ворсинки кишечника от токсичных накоплений, активирует полезную микрофлору, поддерживает функции печени благодаря мощным антиоксидантам и запускает здоровый метаболизм для контроля веса.</p>
-                
-                <div class="info-block">
-                    <div class="herbs-box">
-                        <h4>Активный фито-состав:</h4>
-                        <ul class="herbs-list">
-                            <li>Расторопша (Силимарин)</li>
-                            <li>Хлорофилл</li>
-                            <li>Псиллиум</li>
-                            <li>Экстракт Киви</li>
-                            <li>Моросил (Апельсин)</li>
-                            <li>Яблочный пектин</li>
-                            <li>KiOnutrime-Cs</li>
-                            <li>Живые Пробиотики</li>
-                        </ul>
-                    </div>
-                    <div class="use-box">
-                        <h4>Ритуал применения:</h4>
-                        <ul>
-                            <li>Принимать строго за 30-40 минут до сна.</li>
-                            <li>Растворить 1 саше в 150-200 мл чистой прохладной воды.</li>
-                            <li>Интенсивно взбить в шейкере и сразу выпить.</li>
-                            <li>Соблюдать питьевой режим в течение дня (1.5-2л воды).</li>
-                        </ul>
-                    </div>
+            <div class="product-content-layout">
+                <div class="product-image-container">
+                    <img src="greenmax.jpg" alt="Коробка GreenMAX Клеточное Питание">
                 </div>
-                <a href="https://wa.me/77758501213?text=Хочу%20заказать%20GreenMAX" class="btn-order" target="_blank">Консультация / Заказ</a>
+                <div class="product-text-container">
+                    <p>Эксклюзивное решение для глубокого очищения ЖКТ. Продукт мягко освобождает ворсинки кишечника от токсичных накоплений, активирует полезную микрофлору, поддерживает функции печени благодаря мощным антиоксидантам и запускает здоровый метаболизм для контроля веса.</p>
+                    
+                    <div class="info-block">
+                        <div class="herbs-box">
+                            <h4>Активный фито-состав:</h4>
+                            <ul class="herbs-list">
+                                <li>Расторопша</li>
+                                <li>Хлорофилл</li>
+                                <li>Псиллиум</li>
+                                <li>Экстракт Киви</li>
+                                <li>Моросил</li>
+                                <li>Яблочный пектин</li>
+                                <li>KiOnutrime-Cs</li>
+                                <li>Пробиотики</li>
+                            </ul>
+                        </div>
+                        <div class="use-box">
+                            <h4>Ритуал применения:</h4>
+                            <ul>
+                                <li>Принимать строго за 30-40 минут до сна.</li>
+                                <li>Растворить 1 саше в 150-200 мл прохладной воды.</li>
+                                <li>Интенсивно взбить в шейкере и сразу выпить.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/77758501213?text=Хочу%20заказать%20GreenMAX" class="btn-order" target="_blank">Консультация / Заказ</a>
+                </div>
             </div>
         </div>
 
@@ -154,32 +158,36 @@
                 <h2>MiMAX</h2>
                 <span class="tag">Клеточное Омоложение</span>
             </div>
-            <div class="product-body">
-                <p>Эликсир долголетия. Блокирует окислительные стрессы, восстанавливает ДНК структуру клетки, защищает органы зрения от усталости и излучений экранов, улучшает эластичность капилляров и наполняет каждую клетку чистой природной энергией.</p>
-                
-                <div class="info-block">
-                    <div class="herbs-box">
-                        <h4>Антиоксидантная формула:</h4>
-                        <ul class="herbs-list">
-                            <li>Астаксантин</li>
-                            <li>Французская сосна</li>
-                            <li>Дикая черника</li>
-                            <li>Ягоды облепихи</li>
-                            <li>Ресвератрол</li>
-                            <li>Полифенолы яблока</li>
-                        </ul>
-                    </div>
-                    <div class="use-box">
-                        <h4>Ритуал применения:</h4>
-                        <ul>
-                            <li>Принимать в утренние часы натощак.</li>
-                            <li>Высыпать содержимое саше под язык (сублингвально).</li>
-                            <li>Рассасывать медленно для моментального усвоения в кровь.</li>
-                            <li>Либо развести в 50 мл чистой теплой воды.</li>
-                        </ul>
-                    </div>
+            <div class="product-content-layout">
+                <div class="product-image-container">
+                    <img src="mimax.jpg" alt="Коробка MiMAX Клеточное Питание">
                 </div>
-                <a href="https://wa.me/77758501213?text=Хочу%20заказать%20MiMAX" class="btn-order" target="_blank">Консультация / Заказ</a>
+                <div class="product-text-container">
+                    <p>Эликсир долголетия. Блокирует окислительные стрессы, восстанавливает ДНК структуру клетки, защищает органы зрения от усталости и излучений экранов, улучшает эластичность капилляров и наполняет каждую клетку чистой природной энергией.</p>
+                    
+                    <div class="info-block">
+                        <div class="herbs-box">
+                            <h4>Антиоксидантная формула:</h4>
+                            <ul class="herbs-list">
+                                <li>Астаксантин</li>
+                                <li>Французская сосна</li>
+                                <li>Дикая черника</li>
+                                <li>Ягоды облепихи</li>
+                                <li>Ресвератрол</li>
+                                <li>Полифенолы яблока</li>
+                            </ul>
+                        </div>
+                        <div class="use-box">
+                            <h4>Ритуал применения:</h4>
+                            <ul>
+                                <li>Принимать в утренние часы натощак.</li>
+                                <li>Высыпать содержимое саше под язык (сублингвально).</li>
+                                <li>Рассасывать медленно для моментального усвоения.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/77758501213?text=Хочу%20заказать%20MiMAX" class="btn-order" target="_blank">Консультация / Заказ</a>
+                </div>
             </div>
         </div>
 
