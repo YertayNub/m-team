@@ -3,416 +3,408 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Премиум Каталог | M International</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Каталог продукции M International</title>
     <style>
         :root {
-            --nv-dark: #1A2A50;
-            --nv-mid: #22336A;
-            --pr-dark: #5B2D8E;
-            --gold: #C9A84A;
-            --gold-light: #F4E8C1;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border-glass: rgba(255, 255, 255, 0.08);
+            --primary: #1b4d3e;
+            --secondary: #c29b38;
+            --text: #333333;
+            --bg: #f4f7f6;
+            --white: #ffffff;
         }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: radial-gradient(circle at 50% 0%, #22336A 0%, #1A2A50 50%, #0F1A34 100%); color: #E2E8F0; font-family: 'Jost', sans-serif; min-height: 100vh; overflow-x: hidden; }
-        
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: 1px; color: #FFF; }
-
-        nav { background: rgba(26, 42, 80, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-glass); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        nav .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #FFF; text-decoration: none; font-weight: bold; letter-spacing: 2px; }
-        nav .logo span { color: var(--gold); }
-        nav ul { display: flex; list-style: none; align-items: center; }
-        nav ul li { margin-left: 25px; }
-        nav ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 15px; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
-        nav ul li a:hover, nav ul li a.active { color: var(--gold); border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
-
-        .header-banner { padding: 80px 5% 50px; text-align: center; position: relative; }
-        .header-banner h1 { font-size: 48px; margin-bottom: 15px; text-transform: uppercase; background: linear-gradient(135deg, #FFF 30%, var(--gold-light) 70%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .header-banner p { font-size: 16px; color: #A0AEC0; font-weight: 300; letter-spacing: 1px; max-width: 600px; margin: 0 auto; }
-        .header-banner::after { content: ''; display: block; width: 60px; height: 1px; background: var(--gold); margin: 20px auto 0; }
-
-        .container { padding: 20px 5% 60px; max-width: 1200px; margin: 0 auto; }
-        
-        .cert-section { background: linear-gradient(135deg, rgba(91, 45, 142, 0.2) 0%, rgba(26, 42, 80, 0.4) 100%); border: 1px solid var(--border-glass); padding: 30px; border-radius: 16px; margin-bottom: 50px; text-align: center; backdrop-filter: blur(10px); }
-        .cert-section h2 { font-size: 30px; color: var(--gold); margin-bottom: 15px; }
-        .cert-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
-        .cert-badge { background: rgba(201, 168, 74, 0.1); color: var(--gold-light); padding: 8px 20px; border-radius: 30px; font-size: 13px; font-weight: 600; letter-spacing: 1px; border: 1px solid rgba(201, 168, 74, 0.3); text-transform: uppercase; }
-
-        /* Элитные Карточки Продуктов с сеткой для фото */
-        .product-large { background: var(--glass); border: 1px solid var(--border-glass); border-radius: 20px; margin-bottom: 50px; overflow: hidden; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); transition: transform 0.4s ease, box-shadow 0.4s ease; }
-        .product-large:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(15, 26, 52, 0.5); border-color: rgba(201, 168, 74, 0.3); }
-        
-        .product-header { background: linear-gradient(90deg, rgba(91, 45, 142, 0.15) 0%, transparent 100%); padding: 30px; border-bottom: 1px solid var(--border-glass); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        .product-header h2 { font-size: 36px; letter-spacing: 1.5px; }
-        .product-header .tag { background: linear-gradient(135deg, var(--pr-dark) 0%, #7B3FAE 100%); color: #FFF; padding: 6px 16px; border-radius: 30px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-        
-        /* Двухколоночный контент внутри продукта */
-        .product-content-layout { display: flex; flex-wrap: wrap; padding: 35px; gap: 40px; }
-        
-        /* Блок с картинкой */
-        .product-image-container { flex: 1; min-width: 280px; display: flex; justify-content: center; align-items: start; }
-        .product-image-container img { width: 100%; max-width: 320px; height: auto; border-radius: 16px; border: 1px solid var(--border-glass); background: rgba(15, 26, 52, 0.3); padding: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); object-fit: contain; }
-        
-        /* Блок с текстом */
-        .product-text-container { flex: 2; min-width: 320px; }
-        .product-text-container > p { color: #CBD5E0; line-height: 1.8; margin-bottom: 30px; font-size: 16px; font-weight: 300; }
-        
-        .info-block { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 25px; }
-        
-        .herbs-box { background: rgba(15, 26, 52, 0.4); border: 1px solid var(--border-glass); padding: 25px; border-radius: 12px; }
-        .herbs-box h4 { font-family: 'Cormorant Garamond', serif; color: var(--gold); margin-bottom: 15px; font-size: 22px; border-bottom: 1px solid var(--border-glass); padding-bottom: 8px; }
-        .herbs-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; list-style: none; }
-        .herbs-list li { color: #E2E8F0; font-size: 14px; font-weight: 300; padding-left: 22px; position: relative; }
-        .herbs-list li::before { content: "✨"; position: absolute; left: 0; color: var(--gold); font-size: 12px; }
-
-        .use-box { background: rgba(91, 45, 142, 0.1); border: 1px solid rgba(123, 63, 174, 0.2); padding: 25px; border-radius: 12px; }
-        .use-box h4 { font-family: 'Cormorant Garamond', serif; color: #FFF; margin-bottom: 15px; font-size: 22px; border-bottom: 1px solid rgba(123, 63, 174, 0.2); padding-bottom: 8px; }
-        .use-box ul { list-style: none; }
-        .use-box ul li { color: #CBD5E0; font-size: 14px; font-weight: 300; margin-bottom: 8px; padding-left: 20px; position: relative; }
-        .use-box ul li::before { content: "✺"; position: absolute; left: 0; color: var(--gold); }
-
-        .btn-order { display: inline-block; background: linear-gradient(135deg, #C9A84A 0%, #AA8932 100%); color: #1A2A50; padding: 14px 35px; text-decoration: none; border-radius: 30px; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 30px; transition: 0.3s ease; box-shadow: 0 4px 15px rgba(201, 168, 74, 0.2); border: none; cursor: pointer; }
-        .btn-order:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201, 168, 74, 0.4); }
-
-        footer { background: #0F1A34; border-top: 1px solid var(--border-glass); color: #718096; text-align: center; padding: 25px; font-size: 13px; margin-top: 60px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .important-note {
+            background: linear-gradient(135deg, #e3ece9, #f4f7f6);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .important-note h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        @media (max-width: 400px) {
+            .catalog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .product-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-img-box {
+            width: 100%;
+            height: 280px;
+            background-color: #eef2f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .product-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .product-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 0 0 10px 0;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 5px;
+        }
+        .product-tagline {
+            font-style: italic;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .section-sub {
+            font-weight: bold;
+            color: var(--primary);
+            margin: 15px 0 5px 0;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        .benefits-list, .ingredients-list {
+            padding-left: 20px;
+            margin: 0 0 15px 0;
+            font-size: 0.95rem;
+        }
+        .benefits-list li {
+            margin-bottom: 5px;
+            list-style-type: square;
+        }
+        .ingredients-list li {
+            margin-bottom: 8px;
+            list-style-type: none;
+            position: relative;
+        }
+        .ingredients-list li::before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+        .med-disclaimer {
+            font-size: 0.85rem;
+            color: #777;
+            font-style: italic;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="logo">M <span>INTERNATIONAL</span></a>
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="products.html" class="active">Продукция</a></li>
-            <li><a href="marketing.html">Маркетинг</a></li>
-            <li><a href="about.html">О нас</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-    </nav>
+<div class="container">
+    <h1 class="header-title">Линейка клеточного питания</h1>
 
-    <div class="header-banner">
-        <h1>Коллекция Клеточного Питания</h1>
-        <p>Высокие технологии экстракции и природные фитонутриенты для абсолютного восстановления клеток</p>
+    <!-- Рекомендация по правильной логике оздоровления -->
+    <div class="important-note">
+        <h3>💡 Важная рекомендация эксперта по оздоровлению:</h3>
+        <p>Перед любым курсом оздоровления, для получения максимальных результатов, необходимо правильно подготовить организм. Чтобы продукт полностью усвоился и работал непосредственно по проблеме, целесообразнее сначала очистить кишечник, печень и лимфу с помощью <strong>GreenMAX</strong> и <strong>MiMAX</strong>. Только после качественной детоксикации организма рекомендуется подключать профильные продукты восстановления.</p>
     </div>
 
-    <div class="container">
+    <div class="catalog-grid">
 
-        <div class="cert-section">
-            <h2>Международный Знак Качества</h2>
-            <p style="font-weight: 300; color: #CBD5E0;">Производство сертифицировано по высочайшим мировым стандартам безопасности:</p>
-            <div class="cert-grid">
-                <div class="cert-badge">GMP Certified</div>
-                <div class="cert-badge">HACCP Compliant</div>
-                <div class="cert-badge">Halal International</div>
-                <div class="cert-badge">ISO 22000</div>
+        <!-- GreenMAX -->
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="greenmax.jpg" alt="GreenMAX">
+            </div>
+            <div class="product-content">
+                <h2 class="product-title">GreenMAX</h2>
+                <p class="product-tagline">Эксклюзивный детокс, очищение, обновление и омоложение всего организма!</p>
+                <p>100% чистая растительная клетчатка с пробиотиком и экстрактом расторопши. Специально запатентованная формула 3 в 1 для ухода за толстой кишкой.</p>
+                
+                <div class="section-sub">Польза для здоровья:</div>
+                <ul class="benefits-list">
+                    <li>Очищает кишечник от застойных каловых масс и завалов</li>
+                    <li>Профилактика и эффективное лечение запоров</li>
+                    <li>Убирает висцеральный жир, способствует сбросу веса</li>
+                    <li>Помогает справиться с жировым гепатозом печени, чистит лимфу</li>
+                    <li>Регулирует уровень сахара и холестерина в крови</li>
+                </ul>
+
+                <div class="section-sub">Основные компоненты:</div>
+                <ul class="ingredients-list">
+                    <li><strong>Шелуха Подорожника:</strong> Растворимое волокно, мягко очищает ЖКТ.</li>
+                    <li><strong>Расторопша:</strong> Защита печени от токсинов и окислительного стресса.</li>
+                    <li><strong>Пробиотик:</strong> Поддерживает естественный баланс бактерий и иммунитет.</li>
+                    <li><strong>KiOnutrime-Cs & Моросил:</strong> Растительный хитозан и экстракт апельсина Моро для управления весом.</li>
+                </ul>
+                <div class="med-disclaimer">Не является лекарственным средством. Натуральный состав.</div>
             </div>
         </div>
 
-        <div class="product-large">
-            <div class="product-header">
-                <h2>GreenMAX</h2>
-                <span class="tag">Очищение & Детокс ЖКТ</span>
+        <!-- MiMAX -->
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="mimax.jpg" alt="MiMAX">
             </div>
-            <div class="product-content-layout">
-                <div class="product-image-container">
-                    <img src="greenmax.jpg" alt="Коробка GreenMAX">
-                </div>
-                <div class="product-text-container">
-                    <p>Эксклюзивное решение для глубокого очищения ЖКТ. Продукт мягко освобождает ворсинки кишечника от токсичных накоплений, активирует полезную микрофлору, поддерживает функции печени благодаря мощным антиоксидантам и запускает здоровый метаболизм для контроля веса.</p>
-                    <div class="info-block">
-                        <div class="herbs-box">
-                            <h4>Активный фито-состав:</h4>
-                            <ul class="herbs-list">
-                                <li>Расторопша</li>
-                                <li>Хлорофилл</li>
-                                <li>Псиллиум</li>
-                                <li>Экстракт Киви</li>
-                                <li>Моросил</li>
-                                <li>Яблочный пектин</li>
-                                <li>KiOnutrime-Cs</li>
-                                <li>Пробиотики</li>
-                            </ul>
-                        </div>
-                        <div class="use-box">
-                            <h4>Ритуал применения:</h4>
-                            <ul>
-                                <li>Принимать строго за 30-40 минут до сна.</li>
-                                <li>Растворить 1 саше в 150-200 мл прохладной воды.</li>
-                                <li>Интенсивно взбить в шейкере и сразу выпить.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/77758501213?text=Хочу%20заказать%20GreenMAX" class="btn-order" target="_blank">Консультация / Заказ</a>
-                </div>
+            <div class="product-content">
+                <h2 class="product-title">MiMAX</h2>
+                <p class="product-tagline">Супермощный продукт для омоложения и блокировки процессов старения!</p>
+                <p>Растительная смесь с высочайшими антиоксидантными свойствами. Содержит астаксантин, действие которого в 6000 раз сильнее витамина С.</p>
+                
+                <div class="section-sub">Польза для здоровья:</div>
+                <ul class="benefits-list">
+                    <li>Глубокое клеточное омоложение и защита ДНК от повреждений</li>
+                    <li>Мощное природное противовоспалительное средство</li>
+                    <li>Укрепление функций сердца, печени и повышение иммунитета</li>
+                    <li>Защита, улучшение зрения и устранение усталости глаз</li>
+                    <li>Улучшение метаболизма и общего состояния кожи</li>
+                </ul>
+
+                <div class="section-sub">Основные компоненты:</div>
+                <ul class="ingredients-list">
+                    <li><strong>Астаксантин:</strong> Сильнейший антиоксидант для мозга, глаз и кожи.</li>
+                    <li><strong>Экстракт ягод облепихи:</strong> Источник Омега-3,6,7,9 для сердца и ЖКТ.</li>
+                    <li><strong>Экстракт сосновой коры:</strong> Снижает воспаления, регулирует глюкозу.</li>
+                    <li><strong>Ресвератрол (Виноградные косточки):</strong> Улучшает кровообращение.</li>
+                </ul>
+                <div class="med-disclaimer">Не является лекарственным средством. Натуральный состав.</div>
             </div>
         </div>
 
-        <div class="product-large">
-            <div class="product-header">
-                <h2>MiMAX</h2>
-                <span class="tag">Клеточное Омоложение & Anti-Age</span>
+        <!-- BluMAX -->
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="blumax.jpg" alt="BluMAX">
             </div>
-            <div class="product-content-layout">
-                <div class="product-image-container">
-                    <img src="mimax.jpg" alt="Коробка MiMAX">
-                </div>
-                <div class="product-text-container">
-                    <p>Эликсир долголетия. Блокирует окислительные стрессы, восстанавливает ДНК структуру клетки, защищает органы зрения от усталости и излучений экранов, улучшает эластичность капилляров и наполняет каждую клетку чистой природной энергией.</p>
-                    <div class="info-block">
-                        <div class="herbs-box">
-                            <h4>Антиоксидантная формула:</h4>
-                            <ul class="herbs-list">
-                                <li>Астаксантин</li>
-                                <li>Французская сосна</li>
-                                <li>Дикая черника</li>
-                                <li>Ягоды облепихи</li>
-                                <li>Ресвератрол</li>
-                                <li>Полифенолы яблока</li>
-                            </ul>
-                        </div>
-                        <div class="use-box">
-                            <h4>Ритуал применения:</h4>
-                            <ul>
-                                <li>Принимать в утренние часы натощак.</li>
-                                <li>Высыпать содержимое саше под язык (сублингвально).</li>
-                                <li>Рассасывать медленно для моментального усвоения.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/77758501213?text=Хочу%20заказать%20MiMAX" class="btn-order" target="_blank">Консультация / Заказ</a>
-                </div>
+            <div class="product-content">
+                <h2 class="product-title">BluMAX</h2>
+                <p class="product-tagline">Поддержка здорового развития, чистка сосудов и защита мозга!</p>
+                <p>Уникальный комплекс на основе сине-зеленых водорослей (AFA) и шампиньонов, содержащий более 60 минералов и комплекс нейропептидов.</p>
+                
+                <div class="section-sub">Польза для здоровья:</div>
+                <ul class="benefits-list">
+                    <li>Восстановление от гипоксии мозга и вывод тяжелых металлов</li>
+                    <li>Разжижение крови, растворение тромбов, укрепление сосудов</li>
+                    <li>Повышение гемоглобина за счет высокого содержания органического железа</li>
+                    <li>Помощь при онкозаболеваниях (легче переносятся химия и лучевая терапия)</li>
+                    <li>Снижение алкогольной и табачной зависимостей</li>
+                </ul>
+
+                <div class="section-sub">Основные компоненты:</div>
+                <ul class="ingredients-list">
+                    <li><strong>Водоросли (AFA):</strong> Активируют иммунные клетки, содержат ФЭА для улучшения памяти и настроения.</li>
+                    <li><strong>Витамин C:</strong> Высокоэффективный антиоксидант для стимуляции лейкоцитов.</li>
+                </ul>
+                <div class="med-disclaimer">Рекомендуется при нарушениях работы печени, щитовидной железы, артритах.</div>
             </div>
         </div>
 
-        <div class="product-large">
-            <div class="product-header">
-                <h2>NutriMAX</h2>
-                <span class="tag">Питание & Витаминно-Минеральный Баланс</span>
+        <!-- NutriMAX -->
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="nutrimax.jpg" alt="NutriMAX">
             </div>
-            <div class="product-content-layout">
-                <div class="product-image-container">
-                    <img src="nutrimax.jpg" alt="Коробка NutriMAX">
-                </div>
-                <div class="product-text-container">
-                    <p>Полноценный комплекс макро- и микронутриентов для ежедневной подзарядки организма. Обеспечивает клетки необходимыми строительными материалами, улучшает кроветворение, укрепляет костную ткань, ногти, волосы и гармонизирует общий гормональный фон.</p>
-                    <div class="info-block">
-                        <div class="herbs-box">
-                            <h4>Питательный состав:</h4>
-                            <ul class="herbs-list">
-                                <li>Органические минералы</li>
-                                <li>Экстракты суперфудов</li>
-                                <li>Незаменимые аминокислоты</li>
-                                <li>Хелатный кальций и магний</li>
-                                <li>Комплекс цинка</li>
-                                <li>Природные витамины</li>
-                            </ul>
-                        </div>
-                        <div class="use-box">
-                            <h4>Ритуал применения:</h4>
-                            <ul>
-                                <li>Принимать в первой половине дня во время или после еды.</li>
-                                <li>Растворить в 150-200 мл теплой или комнатной воды.</li>
-                                <li>Тщательно размешать и выпить.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/77758501213?text=Хочу%20заказать%20NutriMAX" class="btn-order" target="_blank">Консультация / Заказ</a>
-                </div>
+            <div class="product-content">
+                <h2 class="product-title">NutriMAX</h2>
+                <p class="product-tagline">Полноценное клеточное питание и здоровая замена пищи!</p>
+                <p>Комбинация растительных белков, щелочного мультизеленого порошка, органического кальция морских водорослей и пребиотиков.</p>
+                
+                <div class="section-sub">Польза для здоровья:</div>
+                <ul class="benefits-list">
+                    <li>Увеличение мышечной массы, регенерация клеток и тканей</li>
+                    <li>Укрепление костной ткани и зубов</li>
+                    <li>Помощь в управлении весом (при ожирении или дефиците веса)</li>
+                    <li>Очищение организма от токсинов, снижение холестерина</li>
+                    <li>Идеально для вегетарианцев, спортсменов, пожилых людей и детей</li>
+                </ul>
+
+                <div class="section-sub">Основные компоненты:</div>
+                <ul class="ingredients-list">
+                    <li><strong>Спирулина & Хлорелла:</strong> Беспрецедентное содержание белка, витаминов группы B и йода.</li>
+                    <li><strong>Люцерна:</strong> Блокирует плохой холестерин, дает лимфодренажный эффект.</li>
+                    <li><strong>Экстракт травы ячменя:</strong> Содержит селен и медь для кроветворения.</li>
+                </ul>
+                <div class="med-disclaimer">Полноценный питательный и фитнес-напиток.</div>
             </div>
         </div>
 
-        <div class="product-large">
-            <div class="product-header">
-                <h2>BlueXMAX</h2>
-                <span class="tag">Нейропротекция & Ментальный Фокус</span>
+        <!-- KordyMAX -->
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="kordymax.jpg" alt="KordyMAX">
             </div>
-            <div class="product-content-layout">
-                <div class="product-image-container">
-                    <img src="bluexmax.jpg" alt="Коробка BlueXMAX">
-                </div>
-                <div class="product-text-container">
-                    <p>Высокотехнологичный ноотропный комплекс на основе редких сине-зеленых водорослей. Повышает концентрацию внимания, улучшает память, снимает умственную усталость, защищает нейроны от разрушения и помогает сохранять ясность мышления при высоких перегрузках.</p>
-                    <div class="info-block">
-                        <div class="herbs-box">
-                            <h4>Инновационная формула:</h4>
-                            <ul class="herbs-list">
-                                <li>Сине-зеленые водоросли AFA</li>
-                                <li>Натуральные ноотропы</li>
-                                <li>Растительные экстракты мозга</li>
-                                <li>Антистресс фитонутриенты</li>
-                                <li>Природные когнитивные активаторы</li>
-                            </ul>
-                        </div>
-                        <div class="use-box">
-                            <h4>Ритуал применения:</h4>
-                            <ul>
-                                <li>Рекомендуется принимать в утреннее или дневное время.</li>
-                                <li>Растворить в стакане чистой воды комнатной температуры.</li>
-                                <li>Не принимать непосредственно перед сном.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/77758501213?text=Хочу%20заказать%20BlueXMAX" class="btn-order" target="_blank">Консультация / Заказ</a>
-                </div>
+            <div class="product-content">
+                <h2 class="product-title">KordyMAX</h2>
+                <p class="product-tagline">Микроэкологический функциональный напиток на основе Кордицепса!</p>
+                <p>Инновационный ботанический микс с 16 видами аминокислот, питательным раствором для клеток человека и свободным селеном.</p>
+                
+                <div class="section-sub">Польза для здоровья:</div>
+                <ul class="benefits-list">
+                    <li>Мощный прямой противоопухолевый эффект (содержит кордицепин)</li>
+                    <li>Восстановление поврежденной печени (жировой гепатоз, цирроз, гепатиты)</li>
+                    <li>Регулирование и улучшение функций почек</li>
+                    <li>Повышение митохондриальной клеточной энергии, устранение хронической усталости</li>
+                    <li>Стабилизация работы сердца и нормализация уровня липидов в крови</li>
+                </ul>
+                <div class="med-disclaimer">Используются изолированные виды Cordyceps sinensis, выращенные по биоинженерным технологиям.</div>
             </div>
         </div>
 
-        <div class="product-large">
-            <div class="product-header">
-                <h2>FlexiMAX</h2>
-                <span class="tag">Здоровье Суставов & Опорный Аппарат</span>
+        <!-- Ye-Katerina -->
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="yekaterina.jpg" alt="Ye-Katerina">
             </div>
-            <div class="product-content-layout">
-                <div class="product-image-container">
-                    <img src="fleximax.jpg" alt="Коробка FlexiMAX">
-                </div>
-                <div class="product-text-container">
-                    <p>Специализированная хондропротекторная система для восстановления опорно-двигательного аппарата. Эффективно снимает воспалительные процессы и болевые синдромы в суставах, запускает синтез собственного коллагена и межсуставной смазки, возвращая легкость движений.</p>
-                    <div class="info-block">
-                        <div class="herbs-box">
-                            <h4>Компоненты гибкости:</h4>
-                            <ul class="herbs-list">
-                                <li>Витамин Д</li>
-                                <li>Гиалуроновая кислота</li>
-                                <li>Экстракт куркумы</li>
-                                <li>Экстракт морского салата</li>
-                                <li>Экстракт кукурузы</li>
-                                <li>Натуральный апельсин</li>
-                            </ul>
-                        </div>
-                        <div class="use-box">
-                            <h4>Ритуал применения:</h4>
-                            <ul>
-                                <li>Принимать один раз в день, желательно в первой половине дня.</li>
-                                <li>Развести саше в 150 мл воды, тщательно перемешать.</li>
-                                <li>Для максимального эффекта сочетать с достаточным питьевым режимом.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/77758501213?text=Хочу%20заказать%20FlexiMAX" class="btn-order" target="_blank">Консультация / Заказ</a>
-                </div>
+            <div class="product-content">
+                <h2 class="product-title">Ye-Katerina</h2>
+                <p class="product-tagline">Природный заслон против женских заболеваний и дискомфорта!</p>
+                <p>100% натуральный гель для женской интимной гигиены со специально подобранным составом целебных трав Малайзии.</p>
+                
+                <div class="section-sub">Польза для здоровья:</div>
+                <ul class="benefits-list">
+                    <li>Профилактика застойных образований (миомы, кисты, мастопатия)</li>
+                    <li>Защита и устранение молочницы, цистита, вагинального зуда</li>
+                    <li>Мгновенный сужающий эффект, возвращение эластичности и тонуса мышц</li>
+                    <li>Регулирование гормонального баланса и менструального цикла</li>
+                    <li>Помощь при опущении матки, заживление эрозий</li>
+                </ul>
+
+                <div class="section-sub">Состав:</div>
+                <ul class="ingredients-list">
+                    <li><strong>Касип Фатима:</strong> Улучшает тонус мышц, обладает противоопухолевым эффектом.</li>
+                    <li><strong>Пуэрария Дольчатая:</strong> Оздоравливает половую сферу, стимулирует коллаген.</li>
+                    <li><strong>Дубовые Галлы:</strong> Восстанавливают эластичность стенок влагалища.</li>
+                    <li><strong>Экстракт чеснока & Лаванда:</strong> Антисептический и антибактериальный барьер.</li>
+                </ul>
+                <div class="med-disclaimer">Идеальное средство для здоровья и личной гигиены женщины.</div>
             </div>
         </div>
 
-        <div class="product-large">
-            <div class="product-header">
-                <h2>Ye-Katerina</h2>
-                <span class="tag">Женское Здоровье & Гормональный Баланс</span>
+        <!-- MachoMAN -->
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="machoman.jpg" alt="MachoMAN">
             </div>
-            <div class="product-content-layout">
-                <div class="product-image-container">
-                    <img src="ye-katerina.jpg" alt="Коробка Ye-Katerina">
-                </div>
-                <div class="product-text-container">
-                    <p>Эксклюзивный фитокомплекс для поддержания женской красоты, внутренней энергии и правильного гормонального баланса. Бережно регулирует цикл, облегчает симптомы возрастных изменений, укрепляет тонус интимных мышц и улучшает состояние кожи.</p>
-                    <div class="info-block">
-                        <div class="herbs-box">
-                            <h4>Целебный женский состав:</h4>
-                            <ul class="herbs-list">
-                                <li>Касип фатима (Labisia Pumila)</li>
-                                <li>Пуэрария дольчатая</li>
-                                <li>Дубовые галлы (Quercus Infectoria)</li>
-                                <li>Экстракт перца бетеля</li>
-                                <li>Экстракт чеснока (органический)</li>
-                                <li>Лаванда</li>
-                            </ul>
-                        </div>
-                        <div class="use-box">
-                            <h4>Ритуал применения:</h4>
-                            <ul>
-                                <li>Принимать в соответствии с рекомендациями курса.</li>
-                                <li>Растворить содержимое пакета в теплой воде.</li>
-                                <li>Пить мягкими глотками, желательно в вечернее время.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/77758501213?text=Хочу%20заказать%20Ye-Katerina" class="btn-order" target="_blank">Консультация / Заказ</a>
-                </div>
+            <div class="product-content">
+                <h2 class="product-title">MachoMAN</h2>
+                <p class="product-tagline">Премиальное клеточное питание для восстановления мужской силы!</p>
+                <p>Порошкообразная биоактивная форма для приема внутрь. Направлен на полную активацию и поддержку мужского здоровья.</p>
+                
+                <div class="section-sub">Польза для здоровья:</div>
+                <ul class="benefits-list">
+                    <li>Идеальное решение проблем с импотенцией и её предотвращение</li>
+                    <li>Улучшение качества, подвижности и количества сперматозоидов</li>
+                    <li>Нормализация естественного уровня тестостерона</li>
+                    <li>Эффективная профилактика заболеваний и рака простаты</li>
+                    <li>Повышение выносливости, энергии и сексуальной активности</li>
+                </ul>
+                <div class="med-disclaimer">Натуральный мужской биоактивный комплекс.</div>
             </div>
         </div>
 
-       
-        <div class="product-large">
-            <div class="product-header">
-                <h2>KordyMAX</h2>
-                <span class="tag">Иммунитет & Адаптогенная Сила</span>
+        <!-- FlexiMAX -->
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="fleximax.jpg" alt="FlexiMAX">
             </div>
-            <div class="product-content-layout">
-                <div class="product-image-container">
-                    <img src="kordymax.jpg" alt="Коробка KordyMAX">
-                </div>
-                <div class="product-text-container">
-                    <p>Высокоэффективный адаптоген для тотального укрепления иммунной системы и защитных сил организма. Существенно повышает общую сопротивляемость вирусам, ускоряет восстановление после болезней и дарит колоссальный прилив физической силы.</p>
-                    <div class="info-block">
-                        <div class="herbs-box">
-                            <h4>Иммунная формула:</h4>
-                            <ul class="herbs-list">
-                                <li>Экстракт Кордицепса</li>
-                                <li>Легендарный Женьшень</li>
-                                <li>Природные фитонциды</li>
-                                <li>Адаптогенные травы</li>
-                                <li>Концентрированные биостимуляторы</li>
-                            </ul>
-                        </div>
-                        <div class="use-box">
-                            <h4>Ритуал применения:</h4>
-                            <ul>
-                                <li>Принимать в первой половине дня из-за мощного прилива энергии.</li>
-                                <li>Тщательно размешать в теплой воде.</li>
-                                <li>Отлично подходит в периоды высоких сезонных нагрузок и вирусов.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/77758501213?text=Хочу%20заказать%20KordyMAX" class="btn-order" target="_blank">Консультация / Заказ</a>
-                </div>
+            <div class="product-content">
+                <h2 class="product-title">FlexiMAX</h2>
+                <p class="product-tagline">Свобода движения — укрепление суставов, костей и снятие воспалений!</p>
+                <p>100% натуральное высокоэффективное средство для устранения болевых синдромов при артритах, артрозах и дегенеративных изменениях.</p>
+                
+                <div class="section-sub">Польза для здоровья:</div>
+                <ul class="benefits-list">
+                    <li>Быстрое облегчение болевого синдрома и отеков в суставах</li>
+                    <li>Питание хрящевой ткани и смазка суставов</li>
+                    <li>Выведение токсинов тяжелых металлов за 1-2 месяца</li>
+                    <li>Помощь при поражениях печени (гепатиты, ожирение печени)</li>
+                    <li>Снижение риска развития онкопроцессов, замедление старения</li>
+                </ul>
+
+                <div class="section-sub">Состав:</div>
+                <ul class="ingredients-list">
+                    <li><strong>Экстракт кукурузы:</strong> Растительный глюкозамин для питания хрящей.</li>
+                    <li><strong>Экстракт морского салата:</strong> Натуральный хондроитин из водорослей.</li>
+                    <li><strong>Гиалуроновая кислота:</strong> Рост новых клеток костей и хрящей.</li>
+                    <li><strong>Экстракт куркумы (Турмерик):</strong> Водорастворимый куркумин против воспалений.</li>
+                    <li><strong>Витамин Д:</strong> Повышает плотность костной ткани.</li>
+                </ul>
+                <div class="med-disclaimer">💡 Совет эксперта: Для максимального результата рекомендуется принимать совместно с BluMAX.</div>
             </div>
         </div>
 
-        <div class="product-large">
-            <div class="product-header">
-                <h2>Relax Tea</h2>
-                <span class="tag">Антистресс & Здоровый Сон</span>
+        <!-- MiCRYSTAL -->
+        <div class="product-card">
+            <div class="product-img-box">
+                <img src="micrystal.jpg" alt="MiCRYSTAL">
             </div>
-            <div class="product-content-layout">
-                <div class="product-image-container">
-                    <img src="relax.jpg" alt="Коробка Relax Tea">
-                </div>
-                <div class="product-text-container">
-                    <p>Благородный травяной комплекс для глубокой релаксации и снятия нервного перенапряжения. Продукт, с которого начиналась история триумфа лидеров! Мягко успокаивает нервную систему, устраняет тревожные состояния, гарантирует легкое засыпание и качественный сон.</p>
-                    <div class="info-block">
-                        <div class="herbs-box">
-                            <h4>Расслабляющий сбор:</h4>
-                            <ul class="herbs-list">
-                                <li>Натуральные успокаивающие травы</li>
-                                <li>Фитонутриенты антистресс</li>
-                                <li>Органический экстракт премиум чая</li>
-                                <li>Природные релаксанты нервных клеток</li>
-                            </ul>
-                        </div>
-                        <div class="use-box">
-                            <h4>Ритуал применения:</h4>
-                            <ul>
-                                <li>Заваривать и принимать во второй половине дня или за час до сна.</li>
-                                <li>Дать настояться для раскрытия всех полезных фитонутриентов.</li>
-                                <li>Пить в спокойной обстановке для максимальной релаксации.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/77758501213?text=Хочу%20заказать%20Relax%20Tea" class="btn-order" target="_blank">Консультация / Заказ</a>
-                </div>
+            <div class="product-content">
+                <h2 class="product-title">MiCRYSTAL</h2>
+                <p class="product-tagline">Клеточное питание для абсолютного здоровья ваших глаз!</p>
+                <p>100% натуральная ботаническая смесь в порошковой форме для быстрого восстановления органов зрения.</p>
+                
+                <div class="section-sub">Польза для здоровья:</div>
+                <ul class="benefits-list">
+                    <li>Эффективно снижает опасное внутриглазное давление</li>
+                    <li>Быстро снимает покраснения, резь и дискомфорт в глазах</li>
+                    <li>Защищает сетчатку от пагубного воздействия экранов телефонов и ПК</li>
+                    <li>Профилактика возрастных изменений зрения</li>
+                </ul>
+
+                <div class="section-sub">Основные компоненты:</div>
+                <ul class="ingredients-list">
+                    <li><strong>Экстракт бузины:</strong> Природный источник антоцианов для сосудов глаз.</li>
+                    <li><strong>ФлораГЛО (Лютеин):</strong> Запатентованный компонент для защиты сетчатки.</li>
+                    <li><strong>Астаксантин:</strong> Глубокая антиоксидантная защита зрительного нерва.</li>
+                </ul>
+                <div class="med-disclaimer">Удобная форма приема: можно запивать водой или разводить в стакане.</div>
             </div>
         </div>
 
     </div>
-
-    <footer>
-        <p>&copy; 2026 M INTERNATIONAL. Premium Cellular Nutrition. Все права защищены.</p>
-    </footer>
+</div>
 
 </body>
 </html>
