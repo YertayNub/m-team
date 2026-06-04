@@ -424,35 +424,5 @@
   <span class="footer-copy">© 2026 M International. Все права защищены.</span>
 </footer>
 
-<script>
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.product-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      
-      const filter = btn.dataset.filter;
-
-      cards.forEach(card => {
-        const cardCategory = card.dataset.category;
-        
-        if (filter === 'all' || cardCategory === filter) {
-          card.style.display = 'flex';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 10);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(10px)';
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-</script>
-
 </body>
 </html>
