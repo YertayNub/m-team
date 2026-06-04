@@ -45,16 +45,59 @@
             margin-top: 0;
             color: var(--primary);
         }
+
+        /* УПРАВЛЕНИЕ И СТРЕЛКИ ДЛЯ КАРУСЕЛИ */
+        .catalog-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .slider-controls {
+            display: flex;
+            gap: 10px;
+        }
+        .slider-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            background: var(--white);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .slider-arrow:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* ОКНО ПРОКРУТКИ КАРУСЕЛИ */
+        .slider-container {
+            width: 100%;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none; /* Скрываем скролл в Firefox */
+            padding-bottom: 15px;
+        }
+        .slider-container::-webkit-scrollbar {
+            display: none; /* Скрываем скролл в Chrome/Safari */
+        }
+
+        /* СЕТКА СТАНОВИТСЯ ОДНОЙ СТРОКОЙ ДЛЯ СЛАЙДЕРА */
         .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            display: flex;
             gap: 30px;
+            width: max-content;
+            padding: 5px;
         }
-        @media (max-width: 400px) {
-            .catalog-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+
+        /* КАРТОЧКА ПРОДУКТА */
         .product-card {
             background-color: var(--white);
             border-radius: 12px;
@@ -63,6 +106,8 @@
             display: flex;
             flex-direction: column;
             transition: transform 0.3s ease;
+            width: 360px; /* Фиксированная ширина карточки в слайдере */
+            flex-shrink: 0;
         }
         .product-card:hover {
             transform: translateY(-5px);
@@ -138,6 +183,37 @@
             padding-top: 15px;
             border-top: 1px dashed #ddd;
         }
+
+        /* ТОЧКИ ПАГИНАЦИИ */
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .dot.active {
+            background: var(--primary);
+            width: 25px;
+            border-radius: 5px;
+        }
+
+        /* Адаптивность для мобильных экранов */
+        @media (max-width: 420px) {
+            .product-card {
+                width: 290px; /* На смартфонах карточки чуть компактнее */
+            }
+            .product-img-box {
+                height: 220px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -151,260 +227,330 @@
         <p>Перед любым курсом оздоровления, для получения максимальных результатов, необходимо правильно подготовить организм. Чтобы продукт полностью усвоился и работал непосредственно по проблеме, целесообразнее сначала очистить кишечник, печень и лимфу с помощью <strong>GreenMAX</strong> и <strong>MiMAX</strong>. Только после качественной детоксикации организма рекомендуется подключать профильные продукты восстановления.</p>
     </div>
 
-    <div class="catalog-grid">
-
-        <!-- GreenMAX -->
-        <div class="product-card">
-            <div class="product-img-box">
-                <img src="greenmax.jpg" alt="GreenMAX">
-            </div>
-            <div class="product-content">
-                <h2 class="product-title">GreenMAX</h2>
-                <p class="product-tagline">Эксклюзивный детокс, очищение, обновление и омоложение всего организма!</p>
-                <p>100% чистая растительная клетчатка с пробиотиком и экстрактом расторопши. Специально запатентованная формула 3 в 1 для ухода за толстой кишкой.</p>
-                
-                <div class="section-sub">Польза для здоровья:</div>
-                <ul class="benefits-list">
-                    <li>Очищает кишечник от застойных каловых масс и завалов</li>
-                    <li>Профилактика и эффективное лечение запоров</li>
-                    <li>Убирает висцеральный жир, способствует сбросу веса</li>
-                    <li>Помогает справиться с жировым гепатозом печени, чистит лимфу</li>
-                    <li>Регулирует уровень сахара и холестерина в крови</li>
-                </ul>
-
-                <div class="section-sub">Основные компоненты:</div>
-                <ul class="ingredients-list">
-                    <li><strong>Шелуха Подорожника:</strong> Растворимое волокно, мягко очищает ЖКТ.</li>
-                    <li><strong>Расторопша:</strong> Защита печени от токсинов и окислительного стресса.</li>
-                    <li><strong>Пробиотик:</strong> Поддерживает естественный баланс бактерий и иммунитет.</li>
-                    <li><strong>KiOnutrime-Cs & Моросил:</strong> Растительный хитозан и экстракт апельсина Моро для управления весом.</li>
-                </ul>
-                <div class="med-disclaimer">Не является лекарственным средством. Натуральный состав.</div>
-            </div>
+    <!-- Блок со стрелками управления -->
+    <div class="catalog-header-row">
+        <div></div> <!-- Пустой блок для выравнивания стрелок вправо -->
+        <div class="slider-controls">
+            <button class="slider-arrow" id="prevBtn" title="Назад">&#10094;</button>
+            <button class="slider-arrow" id="nextBtn" title="Вперед">&#10095;</button>
         </div>
-
-        <!-- MiMAX -->
-        <div class="product-card">
-            <div class="product-img-box">
-                <img src="mimax.jpg" alt="MiMAX">
-            </div>
-            <div class="product-content">
-                <h2 class="product-title">MiMAX</h2>
-                <p class="product-tagline">Супермощный продукт для омоложения и блокировки процессов старения!</p>
-                <p>Растительная смесь с высочайшими антиоксидантными свойствами. Содержит астаксантин, действие которого в 6000 раз сильнее витамина С.</p>
-                
-                <div class="section-sub">Польза для здоровья:</div>
-                <ul class="benefits-list">
-                    <li>Глубокое клеточное омоложение и защита ДНК от повреждений</li>
-                    <li>Мощное природное противовоспалительное средство</li>
-                    <li>Укрепление функций сердца, печени и повышение иммунитета</li>
-                    <li>Защита, улучшение зрения и устранение усталости глаз</li>
-                    <li>Улучшение метаболизма и общего состояния кожи</li>
-                </ul>
-
-                <div class="section-sub">Основные компоненты:</div>
-                <ul class="ingredients-list">
-                    <li><strong>Астаксантин:</strong> Сильнейший антиоксидант для мозга, глаз и кожи.</li>
-                    <li><strong>Экстракт ягод облепихи:</strong> Источник Омега-3,6,7,9 для сердца и ЖКТ.</li>
-                    <li><strong>Экстракт сосновой коры:</strong> Снижает воспаления, регулирует глюкозу.</li>
-                    <li><strong>Ресвератрол (Виноградные косточки):</strong> Улучшает кровообращение.</li>
-                </ul>
-                <div class="med-disclaimer">Не является лекарственным средством. Натуральный состав.</div>
-            </div>
-        </div>
-
-        <!-- BluMAX -->
-        <div class="product-card">
-            <div class="product-img-box">
-                <img src="blumax.jpg" alt="BluMAX">
-            </div>
-            <div class="product-content">
-                <h2 class="product-title">BluMAX</h2>
-                <p class="product-tagline">Поддержка здорового развития, чистка сосудов и защита мозга!</p>
-                <p>Уникальный комплекс на основе сине-зеленых водорослей (AFA) и шампиньонов, содержащий более 60 минералов и комплекс нейропептидов.</p>
-                
-                <div class="section-sub">Польза для здоровья:</div>
-                <ul class="benefits-list">
-                    <li>Восстановление от гипоксии мозга и вывод тяжелых металлов</li>
-                    <li>Разжижение крови, растворение тромбов, укрепление сосудов</li>
-                    <li>Повышение гемоглобина за счет высокого содержания органического железа</li>
-                    <li>Помощь при онкозаболеваниях (легче переносятся химия и лучевая терапия)</li>
-                    <li>Снижение алкогольной и табачной зависимостей</li>
-                </ul>
-
-                <div class="section-sub">Основные компоненты:</div>
-                <ul class="ingredients-list">
-                    <li><strong>Водоросли (AFA):</strong> Активируют иммунные клетки, содержат ФЭА для улучшения памяти и настроения.</li>
-                    <li><strong>Витамин C:</strong> Высокоэффективный антиоксидант для стимуляции лейкоцитов.</li>
-                </ul>
-                <div class="med-disclaimer">Рекомендуется при нарушениях работы печени, щитовидной железы, артритах.</div>
-            </div>
-        </div>
-
-        <!-- NutriMAX -->
-        <div class="product-card">
-            <div class="product-img-box">
-                <img src="nutrimax.jpg" alt="NutriMAX">
-            </div>
-            <div class="product-content">
-                <h2 class="product-title">NutriMAX</h2>
-                <p class="product-tagline">Полноценное клеточное питание и здоровая замена пищи!</p>
-                <p>Комбинация растительных белков, щелочного мультизеленого порошка, органического кальция морских водорослей и пребиотиков.</p>
-                
-                <div class="section-sub">Польза для здоровья:</div>
-                <ul class="benefits-list">
-                    <li>Увеличение мышечной массы, регенерация клеток и тканей</li>
-                    <li>Укрепление костной ткани и зубов</li>
-                    <li>Помощь в управлении весом (при ожирении или дефиците веса)</li>
-                    <li>Очищение организма от токсинов, снижение холестерина</li>
-                    <li>Идеально для вегетарианцев, спортсменов, пожилых людей и детей</li>
-                </ul>
-
-                <div class="section-sub">Основные компоненты:</div>
-                <ul class="ingredients-list">
-                    <li><strong>Спирулина & Хлорелла:</strong> Беспрецедентное содержание белка, витаминов группы B и йода.</li>
-                    <li><strong>Люцерна:</strong> Блокирует плохой холестерин, дает лимфодренажный эффект.</li>
-                    <li><strong>Экстракт травы ячменя:</strong> Содержит селен и медь для кроветворения.</li>
-                </ul>
-                <div class="med-disclaimer">Полноценный питательный и фитнес-напиток.</div>
-            </div>
-        </div>
-
-        <!-- KordyMAX -->
-        <div class="product-card">
-            <div class="product-img-box">
-                <img src="kordymax.jpg" alt="KordyMAX">
-            </div>
-            <div class="product-content">
-                <h2 class="product-title">KordyMAX</h2>
-                <p class="product-tagline">Микроэкологический функциональный напиток на основе Кордицепса!</p>
-                <p>Инновационный ботанический микс с 16 видами аминокислот, питательным раствором для клеток человека и свободным селеном.</p>
-                
-                <div class="section-sub">Польза для здоровья:</div>
-                <ul class="benefits-list">
-                    <li>Мощный прямой противоопухолевый эффект (содержит кордицепин)</li>
-                    <li>Восстановление поврежденной печени (жировой гепатоз, цирроз, гепатиты)</li>
-                    <li>Регулирование и улучшение функций почек</li>
-                    <li>Повышение митохондриальной клеточной энергии, устранение хронической усталости</li>
-                    <li>Стабилизация работы сердца и нормализация уровня липидов в крови</li>
-                </ul>
-                <div class="med-disclaimer">Используются изолированные виды Cordyceps sinensis, выращенные по биоинженерным технологиям.</div>
-            </div>
-        </div>
-
-        <!-- Ye-Katerina -->
-        <div class="product-card">
-            <div class="product-img-box">
-                <img src="yekaterina.jpg" alt="Ye-Katerina">
-            </div>
-            <div class="product-content">
-                <h2 class="product-title">Ye-Katerina</h2>
-                <p class="product-tagline">Природный заслон против женских заболеваний и дискомфорта!</p>
-                <p>100% натуральный гель для женской интимной гигиены со специально подобранным составом целебных трав Малайзии.</p>
-                
-                <div class="section-sub">Польза для здоровья:</div>
-                <ul class="benefits-list">
-                    <li>Профилактика застойных образований (миомы, кисты, мастопатия)</li>
-                    <li>Защита и устранение молочницы, цистита, вагинального зуда</li>
-                    <li>Мгновенный сужающий эффект, возвращение эластичности и тонуса мышц</li>
-                    <li>Регулирование гормонального баланса и менструального цикла</li>
-                    <li>Помощь при опущении матки, заживление эрозий</li>
-                </ul>
-
-                <div class="section-sub">Состав:</div>
-                <ul class="ingredients-list">
-                    <li><strong>Касип Фатима:</strong> Улучшает тонус мышц, обладает противоопухолевым эффектом.</li>
-                    <li><strong>Пуэрария Дольчатая:</strong> Оздоравливает половую сферу, стимулирует коллаген.</li>
-                    <li><strong>Дубовые Галлы:</strong> Восстанавливают эластичность стенок влагалища.</li>
-                    <li><strong>Экстракт чеснока & Лаванда:</strong> Антисептический и антибактериальный барьер.</li>
-                </ul>
-                <div class="med-disclaimer">Идеальное средство для здоровья и личной гигиены женщины.</div>
-            </div>
-        </div>
-
-        <!-- MachoMAN -->
-        <div class="product-card">
-            <div class="product-img-box">
-                <img src="machoman.jpg" alt="MachoMAN">
-            </div>
-            <div class="product-content">
-                <h2 class="product-title">MachoMAN</h2>
-                <p class="product-tagline">Премиальное клеточное питание для восстановления мужской силы!</p>
-                <p>Порошкообразная биоактивная форма для приема внутрь. Направлен на полную активацию и поддержку мужского здоровья.</p>
-                
-                <div class="section-sub">Польза для здоровья:</div>
-                <ul class="benefits-list">
-                    <li>Идеальное решение проблем с импотенцией и её предотвращение</li>
-                    <li>Улучшение качества, подвижности и количества сперматозоидов</li>
-                    <li>Нормализация естественного уровня тестостерона</li>
-                    <li>Эффективная профилактика заболеваний и рака простаты</li>
-                    <li>Повышение выносливости, энергии и сексуальной активности</li>
-                </ul>
-                <div class="med-disclaimer">Натуральный мужской биоактивный комплекс.</div>
-            </div>
-        </div>
-
-        <!-- FlexiMAX -->
-        <div class="product-card">
-            <div class="product-img-box">
-                <img src="fleximax.jpg" alt="FlexiMAX">
-            </div>
-            <div class="product-content">
-                <h2 class="product-title">FlexiMAX</h2>
-                <p class="product-tagline">Свобода движения — укрепление суставов, костей и снятие воспалений!</p>
-                <p>100% натуральное высокоэффективное средство для устранения болевых синдромов при артритах, артрозах и дегенеративных изменениях.</p>
-                
-                <div class="section-sub">Польза для здоровья:</div>
-                <ul class="benefits-list">
-                    <li>Быстрое облегчение болевого синдрома и отеков в суставах</li>
-                    <li>Питание хрящевой ткани и смазка суставов</li>
-                    <li>Выведение токсинов тяжелых металлов за 1-2 месяца</li>
-                    <li>Помощь при поражениях печени (гепатиты, ожирение печени)</li>
-                    <li>Снижение риска развития онкопроцессов, замедление старения</li>
-                </ul>
-
-                <div class="section-sub">Состав:</div>
-                <ul class="ingredients-list">
-                    <li><strong>Экстракт кукурузы:</strong> Растительный глюкозамин для питания хрящей.</li>
-                    <li><strong>Экстракт морского салата:</strong> Натуральный хондроитин из водорослей.</li>
-                    <li><strong>Гиалуроновая кислота:</strong> Рост новых клеток костей и хрящей.</li>
-                    <li><strong>Экстракт куркумы (Турмерик):</strong> Водорастворимый куркумин против воспалений.</li>
-                    <li><strong>Витамин Д:</strong> Повышает плотность костной ткани.</li>
-                </ul>
-                <div class="med-disclaimer">💡 Совет эксперта: Для максимального результата рекомендуется принимать совместно с BluMAX.</div>
-            </div>
-        </div>
-
-        <!-- MiCRYSTAL -->
-        <div class="product-card">
-            <div class="product-img-box">
-                <img src="micrystal.jpg" alt="MiCRYSTAL">
-            </div>
-            <div class="product-content">
-                <h2 class="product-title">MiCRYSTAL</h2>
-                <p class="product-tagline">Клеточное питание для абсолютного здоровья ваших глаз!</p>
-                <p>100% натуральная ботаническая смесь в порошковой форме для быстрого восстановления органов зрения.</p>
-                
-                <div class="section-sub">Польза для здоровья:</div>
-                <ul class="benefits-list">
-                    <li>Эффективно снижает опасное внутриглазное давление</li>
-                    <li>Быстро снимает покраснения, резь и дискомфорт в глазах</li>
-                    <li>Защищает сетчатку от пагубного воздействия экранов телефонов и ПК</li>
-                    <li>Профилактика возрастных изменений зрения</li>
-                </ul>
-
-                <div class="section-sub">Основные компоненты:</div>
-                <ul class="ingredients-list">
-                    <li><strong>Экстракт бузины:</strong> Природный источник антоцианов для сосудов глаз.</li>
-                    <li><strong>ФлораГЛО (Лютеин):</strong> Запатентованный компонент для защиты сетчатки.</li>
-                    <li><strong>Астаксантин:</strong> Глубокая антиоксидантная защита зрительного нерва.</li>
-                </ul>
-                <div class="med-disclaimer">Удобная форма приема: можно запивать водой или разводить в стакане.</div>
-            </div>
-        </div>
-
     </div>
+
+    <!-- Контейнер слайдера -->
+    <div class="slider-container" id="sliderContainer">
+        <div class="catalog-grid">
+
+            <!-- GreenMAX -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="greenmax.jpg" alt="GreenMAX">
+                </div>
+                <div class="product-content">
+                    <h2 class="product-title">GreenMAX</h2>
+                    <p class="product-tagline">Эксклюзивный детокс, очищение, обновление и омоложение всего организма!</p>
+                    <p>100% чистая растительная клетчатка с пробиотиком и экстрактом расторопши. Специально запатентованная формула 3 в 1 для ухода за толстой кишкой.</p>
+                    
+                    <div class="section-sub">Польза для здоровья:</div>
+                    <ul class="benefits-list">
+                        <li>Очищает кишечник от застойных каловых масс и завалов</li>
+                        <li>Профилактика и эффективное лечение запоров</li>
+                        <li>Убирает висцеральный жир, способствует сбросу веса</li>
+                        <li>Помогает справиться с жировым гепатозом печени, чистит лимфу</li>
+                        <li>Регулирует уровень сахара и холестерина в крови</li>
+                    </ul>
+
+                    <div class="section-sub">Основные компоненты:</div>
+                    <ul class="ingredients-list">
+                        <li><strong>Шелуха Подорожника:</strong> Растворимое волокно, мягко очищает ЖКТ.</li>
+                        <li><strong>Расторопша:</strong> Защита печени от токсинов и окислительного стресса.</li>
+                        <li><strong>Пробиотик:</strong> Поддерживает естественный баланс бактерий и иммунитет.</li>
+                        <li><strong>KiOnutrime-Cs & Моросил:</strong> Растительный хитозан и экстракт апельсина Моро для управления весом.</li>
+                    </ul>
+                    <div class="med-disclaimer">Не является лекарственным средством. Натуральный состав.</div>
+                </div>
+            </div>
+
+            <!-- MiMAX -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="mimax.jpg" alt="MiMAX">
+                </div>
+                <div class="product-content">
+                    <h2 class="product-title">MiMAX</h2>
+                    <p class="product-tagline">Супермощный продукт для омоложения и блокировки процессов старения!</p>
+                    <p>Растительная смесь с высочайшими антиоксидантными свойствами. Содержит астаксантин, действие которого в 6000 раз сильнее витамина С.</p>
+                    
+                    <div class="section-sub">Польза для здоровья:</div>
+                    <ul class="benefits-list">
+                        <li>Глубокое клеточное омоложение и защита ДНК от повреждений</li>
+                        <li>Мощное природное противовоспалительное средство</li>
+                        <li>Укрепление функций сердца, печени и повышение иммунитета</li>
+                        <li>Защита, улучшение зрения и устранение усталости глаз</li>
+                        <li>Улучшение метаболизма и общего состояния кожи</li>
+                    </ul>
+
+                    <div class="section-sub">Основные компоненты:</div>
+                    <ul class="ingredients-list">
+                        <li><strong>Астаксантин:</strong> Сильнейший антиоксидант для мозга, глаз и кожи.</li>
+                        <li><strong>Экстракт ягод облепихи:</strong> Источник Омега-3,6,7,9 для сердца и ЖКТ.</li>
+                        <li><strong>Экстракт сосновой коры:</strong> Снижает воспаления, регулирует глюкозу.</li>
+                        <li><strong>Ресвератрол (Виноградные косточки):</strong> Улучшает кровообращение.</li>
+                    </ul>
+                    <div class="med-disclaimer">Не является лекарственным средством. Натуральный состав.</div>
+                </div>
+            </div>
+
+            <!-- BluMAX -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="blumax.jpg" alt="BluMAX">
+                </div>
+                <div class="product-content">
+                    <h2 class="product-title">BluMAX</h2>
+                    <p class="product-tagline">Поддержка здорового развития, чистка сосудов и защита мозга!</p>
+                    <p>Уникальный комплекс на основе сине-зеленых водорослей (AFA) и шампиньонов, содержащий более 60 минералов и комплекс нейропептидов.</p>
+                    
+                    <div class="section-sub">Польза для здоровья:</div>
+                    <ul class="benefits-list">
+                        <li>Восстановление от гипоксии мозга и вывод тяжелых металлов</li>
+                        <li>Разжижение крови, растворение тромбов, укрепление сосудов</li>
+                        <li>Повышение гемоглобина за счет высокого содержания органического железа</li>
+                        <li>Помощь при онкозаболеваниях (легче переносятся химия и лучевая терапия)</li>
+                        <li>Снижение алкогольной и табачной зависимостей</li>
+                    </ul>
+
+                    <div class="section-sub">Основные компоненты:</div>
+                    <ul class="ingredients-list">
+                        <li><strong>Водоросли (AFA):</strong> Активируют иммунные клетки, содержат ФЭА для улучшения памяти и настроения.</li>
+                        <li><strong>Витамин C:</strong> Высокоэффективный антиоксидант для стимуляции лейкоцитов.</li>
+                    </ul>
+                    <div class="med-disclaimer">Рекомендуется при нарушениях работы печени, щитовидной железы, артритах.</div>
+                </div>
+            </div>
+
+            <!-- NutriMAX -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="nutrimax.jpg" alt="NutriMAX">
+                </div>
+                <div class="product-content">
+                    <h2 class="product-title">NutriMAX</h2>
+                    <p class="product-tagline">Полноценное клеточное питание и здоровая замена пищи!</p>
+                    <p>Комбинация растительных белков, щелочного мультизеленого порошка, органического кальция морских водорослей и пребиотиков.</p>
+                    
+                    <div class="section-sub">Польза для здоровья:</div>
+                    <ul class="benefits-list">
+                        <li>Увеличение мышечной массы, регенерация клеток и тканей</li>
+                        <li>Укрепление костной ткани и зубов</li>
+                        <li>Помощь в управлении весом (при ожирении или дефиците веса)</li>
+                        <li>Очищение организма от токсинов, снижение холестерина</li>
+                        <li>Идеально для вегетарианцев, спортсменов, пожилых людей и детей</li>
+                    </ul>
+
+                    <div class="section-sub">Основные компоненты:</div>
+                    <ul class="ingredients-list">
+                        <li><strong>Спирулина & Хлорелла:</strong> Беспрецедентное содержание белка, витаминов группы B и йода.</li>
+                        <li><strong>Люцерна:</strong> Блокирует плохой холестерин, дает лимфодренажный эффект.</li>
+                        <li><strong>Экстракт травы ячменя:</strong> Содержит селен и медь для кроветворения.</li>
+                    </ul>
+                    <div class="med-disclaimer">Полноценный питательный и фитнес-напиток.</div>
+                </div>
+            </div>
+
+            <!-- KordyMAX -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="kordymax.jpg" alt="KordyMAX">
+                </div>
+                <div class="product-content">
+                    <h2 class="product-title">KordyMAX</h2>
+                    <p class="product-tagline">Микроэкологический функциональный напиток на основе Кордицепса!</p>
+                    <p>Инновационный ботанический микс с 16 видами аминокислот, питательным раствором для клеток человека и свободным селеном.</p>
+                    
+                    <div class="section-sub">Польза для здоровья:</div>
+                    <ul class="benefits-list">
+                        <li>Мощный прямой противоопухолевый эффект (содержит кордицепин)</li>
+                        <li>Восстановление поврежденной печени (жировой гепатоз, цирроз, гепатиты)</li>
+                        <li>Регулирование и улучшение функций почек</li>
+                        <li>Повышение митохондриальной клеточной энергии, устранение хронической усталости</li>
+                        <li>Стабилизация работы сердца и нормализация уровня липидов в крови</li>
+                    </ul>
+                    <div class="med-disclaimer">Используются изолированные виды Cordyceps sinensis, выращенные по биоинженерным технологиям.</div>
+                </div>
+            </div>
+
+            <!-- Ye-Katerina -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="yekaterina.jpg" alt="Ye-Katerina">
+                </div>
+                <div class="product-content">
+                    <h2 class="product-title">Ye-Katerina</h2>
+                    <p class="product-tagline">Природный заслон против женских заболеваний и дискомфорта!</p>
+                    <p>100% натуральный гель для женской интимной гигиены со специально подобранным составом целебных трав Малайзии.</p>
+                    
+                    <div class="section-sub">Польза для здоровья:</div>
+                    <ul class="benefits-list">
+                        <li>Профилактика застойных образований (миомы, кисты, мастопатия)</li>
+                        <li>Защита и устранение молочницы, цистита, вагинального зуда</li>
+                        <li>Мгновенный сужающий эффект, возвращение эластичности и тонуса мышц</li>
+                        <li>Регулирование гормонального баланса и менструального цикла</li>
+                        <li>Помощь при опущении матки, заживление эрозий</li>
+                    </ul>
+
+                    <div class="section-sub">Состав:</div>
+                    <ul class="ingredients-list">
+                        <li><strong>Касип Фатима:</strong> Улучшает тонус мышц, обладает противоопухолевым эффектом.</li>
+                        <li><strong>Пуэрария Дольчатая:</strong> Оздоравливает половую сферу, стимулирует коллаген.</li>
+                        <li><strong>Дубовые Галлы:</strong> Восстанавливают эластичность стенок влагалища.</li>
+                        <li><strong>Экстракт чеснока & Лаванда:</strong> Антисептический и антибактериальный барьер.</li>
+                    </ul>
+                    <div class="med-disclaimer">Идеальное средство для здоровья и личной гигиены женщины.</div>
+                </div>
+            </div>
+
+            <!-- MachoMAN -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="machoman.jpg" alt="MachoMAN">
+                </div>
+                <div class="product-content">
+                    <h2 class="product-title">MachoMAN</h2>
+                    <p class="product-tagline">Премиальное клеточное питание для восстановления мужской силы!</p>
+                    <p>Порошкообразная биоактивная форма для приема внутрь. Направлен на полную активацию и поддержку мужского здоровья.</p>
+                    
+                    <div class="section-sub">Польза для здоровья:</div>
+                    <ul class="benefits-list">
+                        <li>Идеальное решение проблем с импотенцией и её предотвращение</li>
+                        <li>Улучшение качества, подвижности и количества сперматозоидов</li>
+                        <li>Нормализация естественного уровня тестостерона</li>
+                        <li>Эффективная профилактика заболеваний и рака простаты</li>
+                        <li>Повышение выносливости, энергии и сексуальной активности</li>
+                    </ul>
+                    <div class="med-disclaimer">Натуральный мужской биоактивный комплекс.</div>
+                </div>
+            </div>
+
+            <!-- FlexiMAX -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="fleximax.jpg" alt="FlexiMAX">
+                </div>
+                <div class="product-content">
+                    <h2 class="product-title">FlexiMAX</h2>
+                    <p class="product-tagline">Свобода движения — укрепление суставов, костей и снятие воспалений!</p>
+                    <p>100% натуральное высокоэффективное средство для устранения болевых синдромов при артритах, артрозах и дегенеративных изменениях.</p>
+                    
+                    <div class="section-sub">Польза для здоровья:</div>
+                    <ul class="benefits-list">
+                        <li>Быстрое облегчение болевого синдрома и отеков в суставах</li>
+                        <li>Питание хрящевой ткани и смазка суставов</li>
+                        <li>Выведение токсинов тяжелых металлов за 1-2 месяца</li>
+                        <li>Помощь при поражениях печени (гепатиты, ожирение печени)</li>
+                        <li>Снижение риска развития онкопроцессов, замедление старения</li>
+                    </ul>
+
+                    <div class="section-sub">Состав:</div>
+                    <ul class="ingredients-list">
+                        <li><strong>Экстракт кукурузы:</strong> Растительный глюкозамин для питания хрящей.</li>
+                        <li><strong>Экстракт морского салата:</strong> Натуральный хондроитин из водорослей.</li>
+                        <li><strong>Гиалуроновая кислота:</strong> Рост новых клеток костей и хрящей.</li>
+                        <li><strong>Экстракт куркумы (Турмерик):</strong> Водорастворимый куркумин против воспалений.</li>
+                        <li><strong>Витамин Д:</strong> Повышает плотность костной ткани.</li>
+                    </ul>
+                    <div class="med-disclaimer">💡 Совет эксперта: Для максимального результата рекомендуется принимать совместно с BluMAX.</div>
+                </div>
+            </div>
+
+            <!-- MiCRYSTAL -->
+            <div class="product-card">
+                <div class="product-img-box">
+                    <img src="micrystal.jpg" alt="MiCRYSTAL">
+                </div>
+                <div class="product-content">
+                    <h2 class="product-title">MiCRYSTAL</h2>
+                    <p class="product-tagline">Клеточное питание для абсолютного здоровья ваших глаз!</p>
+                    <p>100% натуральная ботаническая смесь в порошковой форме для быстрого восстановления органов зрения.</p>
+                    
+                    <div class="section-sub">Польза для здоровья:</div>
+                    <ul class="benefits-list">
+                        <li>Эффективно снижает опасное внутриглазное давление</li>
+                        <li>Быстро снимает покраснения, резь и дискомфорт в глазах</li>
+                        <li>Защищает сетчатку от пагубного воздействия экранов телефонов и ПК</li>
+                        <li>Профилактика возрастных изменений зрения</li>
+                    </ul>
+
+                    <div class="section-sub">Основные компоненты:</div>
+                    <ul class="ingredients-list">
+                        <li><strong>Экстракт бузины:</strong> Природный источник антоцианов для сосудов глаз.</li>
+                        <li><strong>ФлораГЛО (Лютеин):</strong> Запатентованный компонент для защиты сетчатки.</li>
+                        <li><strong>Астаксантин:</strong> Глубокая антиоксидантная защита зрительного нерва.</li>
+                    </ul>
+                    <div class="med-disclaimer">Удобная форма приема: можно запивать водой или разводить в стакане.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Индикаторы точек пагинации под каруселью -->
+    <div class="slider-dots" id="sliderDots"></div>
 </div>
 
+<script>
+    const container = document.getElementById('sliderContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('sliderDots');
+    const cards = document.querySelectorAll('.product-card');
+
+    // Функция расчета шага прокрутки (ширина карты + gap между ними)
+    function getScrollStep() {
+        if (cards.length > 0) {
+            return cards[0].offsetWidth + 30;
+        }
+        return 390;
+    }
+
+    // Стрелка Вперед
+    nextBtn.addEventListener('click', () => {
+        container.scrollLeft += getScrollStep();
+    });
+
+    // Стрелка Назад
+    prevBtn.addEventListener('click', () => {
+        container.scrollLeft -= getScrollStep();
+    });
+
+    // Создание динамических точек
+    function createDots() {
+        dotsContainer.innerHTML = '';
+        cards.forEach((_, idx) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (idx === 0) dot.classList.add('active');
+            
+            dot.addEventListener('click', () => {
+                container.scrollLeft = idx * getScrollStep();
+            });
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    // Подсветка активной точки при скролле пальцем или стрелками
+    container.addEventListener('scroll', () => {
+        const step = getScrollStep();
+        const activeIdx = Math.round(container.scrollLeft / step);
+        const dots = dotsContainer.querySelectorAll('.dot');
+        dots.forEach((dot, i) => {
+            if (i === activeIdx) dot.classList.add('active');
+            else dot.classList.remove('active');
+        });
+    });
+
+    // Инициализация точек
+    createDots();
+</script>
 </body>
 </html>
+
