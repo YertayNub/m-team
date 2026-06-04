@@ -4,56 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Команда M International | Казахстан</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a0933; /* Глубокий фиолетовый */
-            --accent-color: #00b4d8;
-            --text-color: #333;
-            --light-bg: #f8f9fa;
+            --nv-dark: #1A2A50;
+            --nv-mid: #22336A;
+            --pr-dark: #5B2D8E;
+            --gold: #C9A84A;
+            --gold-light: #F4E8C1;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         
-        /* Навигация */
-        nav { background: var(--primary-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        nav .logo { color: white; font-size: 24px; font-weight: bold; text-decoration: none; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: radial-gradient(circle at 50% 0%, #22336A 0%, #1A2A50 50%, #0F1A34 100%); color: #E2E8F0; font-family: 'Jost', sans-serif; min-height: 100vh; }
+        
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #FFF; }
+
+        /* Навигационная панель */
+        nav { background: rgba(26, 42, 80, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-glass); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        nav .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #FFF; text-decoration: none; font-weight: bold; letter-spacing: 2px; }
+        nav .logo span { color: var(--gold); }
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { color: #fff; text-decoration: none; font-size: 16px; transition: 0.3s; }
-        nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 15px; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--gold); border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
 
-        /* Главный баннер */
-        .hero { background: linear-gradient(135deg, #1a0933 0%, #491778 100%); color: white; padding: 100px 5%; text-align: center; }
-        .hero h1 { font-size: 42px; margin-bottom: 20px; }
-        .hero p { font-size: 18px; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .btn { display: inline-block; background: var(--accent-color); color: white; padding: 12px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; transition: 0.3s; }
-        .btn:hover { background: #0077b6; transform: translateY(-2px); }
-
-        /* Разделы контента */
-        .section { padding: 60px 5%; text-align: center; }
-        .section h2 { font-size: 32px; color: var(--primary-color); margin-bottom: 40px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px; }
+        /* Главный баннер (Hero) */
+        .hero { padding: 100px 5% 60px; text-align: center; }
+        .hero h1 { font-size: 52px; text-transform: uppercase; background: linear-gradient(135deg, #FFF 30%, var(--gold-light) 70%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 1px; margin-bottom: 20px; }
+        .hero p { font-size: 18px; color: #A0AEC0; font-weight: 300; max-width: 750px; margin: 0 auto 35px; line-height: 1.6; }
         
-        /* Карточки */
-        .card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 5px solid var(--primary-color); text-align: left; }
-        .card h3 { margin-bottom: 15px; color: var(--primary-color); }
-        .card p { color: #666; font-size: 15px; line-height: 1.6; margin-bottom: 15px; }
-        .card .more-link { color: var(--accent-color); text-decoration: none; font-weight: bold; }
+        /* Кнопки премиум-класса */
+        .btn-gold { display: inline-block; background: linear-gradient(135deg, #C9A84A 0%, #AA8932 100%); color: #1A2A50; padding: 16px 40px; text-decoration: none; border-radius: 30px; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; box-shadow: 0 4px 15px rgba(201, 168, 74, 0.2); }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201, 168, 74, 0.4); }
+
+        .container { padding: 40px 5% 60px; max-width: 1100px; margin: 0 auto; }
+
+        /* Разделы */
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 38px; text-transform: uppercase; letter-spacing: 2px; color: #FFF; }
+        .section-title p { font-size: 16px; color: #A0AEC0; font-weight: 300; margin-top: 10px; }
+        .decor-line { width: 60px; height: 2px; background: var(--gold); margin: 20px auto 0; }
+
+        /* Блок Основателей Команды */
+        .story-wrapper { background: var(--glass); border: 1px solid var(--border-glass); border-radius: 24px; padding: 45px; display: flex; flex-wrap: wrap; gap: 45px; align-items: center; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(15, 26, 52, 0.4); margin-bottom: 60px; }
+        .story-img-block { flex: 1; min-width: 300px; text-align: center; }
+        .story-img-frame { position: relative; display: inline-block; border-radius: 20px; padding: 6px; background: linear-gradient(135deg, var(--gold) 0%, var(--pr-dark) 100%); box-shadow: 0 15px 35px rgba(91, 45, 142, 0.2); }
+        .story-img-frame img { width: 100%; max-width: 340px; height: auto; border-radius: 16px; display: block; object-fit: cover; }
+        .story-title { font-size: 32px; color: var(--gold); margin-top: 20px; letter-spacing: 1px; }
+        .story-status { font-size: 13px; color: #A0AEC0; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; font-weight: 600; }
+        
+        .story-info { flex: 1.6; min-width: 320px; }
+        .story-quote { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: #FFF; margin-bottom: 20px; font-weight: 400; border-left: 4px solid var(--gold); padding-left: 20px; line-height: 1.4; }
+        .story-text { color: #CBD5E0; font-size: 16px; line-height: 1.8; font-weight: 300; }
+        .story-text p { margin-bottom: 15px; }
+
+        .result-badge { background: linear-gradient(135deg, rgba(91, 45, 142, 0.15) 0%, rgba(26, 42, 80, 0.4) 100%); border: 1px dashed var(--gold); padding: 20px; border-radius: 12px; margin: 25px 0; border-left: 5px solid var(--gold); }
+        .result-badge .badge-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold-light); display: block; margin-bottom: 4px; font-weight: 600; }
+        .result-badge .badge-value { font-size: 20px; color: #FFF; font-weight: 600; }
+        .result-badge .badge-value span { color: var(--gold-light); font-weight: 700; }
+
+        /* Сетка продукции */
+        .grid-products { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .card-product { background: var(--glass); border: 1px solid var(--border-glass); padding: 35px 30px; border-radius: 16px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: 0.3s; text-align: left; }
+        .card-product:hover { transform: translateY(-5px); border-color: rgba(201, 168, 74, 0.25); background: rgba(255, 255, 255, 0.05); }
+        .card-product h3 { font-size: 26px; color: var(--gold-light); margin-bottom: 15px; letter-spacing: 1px; }
+        .card-product p { color: #CBD5E0; font-size: 14px; line-height: 1.7; font-weight: 300; margin-bottom: 20px; min-height: 70px; }
+        .card-product .more-link { color: var(--gold); text-decoration: none; font-weight: 600; font-size: 14px; letter-spacing: 0.5px; transition: 0.2s; display: inline-block; }
+        .card-product .more-link:hover { color: #FFF; padding-left: 5px; }
+
+        /* Блок Telegram-отзывов */
+        .reviews-box { background: linear-gradient(135deg, rgba(26, 42, 80, 0.4) 0%, rgba(15, 26, 52, 0.6) 100%); border: 1px solid var(--border-glass); max-width: 850px; margin: 0 auto 50px; padding: 40px 30px; border-radius: 20px; text-align: center; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        .reviews-box h2 { font-size: 32px; color: #FFF; margin-bottom: 12px; letter-spacing: 1px; }
+        .reviews-box p { color: #A0AEC0; font-size: 15px; max-width: 650px; margin: 0 auto 25px; line-height: 1.6; font-weight: 300; }
+        
+        .btn-telegram { display: inline-block; background: linear-gradient(135deg, #0088cc, #006699); color: #ffffff; text-decoration: none; padding: 15px 35px; font-size: 14px; font-weight: bold; border-radius: 30px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0, 136, 204, 0.2); }
+        .btn-telegram:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4); }
+
+        /* Блок QR-кода */
+        .qr-box { background: var(--glass); border: 1px solid var(--border-glass); text-align: center; margin: 0 auto 20px; padding: 25px; border-radius: 16px; max-width: 280px; backdrop-filter: blur(5px); }
+        .qr-box h3 { color: var(--gold-light); font-size: 18px; margin-bottom: 12px; font-weight: 400; letter-spacing: 0.5px; }
+        .qr-box img { width: 100%; max-width: 180px; height: auto; border: 1px solid var(--border-glass); padding: 6px; background: rgba(255,255,255,0.9); border-radius: 8px; }
+        .qr-box p { font-size: 12px; color: #718096; margin-top: 10px; font-weight: 300; line-height: 1.4; }
 
         /* Подвал */
-        footer { background: #111; color: white; text-align: center; padding: 20px; font-size: 14px; }
+        footer { background: #0F1A34; border-top: 1px solid var(--border-glass); color: #718096; text-align: center; padding: 25px; font-size: 13px; margin-top: 60px; }
         
+        /* Мобильная адаптивность */
         @media (max-width: 768px) {
-            nav { flex-direction: column; }
-            nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
-            nav ul li { margin: 5px 10px; }
-            .hero h1 { font-size: 30px; }
+            nav { flex-direction: column; gap: 15px; padding: 15px 5%; }
+            nav ul li { margin-left: 15px; margin-right: 15px; }
+            nav ul li a { font-size: 13px; }
+            .hero h1 { font-size: 34px; }
+            .hero p { font-size: 15px; }
+            .story-wrapper { padding: 25px; gap: 25px; }
+            .section-title h2 { font-size: 28px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- НАВИГАЦИЯ -->
     <nav>
-        <a href="index.html" class="logo">M International Team</a>
+        <a href="index.html" class="logo">M <span>INTERNATIONAL</span></a>
         <ul>
             <li><a href="index.html" class="active">Главная</a></li>
             <li><a href="products.html">Продукция</a></li>
@@ -63,121 +119,99 @@
         </ul>
     </nav>
 
+    <!-- ГЛАВНЫЙ БАННЕР -->
     <section class="hero">
         <h1>Мы мост к Вашей Мечте!</h1>
         <p>Высококачественные продукты для восстановления здоровья на клеточном уровне и легкая международная платформа для создания вашего стабильного благосостояния.</p>
-        <a href="https://wa.me/77758501213" class="btn" target="_blank">Присоединиться к команде</a>
+        <a href="https://wa.me/77758501213" class="btn-gold" target="_blank">Присоединиться к команде</a>
     </section>
 
-   <section id="about" class="reveal" style="padding: 80px 5%; position: relative; background-color: #FFFFFF;">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      
-      <div style="text-align: center; margin-bottom: 45px;">
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; color: #1A2A50;">
-          История Основателей Команды
-        </h2>
-        <p style="font-family: 'Jost', sans-serif; font-size: 16px; color: #4A5568; font-weight: 300; letter-spacing: 1px; max-width: 600px; margin: 0 auto;">
-          От личного семейного результата до построения сильной международной структуры
-        </p>
-        <div style="width: 60px; height: 2px; background: #C9A84C; margin: 20px auto 0;"></div>
-      </div>
+    <div class="container">
 
-      <div style="background: #F7FAFC; border: 1px solid #E2E8F0; border-radius: 24px; padding: 45px; display: flex; flex-wrap: wrap; gap: 45px; align-items: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);">
-        
-        <div style="flex: 1; min-width: 300px; text-align: center;">
-          <div style="position: relative; display: inline-block; border-radius: 20px; padding: 6px; background: linear-gradient(135deg, #C9A84C 0%, #5B2D8E 100%); box-shadow: 0 15px 35px rgba(91, 45, 142, 0.15);">
-            <img src="bakyt-ertay.jpg" alt="Ертай и Бакыт — Лидеры M International" style="width: 100%; max-width: 380px; height: auto; border-radius: 16px; display: block; object-fit: cover;">
-          </div>
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #1A2A50; margin-top: 20px; font-weight: 600; letter-spacing: 1px;">Ертай & Бакыт</h3>
-          <p style="font-family: 'Jost', sans-serif; font-size: 13px; color: #718096; text-transform: uppercase; letter-spacing: 2px; margin-top: 4px; font-weight: 600;">Статус: Сапфировые Директора</p>
+        <!-- СЕКЦИЯ: ИСТОРИЯ ОСНОВАТЕЛЕЙ -->
+        <div class="section-title">
+            <h2>История Основателей Команды</h2>
+            <p>От личного семейного результата до построения сильной международной структуры</p>
+            <div class="decor-line"></div>
         </div>
 
-        <div style="flex: 1.6; min-width: 320px;">
-          <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #1A2A50; margin-bottom: 20px; font-weight: 600; border-left: 4px solid #C9A84C; padding-left: 15px; line-height: 1.3;">
-            «Мы проверили продукт на себе, и поняли — об этом невозможно молчать!»
-          </h4>
-          
-          <div style="font-family: 'Jost', sans-serif; font-size: 16px; color: #2D3748; line-height: 1.8; font-weight: 400;">
-            <p style="margin-bottom: 15px;">
-              Однажды моей супруге Бакыт предложили попробовать буквально несколько саше клеточного детокса <strong style="color: #5B2D8E; font-weight: 600;">GreenMAX</strong> и пакетик травяного чая <strong style="color: #5B2D8E; font-weight: 600;">Relax</strong>. Долго не думая, она приняла GreenMAX на ночь, а чай мы заварили на всю семью... 
-            </p>
-            <p style="margin-bottom: 15px;">
-              В ту ночь мы впервые за долгое время спали как младенцы, а утром проснулись абсолютно бодрыми и выспавшимися. Подробности действия детокса я опущу, но супруга была в таком восторге, что я, как человек военный, привыкший доверять только железным фактам, решил лично протестировать продукт. Результат превзошел все ожидания! Мы поняли: этот продукт — золото, и пришли в компанию исключительно на него.
-            </p>
-            <p style="margin-bottom: 15px;">
-              Но когда мы ознакомились с маркетинг-планом <strong style="color: #1A2A50; font-weight: 600;">M International</strong>, мы были поражены его щедростью. Мы просто начали делиться результатами и пригласили друзей. Сразу после их регистрации нам мгновенно пришли первые деньги — реферальный бонус. 
-            </p>
-            
-            <div style="background: #F0EAF8; border: 1px dashed #5B2D8E; padding: 20px; border-radius: 12px; margin: 22px 0; border-left: 5px solid #5B2D8E;">
-              <span style="font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #5B2D8E; display: block; margin-bottom: 6px; font-weight: 700;">Бизнес-результат команды:</span>
-              <span style="font-family: 'Jost', sans-serif; font-size: 22px; color: #1A2A50; font-weight: 700; letter-spacing: 0.5px;">
-                Ранг «САПФИР» и суммарный доход <span style="color: #5B2D8E; font-weight: 800;">2 262 700 ₸</span> без жесткого напряжения!
-              </span>
+        <div class="story-wrapper">
+            <div class="story-img-block">
+                <div class="story-img-frame">
+                    <img src="bakyt-ertay.jpg" alt="Ертай и Бакыт — Лидеры M International">
+                </div>
+                <h3 class="story-title">Ертай & Бакыт</h3>
+                <p class="story-status">Статус: Сапфировые Директора</p>
             </div>
 
-            <p style="margin-bottom: 15px;">
-              Для нашей семьи это не просто клеточное питание последнего поколения — это реальная возможность получать серьезные чеки. Для кого-то наш продукт становится «продуктом последней надежды» для восстановления организма. Но мы никого не лечим. Следуя чётким рекомендациям наших вышестоящих менторов, <strong style="color: #1A2A50;">мы зовем Вас в сильный, легальный бизнес!</strong>
-            </p>
-            <p style="margin-bottom: 25px; font-style: italic; color: #5B2D8E; font-weight: 500; font-size: 15px;">
-              «Приходите в нашу команду! Мы лично научим Вас профессионально работать в социальных сетях, проведём топовые занятия по саморазвитию и поможем раскрыть масштабный потенциал Вашей личности. Мы послужим Вам надежным мостом к Вашим мечтам!»
-            </p>
-          </div>
+            <div class="story-info">
+                <h4 class="story-quote">
+                    «Мы проверили продукт на себе, и поняли — об этом невозможно молчать!»
+                </h4>
+                
+                <div class="story-text">
+                    <p>Однажды моей супруге Бакыт предложили попробовать буквально несколько саше клеточного детокса <strong style="color: var(--gold-light); font-weight: 600;">GreenMAX</strong> и пакетик травяного чая <strong style="color: var(--gold-light); font-weight: 600;">Relax</strong>. Долго не думая, она приняла GreenMAX на ночь, а чай мы заварили на всю семью...</p>
+                    <p>В ту ночь мы впервые за долгое время спали как младенцы, а утром проснулись абсолютно бодрыми и выспавшися. Подробности действия детокса я опущу, но супруга была в таком восторге, что я, как человек военный, привыкший доверять только железным фактам, решил лично протестировать продукт. Результат превзошел все ожидания! Мы поняли: этот продукт — золото, и пришли в компанию исключительно на него.</p>
+                    <p>Но когда мы ознакомились с маркетинг-планом <strong>M International</strong>, мы были поражены его щедростью. Мы просто начали делиться результатами и пригласили друзей. Сразу после их регистрации нам мгновенно пришли первые деньги — реферальный бонус.</p>
+                    
+                    <div class="result-badge">
+                        <span class="badge-label">Бизнес-результат команды:</span>
+                        <span class="badge-value">Ранг «САПФИР» и суммарный доход <span>2 262 700 ₸</span> без жесткого напряжения!</span>
+                    </div>
 
-          <a href="#contact" style="display: inline-block; background: #1A2A50; color: #FFFFFF; padding: 16px 35px; text-decoration: none; border-radius: 30px; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s ease; box-shadow: 0 4px 15px rgba(26, 42, 80, 0.2);" onmouseover="this.style.background='#5B2D8E'" onmouseout="this.style.background='#1A2A50'">
-            Стать партнером Ертая и Бакыт
-          </a>
-
+                    <p>Для нашей семьи это не просто клеточное питание последнего поколения — это реальная возможность получать серьезные чеки. Для кого-то наш продукт становится «продуктом последней надежды» для восстановления организма. Но мы никого не лечим. Следуя чётким рекомендациям наших вышестоящих менторов, <strong>мы зовем Вас в сильный, легальный бизнес!</strong></p>
+                    <p style="font-style: italic; color: var(--gold-light); font-weight: 400; margin-top: 20px;">«Приходите в нашу команду! Мы лично научим Вас профессионально работать в социальных сетях, проведём топовые занятия по саморазвитию и поможем раскрыть масштабный потенциал Вашей личности. Мы послужим Вам надежным мостом к Вашим мечтам!»</p>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <a href="https://wa.me/77758501213" class="btn-gold" target="_blank">Стать партнером Ертая и Бакыт</a>
+                </div>
+            </div>
         </div>
 
-      </div>
+        <!-- СЕКЦИЯ: ФЛАГМАНЫ ПРОДУКЦИИ -->
+        <div class="section-title">
+            <h2>Флагманы Клеточного Питания</h2>
+            <div class="decor-line"></div>
+        </div>
 
-    </div>
-  </section>
-    <section id="products" class="section" style="background-color: var(--light-bg);">
-        <h2>Флагманы Клеточного Питания</h2>
-        <div class="grid">
-            <div class="card">
+        <div class="grid-products">
+            <div class="card-product">
                 <h3>GreenMAX</h3>
                 <p>100% чистая растительная клетчатка с пробиотиками. Полное очищение кишечника, эффективное выведение токсинов и бережная защита печени.</p>
                 <a href="products.html" class="more-link">Подробнее о составе →</a>
             </div>
-            <div class="card">
+            <div class="card-product">
                 <h3>MiMAX</h3>
                 <p>Мощный антиоксидантный комплекс. Восстанавливает поврежденные клетки, защищает зрение, улучшает состояние кожи и замедляет старение.</p>
                 <a href="products.html" class="more-link">Подробнее о составе →</a>
             </div>
-            <div class="card">
+            <div class="card-product">
                 <h3>BluMAX</h3>
                 <p>Экстракт сине-зеленых водорослей AFA. Максимальная активация иммунных клеток для надежной борьбы организма с вирусами и инфекциями.</p>
                 <a href="products.html" class="more-link">Подробнее о составе →</a>
             </div>
         </div>
-    </section>
-    <!-- Блок "Отзывы и Результаты" -->
-<div class="reviews-section" style="max-width: 800px; margin: 40px auto; padding: 30px 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.08); text-align: center;">
-    <div style="font-size: 40px; margin-bottom: 10px;">🔥</div>
-    <h2 style="color: #1b4d3e; text-transform: uppercase; letter-spacing: 1px; margin-top: 0; margin-bottom: 15px; font-size: 1.8rem;">
-        Результаты применения и Отзывы
-    </h2>
-    <p style="color: #555; font-size: 1.1rem; max-width: 600px; margin: 0 auto 25px auto; line-height: 1.5;">
-        Сотни людей уже вернули себе здоровье, энергию и легкость благодаря клеточному питанию M International. Посмотрите реальные видео-истории и текстовые результаты обычных людей!
-    </p>
-    
-    <!-- Кнопка перехода в Telegram -->
-    <a href="https://t.me/baxaminternational" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #0088cc, #0077b5); color: #ffffff; text-decoration: none; padding: 16px 35px; font-size: 1.1rem; font-weight: bold; border-radius: 50px; box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3); transition: all 0.3s ease;">
-        ✈️ Смотреть отзывы в Telegram
-    </a>
-    
-    <p style="font-size: 0.85rem; color: #888; margin-top: 12px; font-style: italic;">
-        * Ссылка откроет наш официальный канал с видео-подтверждениями и разборами диагнозов.
-    </p>
-</div>
-<!-- Блок с QR-кодом -->
-<div class="qr-section" style="text-align: center; margin: 30px auto; padding: 20px; background-color: #f9f9f9; border-radius: 10px; max-width: 300px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-    <h3 style="color: #333; margin-bottom: 10px; font-size: 18px;">Наш QR-код</h3>
-    <img src="qr.jpg" alt="QR-код сайта" style="width: 100%; max-width: 200px; height: auto; border: 2px solid #ddd; padding: 5px; background: #fff; border-radius: 5px;">
-    <p style="font-size: 13px; color: #666; margin-top: 8px;">Наведите камеру телефона,<br>чтобы поделиться сайтом</p>
-</div>
+
+        <!-- ОТЗЫВЫ В TELEGRAM -->
+        <div class="reviews-box">
+            <div style="font-size: 40px; margin-bottom: 15px;">🔥</div>
+            <h2>Результаты применения и Отзывы</h2>
+            <p>Сотни людей уже вернули себе здоровье, энергию и легкость благодаря клеточному питанию M International. Посмотрите реальные видео-истории и текстовые результаты обычных людей!</p>
+            <a href="https://t.me/baxaminternational" target="_blank" class="btn-telegram">✈️ Смотреть отзывы в Telegram</a>
+            <p style="font-size: 12px; color: #718096; margin-top: 15px; font-style: italic;">* Ссылка откроет наш официальный канал с видео-подтверждениями и разборами диагнозов.</p>
+        </div>
+
+        <!-- QR-КОД -->
+        <div class="qr-box">
+            <h3>Наш QR-код</h3>
+            <img src="qr.jpg" alt="QR-код сайта">
+            <p>Наведите камеру телефона,<br>чтобы поделиться сайтом</p>
+        </div>
+
+    </div>
+
+    <!-- ПОДВАЛ -->
     <footer>
         <p>&copy; 2026 Командный сайт партнеров M International в Казахстане. Продукт не является лекарственным средством.</p>
     </footer>
