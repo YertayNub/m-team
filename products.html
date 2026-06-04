@@ -405,6 +405,57 @@
 
     </div>
 </div>
+<!-- Здесь заканчивается карточка MiCrystal (09 / 09) -->
 
+  </div>
+</section>
+
+<div class="bottom-cta">
+  <h2 class="bottom-cta-title">Готовы начать<br/><em>ваш путь</em> к здоровью?</h2>
+  <p class="bottom-cta-desc">Присоединяйтесь к сети M International и получите доступ к эксклюзивным ценам и партнёрской программе.</p>
+  <div class="cta-buttons">
+    <a href="#" class="btn-primary">Стать партнёром</a>
+    <a href="#" class="btn-outline">Узнать больше</a>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-logo">M International · Hurai</span>
+  <span class="footer-copy">© 2026 M International. Все права защищены.</span>
+</footer>
+
+<!-- ПРОСТО ВСТАВЛЯЙ ЭТОТ БЛОК СЮДА -->
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.product-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      const filter = btn.dataset.filter;
+
+      cards.forEach(card => {
+        const cardCategory = card.dataset.category;
+        
+        if (filter === 'all' || cardCategory === filter) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 10);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(10px)';
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
 </body>
 </html>
