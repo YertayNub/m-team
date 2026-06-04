@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог продукции M International</title>
+    
+    <title>Клеточное Питание M International в Казахстане | Официальный Каталог Продукции</title>
+    <meta name="description" content="Официальный каталог продукции клеточного питания M International в Казахстане. Купить GreenMAX, MiMAX, BluMAX, NutriMAX по выгодной цене. Детокс, омоложение и восстановление организма на клеточном уровне.">
+    <meta name="keywords" content="m international, m international казахстан, клеточное питание, greenmax, mimax, blumax, nutrimax, kordymax, yekaterina, machoman, fleximax, micrystal, купить клеточное питание, детокс организма, омоложение клеток, товары для здоровья астана алматы">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Клеточное Питание M International в Казахстане">
+    <meta property="og:description" content="Полная линейка продукции для детоксикации, омоложения и восстановления суставов и иммунитета. Узнайте подробнее в каталоге!">
+    <meta property="og:type" content="website">
+
     <style>
+        /* ========================================== -->
+        /* НОВАЯ ЦВЕТОВАЯ ПАЛИТРА ПОД СТИЛЬ МАРКЕТИНГА -->
+        /* ========================================== --> */
         :root {
-            --primary: #1b4d3e;
-            --secondary: #c29b38;
-            --text: #333333;
-            --bg: #f4f7f6;
-            --white: #ffffff;
+            --primary: #0f172a;       /* Глубокий темно-синий/графитовый (основной текст и заголовки) */
+            --secondary: #2563eb;     /* Яркий синий (акценты, линии, кнопки) */
+            --accent: #3b82f6;        /* Голубой для интерактивных элементов */
+            --text: #334155;          /* Мягкий темно-серый цвет для удобного чтения текста */
+            --bg: #f8fafc;            /* Чистый, ультра-современный светлый фон страницы */
+            --white: #ffffff;         /* Белый цвет для карточек */
+            --whatsapp: #25D366;      /* Фирменный зеленый цвет для кнопки WhatsApp */
         }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -32,18 +47,20 @@
             font-size: 2.5rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-weight: 800;
         }
         .important-note {
-            background: linear-gradient(135deg, #e3ece9, #f4f7f6);
-            border-left: 5px solid var(--primary);
+            background: linear-gradient(135deg, #eff6ff, #f8fafc);
+            border-left: 5px solid var(--secondary);
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 40px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05);
         }
         .important-note h3 {
             margin-top: 0;
-            color: var(--primary);
+            color: var(--secondary);
+            font-size: 1.2rem;
         }
 
         /* УПРАВЛЕНИЕ И СТРЕЛКИ ДЛЯ КАРУСЕЛИ */
@@ -58,12 +75,12 @@
             gap: 10px;
         }
         .slider-arrow {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            border: 2px solid var(--primary);
+            border: 2px solid var(--secondary);
             background: var(--white);
-            color: var(--primary);
+            color: var(--secondary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -71,9 +88,10 @@
             transition: all 0.2s ease;
             font-weight: bold;
             font-size: 1.2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         .slider-arrow:hover {
-            background: var(--primary);
+            background: var(--secondary);
             color: var(--white);
         }
 
@@ -82,11 +100,11 @@
             width: 100%;
             overflow-x: auto;
             scroll-behavior: smooth;
-            scrollbar-width: none; /* Скрываем скролл в Firefox */
+            scrollbar-width: none;
             padding-bottom: 15px;
         }
         .slider-container::-webkit-scrollbar {
-            display: none; /* Скрываем скролл в Chrome/Safari */
+            display: none;
         }
 
         /* СЕТКА СТАНОВИТСЯ ОДНОЙ СТРОКОЙ ДЛЯ СЛАЙДЕРА */
@@ -100,22 +118,24 @@
         /* КАРТОЧКА ПРОДУКТА */
         .product-card {
             background-color: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: transform 0.3s ease;
-            width: 360px; /* Фиксированная ширина карточки в слайдере */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 360px;
             flex-shrink: 0;
+            border: 1px solid #e2e8f0;
         }
         .product-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
         }
         .product-img-box {
             width: 100%;
             height: 280px;
-            background-color: #eef2f1;
+            background-color: #f1f5f9;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -138,19 +158,20 @@
             margin: 0 0 10px 0;
             border-bottom: 2px solid var(--secondary);
             padding-bottom: 5px;
+            font-weight: 700;
         }
         .product-tagline {
             font-style: italic;
-            color: #555;
+            color: #475569;
             font-weight: 600;
             margin-bottom: 15px;
         }
         .section-sub {
-            font-weight: bold;
-            color: var(--primary);
+            font-weight: 700;
+            color: var(--secondary);
             margin: 15px 0 5px 0;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 0.5px;
         }
         .benefits-list, .ingredients-list {
@@ -177,11 +198,11 @@
         }
         .med-disclaimer {
             font-size: 0.85rem;
-            color: #777;
+            color: #64748b;
             font-style: italic;
             margin-top: auto;
             padding-top: 15px;
-            border-top: 1px dashed #ddd;
+            border-top: 1px dashed #cbd5e1;
         }
 
         /* ТОЧКИ ПАГИНАЦИИ */
@@ -200,18 +221,75 @@
             transition: all 0.3s ease;
         }
         .dot.active {
-            background: var(--primary);
+            background: var(--secondary);
             width: 25px;
             border-radius: 5px;
+        }
+
+        /* ========================================== -->
+        /* ЭТАП 2: СТИЛИ ДЛЯ ПЛАВАЮЩЕЙ КНОПКИ WHATSAPP -->
+        /* ========================================== --> */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            cursor: pointer;
+            z-index: 9999;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        /* Пульсирующий круг вокруг кнопки для привлечения внимания */
+        .whatsapp-btn::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--whatsapp);
+            border-radius: 50%;
+            z-index: -1;
+            animation: whatsapp-pulse 2s infinite;
+            opacity: 0.7;
+        }
+        @keyframes whatsapp-pulse {
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+        /* Простая SVG-иконка WhatsApp внутри кнопки */
+        .whatsapp-icon {
+            width: 32px;
+            height: 32px;
+            fill: #fff;
         }
 
         /* Адаптивность для мобильных экранов */
         @media (max-width: 420px) {
             .product-card {
-                width: 290px; /* На смартфонах карточки чуть компактнее */
+                width: 290px;
             }
             .product-img-box {
                 height: 220px;
+            }
+            .whatsapp-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+            .whatsapp-icon {
+                width: 26px;
+                height: 26px;
             }
         }
     </style>
@@ -221,26 +299,22 @@
 <div class="container">
     <h1 class="header-title">Линейка клеточного питания</h1>
 
-    <!-- Рекомендация по правильной логике оздоровления -->
     <div class="important-note">
         <h3>💡 Важная рекомендация эксперта по оздоровлению:</h3>
         <p>Перед любым курсом оздоровления, для получения максимальных результатов, необходимо правильно подготовить организм. Чтобы продукт полностью усвоился и работал непосредственно по проблеме, целесообразнее сначала очистить кишечник, печень и лимфу с помощью <strong>GreenMAX</strong> и <strong>MiMAX</strong>. Только после качественной детоксикации организма рекомендуется подключать профильные продукты восстановления.</p>
     </div>
 
-    <!-- Блок со стрелками управления -->
     <div class="catalog-header-row">
-        <div></div> <!-- Пустой блок для выравнивания стрелок вправо -->
+        <div></div> 
         <div class="slider-controls">
             <button class="slider-arrow" id="prevBtn" title="Назад">&#10094;</button>
             <button class="slider-arrow" id="nextBtn" title="Вперед">&#10095;</button>
         </div>
     </div>
 
-    <!-- Контейнер слайдера -->
     <div class="slider-container" id="sliderContainer">
         <div class="catalog-grid">
 
-            <!-- GreenMAX -->
             <div class="product-card">
                 <div class="product-img-box">
                     <img src="greenmax.jpg" alt="GreenMAX">
@@ -270,7 +344,6 @@
                 </div>
             </div>
 
-            <!-- MiMAX -->
             <div class="product-card">
                 <div class="product-img-box">
                     <img src="mimax.jpg" alt="MiMAX">
@@ -300,7 +373,6 @@
                 </div>
             </div>
 
-            <!-- BluMAX -->
             <div class="product-card">
                 <div class="product-img-box">
                     <img src="blumax.jpg" alt="BluMAX">
@@ -319,7 +391,7 @@
                         <li>Снижение алкогольной и табачной зависимостей</li>
                     </ul>
 
-                    <div class="section-sub">Основные компоненты:</div>
+                    <div class="section-sub">Основные компоненны:</div>
                     <ul class="ingredients-list">
                         <li><strong>Водоросли (AFA):</strong> Активируют иммунные клетки, содержат ФЭА для улучшения памяти и настроения.</li>
                         <li><strong>Витамин C:</strong> Высокоэффективный антиоксидант для стимуляции лейкоцитов.</li>
@@ -328,7 +400,6 @@
                 </div>
             </div>
 
-            <!-- NutriMAX -->
             <div class="product-card">
                 <div class="product-img-box">
                     <img src="nutrimax.jpg" alt="NutriMAX">
@@ -357,7 +428,6 @@
                 </div>
             </div>
 
-            <!-- KordyMAX -->
             <div class="product-card">
                 <div class="product-img-box">
                     <img src="kordymax.jpg" alt="KordyMAX">
@@ -379,7 +449,6 @@
                 </div>
             </div>
 
-            <!-- Ye-Katerina -->
             <div class="product-card">
                 <div class="product-img-box">
                     <img src="yekaterina.jpg" alt="Ye-Katerina">
@@ -409,7 +478,6 @@
                 </div>
             </div>
 
-            <!-- MachoMAN -->
             <div class="product-card">
                 <div class="product-img-box">
                     <img src="machoman.jpg" alt="MachoMAN">
@@ -431,7 +499,6 @@
                 </div>
             </div>
 
-            <!-- FlexiMAX -->
             <div class="product-card">
                 <div class="product-img-box">
                     <img src="fleximax.jpg" alt="FlexiMAX">
@@ -462,7 +529,6 @@
                 </div>
             </div>
 
-            <!-- MiCRYSTAL -->
             <div class="product-card">
                 <div class="product-img-box">
                     <img src="micrystal.jpg" alt="MiCRYSTAL">
@@ -493,9 +559,14 @@
         </div>
     </div>
 
-    <!-- Индикаторы точек пагинации под каруселью -->
     <div class="slider-dots" id="sliderDots"></div>
 </div>
+
+<a href="https://wa.me/77771112233?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5%20%D0%BE%20%D0%BA%D0%BB%D0%B5%D1%82%D0%BE%D1%87%D0%BD%D0%BE%D0%BC%20%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D0%B8%20M%20International" class="whatsapp-btn" target="_blank" title="Связаться в WhatsApp">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.966C16.528 1.975 14.067 1.953 11.91 1.953c-5.438 0-9.863 4.374-9.867 9.803-.001 1.73.457 3.419 1.323 4.922l-.994 3.63 3.685-.954zm10.963-7.293c-.3-.149-1.77-.872-2.044-.973-.274-.101-.474-.149-.673.149-.198.298-.768.973-.943 1.171-.175.198-.349.223-.648.074-.3-.149-1.265-.464-2.41-1.477-.89-.789-1.492-1.764-1.666-2.062-.175-.298-.019-.459.13-.608.134-.134.3-.349.449-.523.149-.174.199-.298.299-.497.099-.198.05-.372-.025-.521-.075-.149-.674-1.62-.922-2.21-.242-.578-.487-.5-.673-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.77-.723 2.018-1.412.249-.688.249-1.278.174-1.411-.074-.134-.272-.223-.571-.372z"/>
+    </svg>
+</a>
 
 <script>
     const container = document.getElementById('sliderContainer');
@@ -504,7 +575,6 @@
     const dotsContainer = document.getElementById('sliderDots');
     const cards = document.querySelectorAll('.product-card');
 
-    // Функция расчета шага прокрутки (ширина карты + gap между ними)
     function getScrollStep() {
         if (cards.length > 0) {
             return cards[0].offsetWidth + 30;
@@ -512,17 +582,14 @@
         return 390;
     }
 
-    // Стрелка Вперед
     nextBtn.addEventListener('click', () => {
         container.scrollLeft += getScrollStep();
     });
 
-    // Стрелка Назад
     prevBtn.addEventListener('click', () => {
         container.scrollLeft -= getScrollStep();
     });
 
-    // Создание динамических точек
     function createDots() {
         dotsContainer.innerHTML = '';
         cards.forEach((_, idx) => {
@@ -537,7 +604,6 @@
         });
     }
 
-    // Подсветка активной точки при скролле пальцем или стрелками
     container.addEventListener('scroll', () => {
         const step = getScrollStep();
         const activeIdx = Math.round(container.scrollLeft / step);
@@ -548,9 +614,7 @@
         });
     });
 
-    // Инициализация точек
     createDots();
 </script>
 </body>
 </html>
-
