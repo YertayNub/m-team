@@ -4,151 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ========================================== -->
-    <!-- ЭТАП 3: SEO-МЕТАТЕГИ ДЛЯ ПРОДВИЖЕНИЯ В GOOGLE -->
-    <!-- ========================================== -->
-    <title>Клеточное Питание M International в Казахстане | Официальный Каталог Продукции</title>
-    <meta name="description" content="Официальный каталог продукции клеточного питания M International в Казахстане. Купить GreenMAX, MiMAX, BluMAX, NutriMAX по выгодной цене. Детокс, омоложение и восстановление организма на клеточном уровне.">
-    <meta name="keywords" content="m international, m international казахстан, клеточное питание, greenmax, mimax, blumax, nutrimax, kordymax, yekaterina, machoman, fleximax, micrystal, купить клеточное питание, детокс организма, омоложение клеток, товары для здоровья астана алматы">
+    <!-- SEO-МЕТАТЕГИ ДЛЯ ПРОДВИЖЕНИЯ -->
+    <title>Линейка Клеточного Питания | M International</title>
+    <meta name="description" content="Официальный каталог продукции клеточного питания M International в Казахстане. Купить GreenMAX, MiMAX, BluMAX, NutriMAX по выгодной цене. Детокс, омоложение и восстановление организма.">
+    <meta name="keywords" content="m international, клеточное питание, greenmax, mimax, blumax, nutrimax, kordymax, yekaterina, machoman, fleximax, micrystal">
     <meta name="robots" content="index, follow">
     
-    <!-- Мета-теги для красивого отображения ссылки в WhatsApp/Telegram (Open Graph) -->
-    <meta property="og:title" content="Клеточное Питание M International в Казахстане">
-    <meta property="og:description" content="Полная линейка продукции для детоксикации, омоложения и восстановления суставов и иммунитета. Узнайте подробнее в каталоге!">
-    <meta property="og:type" content="website">
+    <!-- Подключение премиальных шрифтов, как на маркетинге -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         /* ========================================== */
-        /* ЦВЕТОВАЯ ПАЛИТРА ПОД СТИЛЬ МАРКЕТИНГА      */
-        /* ========================================== --> */
+        /* ЕДИНАЯ ПРЕМИАЛЬНАЯ ЦВЕТОВАЯ ПАЛИТРА        */
+        /* ========================================== */
         :root {
-            --primary: #0f172a;       /* Глубокий темно-синий/графитовый */
-            --secondary: #2563eb;     /* Яркий синий (акценты, линии, кнопки) */
-            --accent: #3b82f6;        /* Голубой */
-            --text: #334155;          /* Мягкий темно-серый */
-            --bg: #f8fafc;            /* Светлый фон страницы */
-            --white: #ffffff;         /* Белый цвет для карточек */
-            --whatsapp: #25D366;      /* Зеленый цвет для WhatsApp */
+            --nv-dark: #1A2A50;
+            --nv-mid: #22336A;
+            --pr-dark: #5B2D8E;
+            --gold: #C9A84A;
+            --gold-light: #F4E8C1;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --whatsapp: #25D366;
         }
         
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--bg);
-            margin: 0;
-            padding: 0;
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        body { 
+            background: radial-gradient(circle at 50% 0%, #22336A 0%, #1A2A50 50%, #0F1A34 100%); 
+            color: #E2E8F0; 
+            font-family: 'Jost', sans-serif; 
+            min-height: 100vh; 
+        }
+        
+        h1, h2, h3, h4 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-weight: 600; 
+            color: #FFF; 
         }
 
         /* ========================================== */
-        /* СТИЛИ НАВИГАЦИОННОГО МЕНЮ (ШАПКИ)          */
+        /* СТИЛЬ НАВИГАЦИОННОГО МЕНЮ (НА КАНВЕ LUXURY) */
         /* ========================================== */
-        .navbar {
-            background-color: var(--primary);
-            position: sticky;
-            top: 0;
-            z-index: 10000;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+        nav { 
+            background: rgba(26, 42, 80, 0.85); 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px); 
+            border-bottom: 1px solid var(--border-glass); 
+            padding: 20px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
         }
-        .navbar-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
+        nav .logo { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 28px; 
+            color: #FFF; 
+            text-decoration: none; 
+            font-weight: bold; 
+            letter-spacing: 2px; 
         }
-        .navbar-logo {
-            color: var(--white);
-            font-size: 1.3rem;
-            font-weight: 800;
-            text-decoration: none;
-            letter-spacing: 0.5px;
+        nav .logo span { 
+            color: var(--gold); 
         }
-        .navbar-menu {
-            display: flex;
-            gap: 15px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        nav ul { 
+            display: flex; 
+            list-style: none; 
         }
-        .navbar-link {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 6px;
-            transition: all 0.2s ease;
+        nav ul li { 
+            margin-left: 25px; 
         }
-        .navbar-link:hover {
-            color: var(--white);
-            background-color: rgba(255, 255, 255, 0.1);
+        nav ul li a { 
+            color: rgba(255,255,255,0.7); 
+            text-decoration: none; 
+            font-size: 15px; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            transition: 0.3s; 
         }
-        .navbar-link.active {
-            color: var(--white);
-            background-color: var(--secondary);
+        nav ul li a:hover, nav ul li a.active { 
+            color: var(--gold); 
+            border-bottom: 1px solid var(--gold); 
+            padding-bottom: 4px; 
+        }
+
+        /* БАННЕР СТРАНИЦЫ */
+        .header-banner { 
+            padding: 80px 5% 40px; 
+            text-align: center; 
+        }
+        .header-banner h1 { 
+            font-size: 44px; 
+            text-transform: uppercase; 
+            background: linear-gradient(135deg, #FFF 30%, var(--gold-light) 70%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .header-banner p { 
+            font-size: 16px; 
+            color: #A0AEC0; 
+            font-weight: 300; 
+            max-width: 600px; 
+            margin: 10px auto 0; 
         }
 
         /* ОСНОВНОЙ КОНТЕНТ */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        .header-title {
-            text-align: center;
-            color: var(--primary);
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 800;
-        }
-        .important-note {
-            background: linear-gradient(135deg, #eff6ff, #f8fafc);
-            border-left: 5px solid var(--secondary);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05);
-        }
-        .important-note h3 {
-            margin-top: 0;
-            color: var(--secondary);
-            font-size: 1.2rem;
+        .container { 
+            padding: 20px 5% 60px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
         }
 
-        /* УПРАВЛЕНИЕ И СТРЕЛКИ ДЛЯ КАРУСЕЛИ */
+        /* Справочник Luxury (Важная рекомендация) */
+        .terms-box { 
+            background: rgba(201, 168, 74, 0.05); 
+            border: 1px solid rgba(201, 168, 74, 0.2); 
+            padding: 25px; 
+            border-radius: 12px; 
+            margin-bottom: 40px; 
+        }
+        .terms-box h4 { 
+            font-family: 'Cormorant Garamond', serif; 
+            color: var(--gold); 
+            font-size: 22px; 
+            margin-bottom: 10px; 
+        }
+        .terms-box p { 
+            color: #CBD5E0; 
+            font-size: 15px; 
+            font-weight: 300; 
+            line-height: 1.6; 
+        }
+
+        /* УПРАВЛЕНИЕ СЛАЙДЕРОМ */
         .catalog-header-row {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
+            justify-content: flex-end;
+            margin-bottom: 25px;
         }
         .slider-controls {
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
         .slider-arrow {
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            border: 2px solid var(--secondary);
-            background: var(--white);
-            color: var(--secondary);
+            border: 1px solid rgba(201, 168, 74, 0.3);
+            background: rgba(26, 42, 80, 0.6);
+            color: var(--gold);
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.2s ease;
-            font-weight: bold;
-            font-size: 1.2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            font-size: 1.1rem;
+            backdrop-filter: blur(5px);
         }
         .slider-arrow:hover {
-            background: var(--secondary);
-            color: var(--white);
+            background: var(--gold);
+            color: #1A2A50;
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(201, 168, 74, 0.3);
         }
 
         /* ОКНО ПРОКРУТКИ КАРУСЕЛИ */
@@ -157,13 +183,12 @@
             overflow-x: auto;
             scroll-behavior: smooth;
             scrollbar-width: none;
-            padding-bottom: 15px;
+            padding-bottom: 20px;
         }
         .slider-container::-webkit-scrollbar {
             display: none;
         }
 
-        /* СЕТКА СТАНОВИТСЯ ОДНОЙ СТРОКОЙ ДЛЯ СЛАЙДЕРА */
         .catalog-grid {
             display: flex;
             gap: 30px;
@@ -171,31 +196,35 @@
             padding: 5px;
         }
 
-        /* КАРТОЧКА ПРОДУКТА */
+        /* ПРЕМИАЛЬНАЯ СТЕНД-КАРТОЧКА ПРОДУКТА */
         .product-card {
-            background-color: var(--white);
+            background: var(--glass); 
+            border: 1px solid var(--border-glass);
             border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: 0.3s;
             width: 360px;
             flex-shrink: 0;
-            border: 1px solid #e2e8f0;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         .product-card:hover {
+            border-color: rgba(201, 168, 74, 0.3); 
+            background: rgba(255, 255, 255, 0.05);
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            box-shadow: 0 10px 30px rgba(15, 26, 52, 0.5);
         }
         .product-img-box {
             width: 100%;
-            height: 280px;
-            background-color: #f1f5f9;
+            height: 260px;
+            background-color: rgba(15, 26, 52, 0.4);
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            border-bottom: 1px solid var(--border-glass);
         }
         .product-img-box img {
             width: 100%;
@@ -209,56 +238,69 @@
             flex-grow: 1;
         }
         .product-title {
-            font-size: 1.8rem;
-            color: var(--primary);
+            font-size: 28px;
+            color: #FFF;
             margin: 0 0 10px 0;
-            border-bottom: 2px solid var(--secondary);
+            font-family: 'Cormorant Garamond', serif;
+            border-bottom: 1px solid rgba(201, 168, 74, 0.2);
             padding-bottom: 5px;
-            font-weight: 700;
         }
         .product-tagline {
             font-style: italic;
-            color: #475569;
-            font-weight: 600;
+            color: var(--gold-light);
+            font-weight: 300;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #CBD5E0;
+            font-weight: 300;
             margin-bottom: 15px;
         }
         .section-sub {
-            font-weight: 700;
-            color: var(--secondary);
-            margin: 15px 0 5px 0;
+            font-weight: 600;
+            color: var(--gold);
+            margin: 15px 0 8px 0;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
+            font-size: 12px;
+            letter-spacing: 1px;
         }
         .benefits-list, .ingredients-list {
-            padding-left: 20px;
+            padding-left: 15px;
             margin: 0 0 15px 0;
-            font-size: 0.95rem;
+            font-size: 14px;
+            color: #CBD5E0;
+            font-weight: 300;
+        }
+        .benefits-list li, .ingredients-list li {
+            margin-bottom: 6px;
+            line-height: 1.5;
         }
         .benefits-list li {
-            margin-bottom: 5px;
             list-style-type: square;
         }
         .ingredients-list li {
-            margin-bottom: 8px;
             list-style-type: none;
             position: relative;
         }
         .ingredients-list li::before {
-            content: "•";
-            color: var(--secondary);
-            font-weight: bold;
-            display: inline-block; 
-            width: 1em;
-            margin-left: -1em;
+            content: "◆";
+            color: var(--gold);
+            font-size: 10px;
+            position: absolute;
+            left: -15px;
+            top: 2px;
         }
         .med-disclaimer {
-            font-size: 0.85rem;
-            color: #64748b;
+            font-size: 12px;
+            color: #718096;
             font-style: italic;
             margin-top: auto;
             padding-top: 15px;
-            border-top: 1px dashed #cbd5e1;
+            border-top: 1px dashed var(--border-glass);
+            font-weight: 300;
         }
 
         /* ТОЧКИ ПАГИНАЦИИ */
@@ -266,36 +308,36 @@
             display: flex;
             justify-content: center;
             gap: 8px;
-            margin-top: 20px;
+            margin-top: 30px;
         }
         .dot {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            background: #cbd5e1;
+            background: rgba(255, 255, 255, 0.2);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
         .dot.active {
-            background: var(--secondary);
-            width: 25px;
-            border-radius: 5px;
+            background: var(--gold);
+            width: 20px;
+            border-radius: 4px;
         }
 
-        /* ЭТАП 2: СТИЛИ ДЛЯ ПЛАВАЮЩЕЙ КНОПКИ WHATSAPP */
+        /* ПЛАВАЮЩЕЙ КНОПКА WHATSAPP */
         .whatsapp-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background-color: var(--whatsapp);
-            color: var(--white);
+            color: #FFF;
             width: 60px;
             height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
             cursor: pointer;
             z-index: 9999;
             transition: transform 0.3s ease;
@@ -325,395 +367,402 @@
             fill: #fff;
         }
 
-        /* Адаптивность */
-        @media (max-width: 600px) {
-            .navbar-container {
+        footer { 
+            background: #0F1A34; 
+            border-top: 1px solid var(--border-glass); 
+            color: #718096; 
+            text-align: center; 
+            padding: 25px; 
+            font-size: 13px; 
+            margin-top: 60px; 
+        }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 768px) {
+            nav {
                 flex-direction: column;
-                gap: 10px;
-                padding: 10px;
+                gap: 15px;
+                padding: 15px 5%;
             }
-            .navbar-menu {
-                width: 100%;
-                justify-content: center;
-                gap: 5px;
+            nav ul li {
+                margin-left: 15px;
+                margin-right: 15px;
             }
-            .navbar-link {
-                padding: 6px 10px;
-                font-size: 0.85rem;
+            nav ul li a {
+                font-size: 13px;
+            }
+            .header-banner h1 {
+                font-size: 32px;
             }
         }
         @media (max-width: 420px) {
             .product-card {
-                width: 290px;
+                width: 295px;
             }
             .product-img-box {
-                height: 220px;
+                height: 210px;
             }
-            .whatsapp-btn {
-                bottom: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
             }
-            .whatsapp-icon {
-                width: 26px;
-                height: 26px;
+            nav ul li {
+                margin: 0 5px;
             }
         }
     </style>
 </head>
 <body>
 
-<!-- ========================================== -->
-<!-- НАВИГАЦИОННОЕ МЕНЮ (СВЯЗЬ С ДРУГИМИ СТРАНИЦАМИ) -->
-<!-- ========================================== -->
-<nav class="navbar">
-    <div class="navbar-container">
-        <a href="index.html" class="navbar-logo">M International</a>
-        <ul class="navbar-menu">
-            <li><a href="index.html" class="navbar-link">Главная</a></li>
-            <li><a href="products.html" class="navbar-link active">Продукция</a></li>
-            <li><a href="marketing.html" class="navbar-link">Маркетинг</a></li>
+    <!-- НАВИГАЦИЯ (Точь-в-точь как на Маркетинге, активна кнопка Продукция) -->
+    <nav>
+        <a href="index.html" class="logo">M <span>INTERNATIONAL</span></a>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="products.html" class="active">Продукция</a></li>
+            <li><a href="marketing.html">Маркетинг</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
         </ul>
-    </div>
-</nav>
+    </nav>
 
-<div class="container">
-    <h1 class="header-title">Линейка клеточного питания</h1>
-
-    <!-- Рекомендация по правильной логике оздоровления -->
-    <div class="important-note">
-        <h3>💡 Важная рекомендация эксперта по оздоровлению:</h3>
-        <p>Перед любым курсом оздоровления, для получения максимальных результатов, необходимо правильно подготовить организм. Чтобы продукт полностью усвоился и работал непосредственно по проблеме, целесообразнее сначала очистить кишечник, печень и лимфу с помощью <strong>GreenMAX</strong> и <strong>MiMAX</strong>. Только после качественной детоксикации организма рекомендуется подключать профильные продукты восстановления.</p>
+    <!-- БАННЕР СТРАНИЦЫ -->
+    <div class="header-banner">
+        <h1>Линейка Клеточного Питания</h1>
+        <p>Высокотехнологичные растительные комплексы для глубокого очищения, омоложения и восстановления организма</p>
     </div>
 
-    <!-- Блок со стрелками управления -->
-    <div class="catalog-header-row">
-        <div></div> 
-        <div class="slider-controls">
-            <button class="slider-arrow" id="prevBtn" title="Назад">&#10094;</button>
-            <button class="slider-arrow" id="nextBtn" title="Вперед">&#10095;</button>
+    <div class="container">
+
+        <!-- Рекомендация эксперта в Luxury блоке -->
+        <div class="terms-box">
+            <h4>💡 Важная рекомендация эксперта по оздоровлению:</h4>
+            <p>Перед любым курсом оздоровления, для получения максимальных результатов, необходимо правильно подготовить организм. Чтобы продукт полностью усвоился и работал непосредственно по проблеме, целесообразнее сначала очистить кишечник, печень и лимфу с помощью <strong>GreenMAX</strong> и <strong>MiMAX</strong>. Только после качественной детоксикации организма рекомендуется подключать профильные продукты восстановления.</p>
         </div>
-    </div>
 
-    <!-- Контейнер слайдера -->
-    <div class="slider-container" id="sliderContainer">
-        <div class="catalog-grid">
-
-            <!-- GreenMAX -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img src="greenmax.jpg" alt="GreenMAX">
-                </div>
-                <div class="product-content">
-                    <h2 class="product-title">GreenMAX</h2>
-                    <p class="product-tagline">Эксклюзивный детокс, очищение, обновление и омоложение всего организма!</p>
-                    <p>100% чистая растительная клетчатка с пробиотиком и экстрактом расторопши. Специально запатентованная формула 3 в 1 для ухода за толстой кишкой.</p>
-                    
-                    <div class="section-sub">Польза для здоровья:</div>
-                    <ul class="benefits-list">
-                        <li>Очищает кишечник от застойных каловых масс и завалов</li>
-                        <li>Профилактика и эффективное лечение запоров</li>
-                        <li>Убирает висцеральный жир, способствует сбросу веса</li>
-                        <li>Помогает справиться с жировым гепатозом печени, чистит лимфу</li>
-                        <li>Регулирует уровень сахара и холестерина в крови</li>
-                    </ul>
-
-                    <div class="section-sub">Основные компоненты:</div>
-                    <ul class="ingredients-list">
-                        <li><strong>Шелуха Подорожника:</strong> Растворимое волокно, мягко очищает ЖКТ.</li>
-                        <li><strong>Расторопша:</strong> Защита печени от токсинов и окислительного стресса.</li>
-                        <li><strong>Пробиотик:</strong> Поддерживает естественный баланс бактерий и иммунитет.</li>
-                        <li><strong>KiOnutrime-Cs & Моросил:</strong> Растительный хитозан и экстракт апельсина Моро для управления весом.</li>
-                    </ul>
-                    <div class="med-disclaimer">Не является лекарственным средством. Натуральный состав.</div>
-                </div>
+        <!-- Кнопки управления слайдером -->
+        <div class="catalog-header-row">
+            <div class="slider-controls">
+                <button class="slider-arrow" id="prevBtn" title="Назад">&#10094;</button>
+                <button class="slider-arrow" id="nextBtn" title="Вперед">&#10095;</button>
             </div>
-
-            <!-- MiMAX -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img src="mimax.jpg" alt="MiMAX">
-                </div>
-                <div class="product-content">
-                    <h2 class="product-title">MiMAX</h2>
-                    <p class="product-tagline">Супермощный продукт для омоложения и блокировки процессов старения!</p>
-                    <p>Растительная смесь с высочайшими антиоксидантными свойствами. Содержит астаксантин, действие которого в 6000 раз сильнее витамина С.</p>
-                    
-                    <div class="section-sub">Польза для здоровья:</div>
-                    <ul class="benefits-list">
-                        <li>Глубокое клеточное омоложение и защита ДНК от повреждений</li>
-                        <li>Мощное природное противовоспалительное средство</li>
-                        <li>Укрепление функций сердца, печени и повышение иммунитета</li>
-                        <li>Защита, улучшение зрения и устранение усталости глаз</li>
-                        <li>Улучшение метаболизма и общего состояния кожи</li>
-                    </ul>
-
-                    <div class="section-sub">Основные компоненты:</div>
-                    <ul class="ingredients-list">
-                        <li><strong>Астаксантин:</strong> Сильнейший антиоксидант для мозга, глаз и кожи.</li>
-                        <li><strong>Экстракт ягод облепихи:</strong> Источник Омега-3,6,7,9 для сердца и ЖКТ.</li>
-                        <li><strong>Экстракт сосновой коры:</strong> Снижает воспаления, регулирует глюкозу.</li>
-                        <li><strong>Ресвератрол (Виноградные косточки):</strong> Улучшает кровообращение.</li>
-                    </ul>
-                    <div class="med-disclaimer">Не является лекарственным средством. Натуральный состав.</div>
-                </div>
-            </div>
-
-            <!-- BluMAX -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img src="blumax.jpg" alt="BluMAX">
-                </div>
-                <div class="product-content">
-                    <h2 class="product-title">BluMAX</h2>
-                    <p class="product-tagline">Поддержка здорового развития, чистка сосудов и защита мозга!</p>
-                    <p>Уникальный комплекс на основе сине-зеленых водорослей (AFA) и шампиньонов, содержащий более 60 минералов и комплекс нейропептидов.</p>
-                    
-                    <div class="section-sub">Польза для здоровья:</div>
-                    <ul class="benefits-list">
-                        <li>Восстановление от гипоксии мозга и вывод тяжелых металлов</li>
-                        <li>Разжижение крови, растворение тромбов, укрепление сосудов</li>
-                        <li>Повышение гемоглобина за счет высокого содержания органического железа</li>
-                        <li>Помощь при онкозаболеваниях (легче переносятся химия и лучевая терапия)</li>
-                        <li>Снижение алкогольной и табачной зависимостей</li>
-                    </ul>
-
-                    <div class="section-sub">Основные компоненты:</div>
-                    <ul class="ingredients-list">
-                        <li><strong>Водоросли (AFA):</strong> Активируют иммунные клетки, содержат ФЭА для улучшения памяти и настроения.</li>
-                        <li><strong>Витамин C:</strong> Высокоэффективный антиоксидант для стимуляции лейкоцитов.</li>
-                    </ul>
-                    <div class="med-disclaimer">Рекомендуется при нарушениях работы печени, щитовидной железы, артритах.</div>
-                </div>
-            </div>
-
-            <!-- NutriMAX -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img src="nutrimax.jpg" alt="NutriMAX">
-                </div>
-                <div class="product-content">
-                    <h2 class="product-title">NutriMAX</h2>
-                    <p class="product-tagline">Полноценное клеточное питание и здоровая замена пищи!</p>
-                    <p>Комбинация растительных белков, щелочного мультизеленого порошка, органического кальция морских водорослей и пребиотиков.</p>
-                    
-                    <div class="section-sub">Польза для здоровья:</div>
-                    <ul class="benefits-list">
-                        <li>Увеличение мышечной массы, регенерация клеток и тканей</li>
-                        <li>Укрепление костной ткани и зубов</li>
-                        <li>Помощь в управлении весом (при ожирении или дефиците веса)</li>
-                        <li>Очищение организма от токсинов, снижение холестерина</li>
-                        <li>Идеально для вегетарианцев, спортсменов, пожилых людей и детей</li>
-                    </ul>
-
-                    <div class="section-sub">Основные компоненты:</div>
-                    <ul class="ingredients-list">
-                        <li><strong>Спирулина & Хлорелла:</strong> Беспрецедентное содержание белка, витаминов группы B и йода.</li>
-                        <li><strong>Люцерна:</strong> Блокирует плохой холестерин, дает лимфодренажный эффект.</li>
-                        <li><strong>Экстракт травы ячменя:</strong> Содержит селен и медь для кроветворения.</li>
-                    </ul>
-                    <div class="med-disclaimer">Полноценный питательный и фитнес-напиток.</div>
-                </div>
-            </div>
-
-            <!-- KordyMAX -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img src="kordymax.jpg" alt="KordyMAX">
-                </div>
-                <div class="product-content">
-                    <h2 class="product-title">KordyMAX</h2>
-                    <p class="product-tagline">Микроэкологический функциональный напиток на основе Кордицепса!</p>
-                    <p>Инновационный ботанический микс с 16 видами аминокислот, питательным раствором для клеток человека и свободным селеном.</p>
-                    
-                    <div class="section-sub">Польза для здоровья:</div>
-                    <ul class="benefits-list">
-                        <li>Мощный прямой противоопухолевый эффект (содержит кордицепин)</li>
-                        <li>Восстановление поврежденной печени (жировой гепатоз, цирроз, гепатиты)</li>
-                        <li>Регулирование и улучшение функций почек</li>
-                        <li>Повышение митохондриальной клеточной энергии, устранение хронической усталости</li>
-                        <li>Стабилизация работы сердца и нормализация уровня липидов в крови</li>
-                    </ul>
-                    <div class="med-disclaimer">Используются изолированные виды Cordyceps sinensis, выращенные по биоинженерным технологиям.</div>
-                </div>
-            </div>
-
-            <!-- Ye-Katerina -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img src="yekaterina.jpg" alt="Ye-Katerina">
-                </div>
-                <div class="product-content">
-                    <h2 class="product-title">Ye-Katerina</h2>
-                    <p class="product-tagline">Природный заслон против женских заболеваний и дискомфорта!</p>
-                    <p>100% натуральный гель для женской интимной гигиены со специально подобранным составом целебных трав Малайзии.</p>
-                    
-                    <div class="section-sub">Польза для здоровья:</div>
-                    <ul class="benefits-list">
-                        <li>Профилактика застойных образований (миомы, кисты, мастопатия)</li>
-                        <li>Защита и устранение молочницы, цистита, вагинального зуда</li>
-                        <li>Мгновенный сужающий эффект, возвращение эластичности и тонуса мышц</li>
-                        <li>Регулирование гормонального баланса и менструального цикла</li>
-                        <li>Помощь при опущении матки, заживление эрозий</li>
-                    </ul>
-
-                    <div class="section-sub">Состав:</div>
-                    <ul class="ingredients-list">
-                        <li><strong>Касип Фатима:</strong> Улучшает тонус мышц, обладает противоопухолевым эффектом.</li>
-                        <li><strong>Пуэрария Дольчатая:</strong> Оздоравливает половую сферу, стимулирует коллаген.</li>
-                        <li><strong>Дубовые Галлы:</strong> Восстанавливают эластичность стенок влагалища.</li>
-                        <li><strong>Экстракт чеснока & Лаванда:</strong> Антисептический и антибактериальный барьер.</li>
-                    </ul>
-                    <div class="med-disclaimer">Идеальное средство для здоровья и личной гигиены женщины.</div>
-                </div>
-            </div>
-
-            <!-- MachoMAN -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img src="machoman.jpg" alt="MachoMAN">
-                </div>
-                <div class="product-content">
-                    <h2 class="product-title">MachoMAN</h2>
-                    <p class="product-tagline">Премиальное клеточное питание для восстановления мужской силы!</p>
-                    <p>Порошкообразная биоактивная форма для приема внутрь. Направлен на полную активацию и поддержку мужского здоровья.</p>
-                    
-                    <div class="section-sub">Польза для здоровья:</div>
-                    <ul class="benefits-list">
-                        <li>Идеальное решение проблем с импотенцией и её предотвращение</li>
-                        <li>Улучшение качества, подвижности и количества сперматозоидов</li>
-                        <li>Нормализация естественного уровня тестостерона</li>
-                        <li>Эффективная профилактика заболеваний и рака простаты</li>
-                        <li>Повышение выносливости, энергии и сексуальной активности</li>
-                    </ul>
-                    <div class="med-disclaimer">Натуральный мужской биоактивный комплекс.</div>
-                </div>
-            </div>
-
-            <!-- FlexiMAX -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img src="fleximax.jpg" alt="FlexiMAX">
-                </div>
-                <div class="product-content">
-                    <h2 class="product-title">FlexiMAX</h2>
-                    <p class="product-tagline">Свобода движения — укрепление суставов, костей и снятие воспалений!</p>
-                    <p>100% натуральное высокоэффективное средство для устранения болевых синдромов при артритах, артрозах и дегенеративных изменениях.</p>
-                    
-                    <div class="section-sub">Польза для здоровья:</div>
-                    <ul class="benefits-list">
-                        <li>Быстрое облегчение болевого синдрома и отеков в суставах</li>
-                        <li>Питание хрящевой ткани и смазка суставов</li>
-                        <li>Выведение токсинов тяжелых металлов за 1-2 месяца</li>
-                        <li>Помощь при поражениях печени (гепатиты, ожирение печени)</li>
-                        <li>Снижение риска развития онкопроцессов, замедление старения</li>
-                    </ul>
-
-                    <div class="section-sub">Состав:</div>
-                    <ul class="ingredients-list">
-                        <li><strong>Экстракт кукурузы:</strong> Растительный глюкозамин для питания хрящей.</li>
-                        <li><strong>Экстракт морского салата:</strong> Натуральный хондроитин из водорослей.</li>
-                        <li><strong>Гиалуроновая кислота:</strong> Рост новых клеток костей и хрящей.</li>
-                        <li><strong>Экстракт куркумы (Турмерик):</strong> Водорастворимый куркумин против воспалений.</li>
-                        <li><strong>Витамин Д:</strong> Повышает плотность костной ткани.</li>
-                    </ul>
-                    <div class="med-disclaimer">💡 Совет эксперта: Для максимального результата рекомендуется принимать совместно с BluMAX.</div>
-                </div>
-            </div>
-
-            <!-- MiCRYSTAL -->
-            <div class="product-card">
-                <div class="product-img-box">
-                    <img src="micrystal.jpg" alt="MiCRYSTAL">
-                </div>
-                <div class="product-content">
-                    <h2 class="product-title">MiCRYSTAL</h2>
-                    <p class="product-tagline">Клеточное питание для абсолютного здоровья ваших глаз!</p>
-                    <p>100% натуральная ботаническая смесь в порошковой форме для быстрого восстановления органов зрения.</p>
-                    
-                    <div class="section-sub">Польза для здоровья:</div>
-                    <ul class="benefits-list">
-                        <li>Эффективно снижает опасное внутриглазное давление</li>
-                        <li>Быстро снимает покраснения, резь и дискомфорт в глазах</li>
-                        <li>Защищает сетчатку от пагубного воздействия экранов телефонов и ПК</li>
-                        <li>Профилактика возрастных изменений зрения</li>
-                    </ul>
-
-                    <div class="section-sub">Основные компоненты:</div>
-                    <ul class="ingredients-list">
-                        <li><strong>Экстракт бузины:</strong> Природный источник антоцианов для сосудов глаз.</li>
-                        <li><strong>ФлораГЛО (Лютеин):</strong> Запатентованный компонент для защиты сетчатки.</li>
-                        <li><strong>Астаксантин:</strong> Глубокая антиоксидантная защита зрительного нерва.</li>
-                    </ul>
-                    <div class="med-disclaimer">Удобная форма приема: можно запивать водой или разводить в стакане.</div>
-                </div>
-            </div>
-
         </div>
+
+        <!-- Контейнер слайдера -->
+        <div class="slider-container" id="sliderContainer">
+            <div class="catalog-grid">
+
+                <!-- GreenMAX -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="greenmax.jpg" alt="GreenMAX">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">GreenMAX</h2>
+                        <p class="product-tagline">Эксклюзивный детокс, очищение, обновление и омоложение всего организма!</p>
+                        <p class="product-description">100% чистая растительная клетчатка с пробиотиком и экстрактом расторопши. Специально запатентованная формула 3 в 1 для ухода за толстой кишкой.</p>
+                        
+                        <div class="section-sub">Польза для здоровья:</div>
+                        <ul class="benefits-list">
+                            <li>Очищает кишечник от застойных каловых масс</li>
+                            <li>Профилактика и эффективное лечение запоров</li>
+                            <li>Убирает висцеральный жир, способствует сбросу веса</li>
+                            <li>Помогает справиться с жировым гепатозом печени</li>
+                            <li>Регулирует уровень сахара и холестерина в крови</li>
+                        </ul>
+
+                        <div class="section-sub">Основные компоненты:</div>
+                        <ul class="ingredients-list">
+                            <li><strong>Шелуха Подорожника:</strong> Мягко очищает ЖКТ.</li>
+                            <li><strong>Расторопша:</strong> Защита и восстановление клеток печени.</li>
+                            <li><strong>Пробиотик:</strong> Поддерживает баланс бактерий и иммунитет.</li>
+                            <li><strong>KiOnutrime-Cs & Моросил:</strong> Управление весом.</li>
+                        </ul>
+                        <div class="med-disclaimer">Не является лекарственным средством. Натуральный состав.</div>
+                    </div>
+                </div>
+
+                <!-- MiMAX -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="mimax.jpg" alt="MiMAX">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">MiMAX</h2>
+                        <p class="product-tagline">Супермощный продукт для омоложения и блокировки процессов старения!</p>
+                        <p class="product-description">Растительная смесь с высочайшими антиоксидантными свойствами. Содержит астаксантин, действие которого в 6000 раз сильнее витамина С.</p>
+                        
+                        <div class="section-sub">Польза для здоровья:</div>
+                        <ul class="benefits-list">
+                            <li>Глубокое клеточное омоложение и защита ДНК</li>
+                            <li>Мощное природное противовоспалительное средство</li>
+                            <li>Укрепление функций сердца, печени и иммунитета</li>
+                            <li>Защита, улучшение зрения и устранение усталости глаз</li>
+                        </ul>
+
+                        <div class="section-sub">Основные компоненты:</div>
+                        <ul class="ingredients-list">
+                            <li><strong>Астаксантин:</strong> Сильнейший антиоксидант для всего тела.</li>
+                            <li><strong>Экстракт ягод облепихи:</strong> Источник Омега-3,6,7,9 для сосудов.</li>
+                            <li><strong>Экстракт сосновой коры:</strong> Снижает внутренние воспаления.</li>
+                            <li><strong>Ресвератрол:</strong> Улучшает общее микроциркуляторное русло.</li>
+                        </ul>
+                        <div class="med-disclaimer">Не является лекарственным средством. Натуральный состав.</div>
+                    </div>
+                </div>
+
+                <!-- BluMAX -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="blumax.jpg" alt="BluMAX">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">BluMAX</h2>
+                        <p class="product-tagline">Поддержка здорового развития, чистка сосудов и защита мозга!</p>
+                        <p class="product-description">Уникальный комплекс на основе сине-зеленых водорослей (AFA) и шампиньонов, содержащий более 60 минералов и комплекс нейропептидов.</p>
+                        
+                        <div class="section-sub">Польза для здоровья:</div>
+                        <ul class="benefits-list">
+                            <li>Восстановление от гипоксии мозга и вывод металлов</li>
+                            <li>Разжижение крови, профилактика тромбообразования</li>
+                            <li>Повышение гемоглобина (органическое железо)</li>
+                            <li>Легче переносятся жесткие виды терапии (химия)</li>
+                        </ul>
+
+                        <div class="section-sub">Основные компоненты:</div>
+                        <ul class="ingredients-list">
+                            <li><strong>Водоросли (AFA):</strong> Активируют естественные иммунные клетки.</li>
+                            <li><strong>Витамин C:</strong> Высокоэффективный антиоксидантный щит.</li>
+                        </ul>
+                        <div class="med-disclaimer">Рекомендуется при нарушениях работы печени и суставов.</div>
+                    </div>
+                </div>
+
+                <!-- NutriMAX -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="nutrimax.jpg" alt="NutriMAX">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">NutriMAX</h2>
+                        <p class="product-tagline">Полноценное клеточное питание и здоровая замена пищи!</p>
+                        <p class="product-description">Комбинация качественных растительных белков, щелочного мультизеленого порошка, органического кальция и пребиотиков.</p>
+                        
+                        <div class="section-sub">Польза для здоровья:</div>
+                        <ul class="benefits-list">
+                            <li>Регенерация тканей и стабильное увеличение мышечной массы</li>
+                            <li>Укрепление костной структуры скелета и зубов</li>
+                            <li>Помощь в сбалансированном управлении весом тела</li>
+                            <li>Очищение лимфы от токсинов, снижение холестерина</li>
+                        </ul>
+
+                        <div class="section-sub">Основные компоненты:</div>
+                        <ul class="ingredients-list">
+                            <li><strong>Спирулина & Хлорелла:</strong> Комплекс растительного белка и йода.</li>
+                            <li><strong>Люцерна:</strong> Блокирует вредные фракции липидов.</li>
+                            <li><strong>Экстракт травы ячменя:</strong> Важный селен и медь для крови.</li>
+                        </ul>
+                        <div class="med-disclaimer">Полноценный питательный восстановительный напиток.</div>
+                    </div>
+                </div>
+
+                <!-- KordyMAX -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="kordymax.jpg" alt="KordyMAX">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">KordyMAX</h2>
+                        <p class="product-tagline">Микроэкологический функциональный напиток на основе Кордицепса!</p>
+                        <p class="product-description">Инновационный ботанический микс с 16 видами ценных аминокислот, питательным раствором для клеток и свободным селеном.</p>
+                        
+                        <div class="section-sub">Польза для здоровья:</div>
+                        <ul class="benefits-list">
+                            <li>Мощный прямой онкопротекторный эффект (кордицепин)</li>
+                            <li>Восстановление паренхимы печени (гепатиты, гепатозы)</li>
+                            <li>Регулирование и улучшение выделительной функции почек</li>
+                            <li>Повышение митохондриальной энергии клеток</li>
+                        </ul>
+                        <div class="med-disclaimer">Используются высшие изолированные виды Cordyceps sinensis.</div>
+                    </div>
+                </div>
+
+                <!-- Ye-Katerina -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="yekaterina.jpg" alt="Ye-Katerina">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">Ye-Katerina</h2>
+                        <p class="product-tagline">Природный заслон против женских заболеваний и дискомфорта!</p>
+                        <p class="product-description">100% натуральный гель для женской интимной гигиены со специально подобранным составом целебных трав Малайзии.</p>
+                        
+                        <div class="section-sub">Польза для здоровья:</div>
+                        <ul class="benefits-list">
+                            <li>Профилактика застойных явлений (миомы, кисты, мастопатия)</li>
+                            <li>Защита от молочницы, цистита, бактериального вагинального зуда</li>
+                            <li>Мгновенный сужающий эффект, возвращение тонуса мышц</li>
+                            <li>Регулирование гормонального баланса женской сферы</li>
+                        </ul>
+
+                        <div class="section-sub">Состав:</div>
+                        <ul class="ingredients-list">
+                            <li><strong>Касип Фатима:</strong> Улучшает тонус мышц малого таза.</li>
+                            <li><strong>Пуэрария Дольчатая:</strong> Оздоравливает ткани, стимулирует коллаген.</li>
+                            <li><strong>Дубовые Галлы:</strong> Восстанавливают эластичность стенок.</li>
+                            <li><strong>Экстракт чеснока & Лаванда:</strong> Природный антибактериальный барьер.</li>
+                        </ul>
+                        <div class="med-disclaimer">Идеальное средство для личного здоровья женщины.</div>
+                    </div>
+                </div>
+
+                <!-- MachoMAN -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="machoman.jpg" alt="MachoMAN">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">MachoMAN</h2>
+                        <p class="product-tagline">Премиальное клеточное питание для восстановления мужской силы!</p>
+                        <p class="product-description">Порошкообразная биоактивная форма для приема внутрь. Направлен на полную активацию и поддержку мужской репродуктивной системы.</p>
+                        
+                        <div class="section-sub">Польза для здоровья:</div>
+                        <ul class="benefits-list">
+                            <li>Профилактика и эффективное решение проблем с потенцией</li>
+                            <li>Улучшение качества, подвижности сперматозоидов</li>
+                            <li>Нормализация выработки естественного тестостерона</li>
+                            <li>Профилактика аденомы и застойных процессов простаты</li>
+                        </ul>
+                        <div class="med-disclaimer">Натуральный мужской биоактивный комплекс нового поколения.</div>
+                    </div>
+                </div>
+
+                <!-- FlexiMAX -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="fleximax.jpg" alt="FlexiMAX">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">FlexiMAX</h2>
+                        <p class="product-tagline">Свобода движения — укрепление суставов, костей и снятие воспалений!</p>
+                        <p class="product-description">100% натуральное высокоэффективное средство для устранения болевых синдромов при артритах, артрозах и дегенеративных изменениях хрящей.</p>
+                        
+                        <div class="section-sub">Польза для здоровья:</div>
+                        <ul class="benefits-list">
+                            <li>Быстрое облегчение болевого синдрома и отеков суставов</li>
+                            <li>Глубокое питание хрящевой ткани, выработка синовиальной смазки</li>
+                            <li>Выведение тяжелых металлов и солей из организма</li>
+                            <li>Снижение рисков деструктивных изменений костей</li>
+                        </ul>
+
+                        <div class="section-sub">Состав:</div>
+                        <ul class="ingredients-list">
+                            <li><strong>Экстракт кукурузы:</strong> Растительный биодоступный глюкозамин.</li>
+                            <li><strong>Экстракт морского салата:</strong> Натуральный природный хондроитин.</li>
+                            <li><strong>Гиалуроновая кислота:</strong> Ускорение регенерации элементов матрикса.</li>
+                            <li><strong>Экстракт куркумы:</strong> Мощный противовоспалительный эффект.</li>
+                            <li><strong>Витамин Д:</strong> Фиксация кальция в костной структуре.</li>
+                        </ul>
+                        <div class="med-disclaimer">💡 Совет эксперта: Для максимального результата рекомендуется принимать совместно с BluMAX.</div>
+                    </div>
+                </div>
+
+                <!-- MiCRYSTAL -->
+                <div class="product-card">
+                    <div class="product-img-box">
+                        <img src="micrystal.jpg" alt="MiCRYSTAL">
+                    </div>
+                    <div class="product-content">
+                        <h2 class="product-title">MiCRYSTAL</h2>
+                        <p class="product-tagline">Клеточное питание для абсолютного здоровья ваших глаз!</p>
+                        <p class="product-description">100% натуральная ботаническая смесь в микропорошковой форме для быстрого восстановления зрительного аппарата.</p>
+                        
+                        <div class="section-sub">Польза для здоровья:</div>
+                        <ul class="benefits-list">
+                            <li>Эффективно снижает патологическое внутриглазное давление</li>
+                            <li>Быстро снимает покраснения, резь и усталость глаз от экранов</li>
+                            <li>Защищает сетчатку от пагубного воздействия синего спектра</li>
+                            <li>Замедляет возрастную дегенерацию макулы глаза</li>
+                        </ul>
+
+                        <div class="section-sub">Основные компоненты:</div>
+                        <ul class="ingredients-list">
+                            <li><strong>Экстракт бузины:</strong> Укрепление тонких капилляров глазного дна.</li>
+                            <li><strong>ФлораГЛО (Лютеин):</strong> Запатентованный щит сетчатки.</li>
+                            <li><strong>Астаксантин:</strong> Антиоксидантная защита зрительного нерва.</li>
+                        </ul>
+                        <div class="med-disclaimer">Удобная форма приема: можно запивать водой или рассасывать.</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Индикаторы точек пагинации -->
+        <div class="slider-dots" id="sliderDots"></div>
     </div>
 
-    <!-- Индикаторы точек пагинации под каруселью -->
-    <div class="slider-dots" id="sliderDots"></div>
-</div>
+    <!-- КНОПКА WHATSAPP (Единый номер телефона команды) -->
+    <a href="https://wa.me/77758501213?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5%20%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BA%D1%83%20%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D0%B8%20M%20International" class="whatsapp-btn" target="_blank" title="Связаться в WhatsApp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.966C16.528 1.975 14.067 1.953 11.91 1.953c-5.438 0-9.863 4.374-9.867 9.803-.001 1.73.457 3.419 1.323 4.922l-.994 3.63 3.685-.954zm10.963-7.293c-.3-.149-1.77-.872-2.044-.973-.274-.101-.474-.149-.673.149-.198.298-.768.973-.943 1.171-.175.198-.349.223-.648.074-.3-.149-1.265-.464-2.41-1.477-.89-.789-1.492-1.764-1.666-2.062-.175-.298-.019-.459.13-.608.134-.134.3-.349.449-.523.149-.174.199-.298.299-.497.099-.198.05-.372-.025-.521-.075-.149-.674-1.62-.922-2.21-.242-.578-.487-.5-.673-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.77-.723 2.018-1.412.249-.688.249-1.278.174-1.411-.074-.134-.272-.223-.571-.372z"/>
+        </svg>
+    </a>
 
-<!-- ========================================== -->
-<!-- КНОПКА WHATSAPP (НЕ ЗАБУДЬ ВСТАВИТЬ СВОЙ НОМЕР) -->
-<!-- ========================================== -->
-<!-- Вместо 77771112233 пропиши свой реальный номер телефона, начиная с 7 (без плюса) -->
-<a href="https://wa.me/77771112233?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5%20%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BA%D1%83%20%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D0%B8%20M%20International" class="whatsapp-btn" target="_blank" title="Связаться в WhatsApp">
-    <svg class="whatsapp-icon" viewBox="0 0 24 24">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.966C16.528 1.975 14.067 1.953 11.91 1.953c-5.438 0-9.863 4.374-9.867 9.803-.001 1.73.457 3.419 1.323 4.922l-.994 3.63 3.685-.954zm10.963-7.293c-.3-.149-1.77-.872-2.044-.973-.274-.101-.474-.149-.673.149-.198.298-.768.973-.943 1.171-.175.198-.349.223-.648.074-.3-.149-1.265-.464-2.41-1.477-.89-.789-1.492-1.764-1.666-2.062-.175-.298-.019-.459.13-.608.134-.134.3-.349.449-.523.149-.174.199-.298.299-.497.099-.198.05-.372-.025-.521-.075-.149-.674-1.62-.922-2.21-.242-.578-.487-.5-.673-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.77-.723 2.018-1.412.249-.688.249-1.278.174-1.411-.074-.134-.272-.223-.571-.372z"/>
-    </svg>
-</a>
+    <!-- ФУТЕР В ТОМ ЖЕ СТИЛЕ -->
+    <footer>
+        <p>&copy; 2026 M INTERNATIONAL. Все материалы защищены официальным регламентом компании.</p>
+    </footer>
 
-<script>
-    const container = document.getElementById('sliderContainer');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dotsContainer = document.getElementById('sliderDots');
-    const cards = document.querySelectorAll('.product-card');
+    <!-- Логика работы слайдера-карусели -->
+    <script>
+        const container = document.getElementById('sliderContainer');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('sliderDots');
+        const cards = document.querySelectorAll('.product-card');
 
-    function getScrollStep() {
-        if (cards.length > 0) {
-            return cards[0].offsetWidth + 30;
+        function getScrollStep() {
+            if (cards.length > 0) {
+                return cards[0].offsetWidth + 30; // Ширина карточки + gap
+            }
+            return 390;
         }
-        return 390;
-    }
 
-    nextBtn.addEventListener('click', () => {
-        container.scrollLeft += getScrollStep();
-    });
+        nextBtn.addEventListener('click', () => {
+            container.scrollLeft += getScrollStep();
+        });
 
-    prevBtn.addEventListener('click', () => {
-        container.scrollLeft -= getScrollStep();
-    });
+        prevBtn.addEventListener('click', () => {
+            container.scrollLeft -= getScrollStep();
+        });
 
-    function createDots() {
-        dotsContainer.innerHTML = '';
-        cards.forEach((_, idx) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (idx === 0) dot.classList.add('active');
-            
-            dot.addEventListener('click', () => {
-                container.scrollLeft = idx * getScrollStep();
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            cards.forEach((_, idx) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (idx === 0) dot.classList.add('active');
+                
+                dot.addEventListener('click', () => {
+                    container.scrollLeft = idx * getScrollStep();
+                });
+                dotsContainer.appendChild(dot);
             });
-            dotsContainer.appendChild(dot);
-        });
-    }
+        }
 
-    container.addEventListener('scroll', () => {
-        const step = getScrollStep();
-        const activeIdx = Math.round(container.scrollLeft / step);
-        const dots = dotsContainer.querySelectorAll('.dot');
-        dots.forEach((dot, i) => {
-            if (i === activeIdx) dot.classList.add('active');
-            else dot.classList.remove('active');
+        container.addEventListener('scroll', () => {
+            const step = getScrollStep();
+            const activeIdx = Math.round(container.scrollLeft / step);
+            const dots = dotsContainer.querySelectorAll('.dot');
+            dots.forEach((dot, i) => {
+                if (i === activeIdx) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
         });
-    });
 
-    createDots();
-</script>
+        createDots();
+    </script>
 </body>
 </html>
