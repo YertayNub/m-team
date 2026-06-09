@@ -47,6 +47,15 @@
         .terms-box ul li { color: #E2E8F0; font-size: 14px; font-weight: 300; margin-bottom: 6px; }
         .terms-box ul li strong { color: var(--gold-light); }
 
+        /* Горящая акция */
+        .promo-box { background: linear-gradient(135deg, rgba(91, 45, 142, 0.3) 0%, rgba(201, 168, 74, 0.1) 100%); border: 1px solid var(--gold); padding: 25px; border-radius: 16px; margin-bottom: 40px; position: relative; overflow: hidden; }
+        .promo-box h4 { font-family: 'Cormorant Garamond', serif; color: #FFF; font-size: 24px; margin-bottom: 8px; display: flex; align-items: center; }
+        .promo-box h4 span { color: var(--gold); margin-right: 10px; }
+
+        /* Видео-контейнер */
+        .video-wrapper { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-glass); box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin-bottom: 40px; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
         /* Роскошные интерактивные таблицы */
         .table-responsive { overflow-x: auto; margin-bottom: 40px; border: 1px solid var(--border-glass); border-radius: 16px; box-shadow: 0 10px 30px rgba(15, 26, 52, 0.4); background: rgba(26, 42, 80, 0.2); backdrop-filter: blur(10px); }
         table { width: 100%; border-collapse: collapse; text-align: left; }
@@ -99,6 +108,26 @@
             </ul>
         </div>
 
+        <div class="promo-box">
+            <h4><span>🔥</span> ГОРЯЧЕЕ ОКНО ВОЗМОЖНОСТЕЙ: АКТИВНОСТЬ ДО КОНЦА ГОДА!</h4>
+            <p style="margin-bottom: 0; color: #FFF; font-weight: 400;">
+                Стандартный регламент платформы требует активации аккаунта раз в 45 дней. 
+                <strong>Но прямо сейчас действует стратегическая акция:</strong> все партнеры, активировавшие свой бизнес-пакет в текущий период, освобождаются от повторных закупок — ваш личный кабинет останется полностью активным для получения всех командных бонусов <strong>до конца 2026 года!</strong>
+            </p>
+        </div>
+
+        <h2>Видео-презентация бизнес-возможностей</h2>
+        <p>Посмотрите подробный видео-разбор маркетинг-плана, стратегий быстрого старта и командной работы:</p>
+        
+        <div class="video-wrapper">
+            <iframe 
+                src="https://www.youtube.com/embed/КОД_ВАШЕГО_ВИДЕО" 
+                title="Маркетинг-план M International" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
         <h2>1. Бизнес-Пакеты и Наполнение</h2>
         <p>Регистрация на платформе адаптирована под любые финансовые цели — от личного потребления клеточного питания до построения глобального сетевого склада:</p>
 
@@ -125,6 +154,7 @@
                         <td>400 BV</td>
                         <td>10 флагманских продуктов</td>
                     </tr>
+                    <div class="test"></div>
                     <tr class="highlight-row">
                         <td><strong>Mobile</strong> (Мобильный Дистрибьютор)</td>
                         <td>1100 CP</td>
@@ -141,7 +171,19 @@
             </table>
         </div>
 
-        <h2>2. Премиальные Доходные Бонусы</h2>
+        <h2>2. Схематичный разбор Бинарного дохода</h2>
+        <p>Бинарная система M International построена на командном взаимодействии. Вы развиваете всего две бизнес-ветки — левую и правую:</p>
+        
+        <div class="bonus-card" style="border-left: 4px solid var(--gold);">
+            <h3>Как работает командный (бинарный) бонус:</h3>
+            <p>Все партнеры, которых приглашаете вы и ваша команда, распределяются в левую или правую сторону. Вы получаете фиксированный лидерский процент с товарооборота (BV) вашего меньшего бизнес-направления.</p>
+            <ul style="list-style: none; padding-left: 20px; font-size: 15px; color: #CBD5E0;">
+                <li style="margin-bottom: 8px;">📊 <strong>Накопительная система:</strong> Баллы в вашей большой ветке никогда не сгорают и не обнуляются в конце календарного месяца, а накапливаются до момента расчета.</li>
+                <li>🚀 <strong>Бесконечная глубина:</strong> Вы получаете доход со всей глубины структуры, независимо от того, кто именно из партнеров пригласил человека.</li>
+            </ul>
+        </div>
+
+        <h2>3. Премиальные Доходные Бонусы</h2>
         
         <div class="bonus-card">
             <h3>Реферальный бонус личных продаж</h3>
@@ -153,7 +195,7 @@
             <p>Премиальный пассивный доход в размере <strong>5% от BV</strong> за рекомендации, сделанные партнерами вашей первой линии. Открывается автоматически для статусов <strong>Mobile</strong> и <strong>Supreme</strong>.</p>
         </div>
 
-        <h2>3. Лидерский кумулятивный бонус (2% от бинара)</h2>
+        <h2>4. Лидерский кумулятивный бонус (2% от бинара)</h2>
         <p>Профессиональный пассивный чек, выплачиваемый 1-го числа каждого месяца. Вы получаете фиксированные <strong>2% от бинарных доходов всей вашей глубины</strong>. Масштаб охвата зависит от вашего ранга:</p>
 
         <div class="table-responsive">
@@ -205,9 +247,9 @@
 
     <footer>
      <p style="font-size: 13px; color: #718096; margin-top: 10px;">
-    © 2026 M International Казахстан. Официальное представительство в г. Актобе. <br>
-    Работаем удаленно и доставляем продукцию по всему миру.
-</p>
+        © 2026 M International Казахстан. Официальное представительство в г. Актобе. <br>
+        Работаем удаленно и доставляем продукцию по всему миру.
+    </p>
     </footer>
 
 </body>
