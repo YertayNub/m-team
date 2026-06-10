@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO-МЕТАТЕГИ ДЛЯ ПРОДВИЖЕНИЯ -->
     <title>Купить GreenMAX, BluMAX, FlexiMAX в Актобе — Каталог M International</title>
     <meta name="description" content="Официальный каталог продукции клеточного питания M International в Казахстане. Купить GreenMAX, MiMAX, BluMAX, NutriMAX по выгодной цене. Детокс, омоложение и восстановление организма.">
     <meta name="keywords" content="m international, клеточное питание, greenmax, mimax, blumax, nutrimax, kordymax, yekaterina, machoman, fleximax, micrystal">
     <meta name="robots" content="index, follow">
     
-    <!-- Подключение премиальных шрифтов, как на маркетинге -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
@@ -309,6 +307,7 @@
             justify-content: center;
             gap: 8px;
             margin-top: 30px;
+            margin-bottom: 50px;
         }
         .dot {
             width: 8px;
@@ -324,7 +323,164 @@
             border-radius: 4px;
         }
 
-        /* ПЛАВАЮЩЕЙ КНОПКА WHATSAPP */
+        /* ========================================== */
+        /* СТИЛИ ДЛЯ НОВОГО БЛОКА СТОИМОСТИ (ПРАЙС)   */
+        /* ========================================== */
+        .price-section {
+            margin-top: 40px;
+            margin-bottom: 60px;
+            background: var(--glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 40px 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .price-title-box {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        .price-section h2 {
+            font-size: 36px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: #FFF;
+        }
+        .price-section .subtitle {
+            font-size: 15px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+        .table-wrapper {
+            overflow-x: auto;
+        }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 15px;
+        }
+        .price-table th {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--gold-light);
+            border-bottom: 2px solid rgba(201, 168, 74, 0.3);
+            padding: 15px 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .price-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--border-glass);
+            color: #CBD5E0;
+            font-weight: 300;
+        }
+        .price-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: #FFF;
+        }
+        .product-name-td {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #FFF;
+        }
+        .price-td {
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 16px;
+        }
+        .pv-badge {
+            background: rgba(91, 45, 142, 0.3);
+            border: 1px solid rgba(91, 45, 142, 0.6);
+            color: #E2E8F0;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            display: inline-block;
+        }
+        .price-notice {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #718096;
+            font-style: italic;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* ========================================== */
+        /* СТИЛИ ДЛЯ БЛОКА ВИДЕО-ОТЗЫВОВ              */
+        /* ========================================== */
+        .video-reviews-section {
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+        .reviews-title-box {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .video-reviews-section h2 {
+            font-size: 38px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .video-reviews-section .subtitle {
+            font-size: 14px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .video-card {
+            background: var(--glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: 0.3s ease;
+        }
+        .video-card:hover {
+            border-color: rgba(201, 168, 74, 0.2);
+            transform: translateY(-3px);
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* Пропорции 16:9 */
+            background-color: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .video-info {
+            padding: 20px;
+        }
+        .video-info h3 {
+            font-size: 22px;
+            color: #FFF;
+            margin-bottom: 8px;
+        }
+        .video-info p {
+            font-size: 14px;
+            color: #A0AEC0;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        /* ПЛАВАЮЩАЯ КНОПКА WHATSAPP */
         .whatsapp-btn {
             position: fixed;
             bottom: 30px;
@@ -378,6 +534,12 @@
         }
 
         /* Адаптивность для мобильных */
+        @media (max-width: 992px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
@@ -393,6 +555,19 @@
             }
             .header-banner h1 {
                 font-size: 32px;
+            }
+            .price-section {
+                padding: 30px 15px;
+            }
+            .price-table th, .price-table td {
+                padding: 12px 10px;
+                font-size: 14px;
+            }
+            .product-name-td {
+                font-size: 18px;
+            }
+            .video-grid {
+                grid-template-columns: 1fr;
             }
         }
         @media (max-width: 420px) {
@@ -415,7 +590,6 @@
 </head>
 <body>
 
-    <!-- НАВИГАЦИЯ (Точь-в-точь как на Маркетинге, активна кнопка Продукция) -->
     <nav>
         <a href="index.html" class="logo">M <span>INTERNATIONAL</span></a>
         <ul>
@@ -427,7 +601,6 @@
         </ul>
     </nav>
 
-    <!-- БАННЕР СТРАНИЦЫ -->
     <div class="header-banner">
         <h1>Линейка Клеточного Питания</h1>
         <p>Высокотехнологичные растительные комплексы для глубокого очищения, омоложения и восстановления организма</p>
@@ -435,13 +608,11 @@
 
     <div class="container">
 
-        <!-- Рекомендация эксперта в Luxury блоке -->
         <div class="terms-box">
             <h4>💡 Важная рекомендация эксперта по оздоровлению:</h4>
             <p>Перед любым курсом оздоровления, для получения максимальных результатов, необходимо правильно подготовить организм. Чтобы продукт полностью усвоился и работал непосредственно по проблеме, целесообразнее сначала очистить кишечник, печень и лимфу с помощью <strong>GreenMAX</strong> и <strong>MiMAX</strong>. Только после качественной детоксикации организма рекомендуется подключать профильные продукты восстановления.</p>
         </div>
 
-        <!-- Кнопки управления слайдером -->
         <div class="catalog-header-row">
             <div class="slider-controls">
                 <button class="slider-arrow" id="prevBtn" title="Назад">&#10094;</button>
@@ -449,11 +620,9 @@
             </div>
         </div>
 
-        <!-- Контейнер слайдера -->
         <div class="slider-container" id="sliderContainer">
             <div class="catalog-grid">
 
-                <!-- GreenMAX -->
                 <div class="product-card">
                     <div class="product-img-box">
                         <img src="greenmax.jpg" alt="GreenMAX">
@@ -483,7 +652,6 @@
                     </div>
                 </div>
 
-                <!-- MiMAX -->
                 <div class="product-card">
                     <div class="product-img-box">
                         <img src="mimax.jpg" alt="MiMAX">
@@ -512,7 +680,6 @@
                     </div>
                 </div>
 
-                <!-- BluMAX -->
                 <div class="product-card">
                     <div class="product-img-box">
                         <img src="blumax.jpg" alt="BluMAX">
@@ -539,7 +706,6 @@
                     </div>
                 </div>
 
-                <!-- NutriMAX -->
                 <div class="product-card">
                     <div class="product-img-box">
                         <img src="nutrimax.jpg" alt="NutriMAX">
@@ -567,7 +733,6 @@
                     </div>
                 </div>
 
-                <!-- KordyMAX -->
                 <div class="product-card">
                     <div class="product-img-box">
                         <img src="kordymax.jpg" alt="KordyMAX">
@@ -588,7 +753,6 @@
                     </div>
                 </div>
 
-                <!-- Ye-Katerina -->
                 <div class="product-card">
                     <div class="product-img-box">
                         <img src="yekaterina.jpg" alt="Ye-Katerina">
@@ -617,7 +781,6 @@
                     </div>
                 </div>
 
-                <!-- MachoMAN -->
                 <div class="product-card">
                     <div class="product-img-box">
                         <img src="machoman.jpg" alt="MachoMAN">
@@ -638,7 +801,6 @@
                     </div>
                 </div>
 
-                <!-- FlexiMAX -->
                 <div class="product-card">
                     <div class="product-img-box">
                         <img src="fleximax.jpg" alt="FlexiMAX">
@@ -658,8 +820,8 @@
 
                         <div class="section-sub">Состав:</div>
                         <ul class="ingredients-list">
-                            <li><strong>Экстракт кукурузы:</strong> Растительный биодоступный глюкозамин.</li>
-                            <li><strong>Экстракт морского салата:</strong> Натуральный природный хондроитин.</li>
+                            <li><strong>Экстракт кукурузы:</strong> Растительный глюкозамин.</li>
+                            <li><strong>Экстракт морского салата:</strong> Натуральный хондроитин.</li>
                             <li><strong>Гиалуроновая кислота:</strong> Ускорение регенерации элементов матрикса.</li>
                             <li><strong>Экстракт куркумы:</strong> Мощный противовоспалительный эффект.</li>
                             <li><strong>Витамин Д:</strong> Фиксация кальция в костной структуре.</li>
@@ -668,7 +830,6 @@
                     </div>
                 </div>
 
-                <!-- MiCRYSTAL -->
                 <div class="product-card">
                     <div class="product-img-box">
                         <img src="micrystal.jpg" alt="MiCRYSTAL">
@@ -699,157 +860,210 @@
             </div>
         </div>
 
-        <!-- Индикаторы точек пагинации -->
         <div class="slider-dots" id="sliderDots"></div>
+
+        <div class="price-section">
+            <div class="price-title-box">
+                <h2>Официальная стоимость продукции</h2>
+                <div class="subtitle">Прайс-лист для клиентов и партнеров компании</div>
+            </div>
+            <div class="table-wrapper">
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Продукт</th>
+                            <th>Объем / Комплектация</th>
+                            <th>Стоимость (₸)</th>
+                            <th>Балловая стоимость</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="product-name-td">GreenMAX</td>
+                            <td>1 упаковка (20 саше)</td>
+                            <td class="price-td">33 000 ₸</td>
+                            <td><span class="pv-badge">60 CP</span></td>
+                        </tr>
+                        <tr>
+                            <td class="product-name-td">MiMAX</td>
+                            <td>1 упаковка (20 саше)</td>
+                            <td class="price-td">33 000 ₸</td>
+                            <td><span class="pv-badge">60 CP</span></td>
+                        </tr>
+                        <tr>
+                            <td class="product-name-td">BluMAX</td>
+                            <td>1 упаковка (20 саше)</td>
+                            <td class="price-td">33 000 ₸</td>
+                            <td><span class="pv-badge">60 CP</span></td>
+                        </tr>
+                        <tr>
+                            <td class="product-name-td">NutriMAX</td>
+                            <td>1 упаковка (15 саше)</td>
+                            <td class="price-td">33 000 ₸</td>
+                            <td><span class="pv-badge">60 CP</span></td>
+                        </tr>
+                        <tr>
+                            <td class="product-name-td">KordyMAX</td>
+                            <td>1 упаковка (14 пузырьков)</td>
+                            <td class="price-td">33 000 ₸</td>
+                            <td><span class="pv-badge">60 CP</span></td>
+                        </tr>
+                        <tr>
+                            <td class="product-name-td">Ye-Katerina</td>
+                            <td>1 флакон (интим-гель 2 флакона)</td>
+                            <td class="price-td">33 000 ₸</td>
+                            <td><span class="pv-badge">60 CP</span></td>
+                        </tr>
+                        <tr>
+                            <td class="product-name-td">MachoMAN</td>
+                            <td>1 упаковка (20 саше)</td>
+                            <td class="price-td">33 000 ₸</td>
+                            <td><span class="pv-badge">60 CP</span></td>
+                        </tr>
+                        <tr>
+                            <td class="product-name-td">FlexiMAX</td>
+                            <td>1 упаковка (20 саше)</td>
+                            <td class="price-td">33 000 ₸</td>
+                            <td><span class="pv-badge">60 CP</span></td>
+                        </tr>
+                        <tr>
+                            <td class="product-name-td">MiCRYSTAL</td>
+                            <td>1 упаковка (20 саше)</td>
+                            <td class="price-td">33 000 ₸</td>
+                            <td><span class="pv-badge">60 CP</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="price-notice">
+                * Цены фиксированы и установлены официальным регламентом M International.<br>
+                Для заказа или консультации по формированию выгодных терапевтических кейсов нажмите кнопку WhatsApp.
+            </div>
+        </div>
+
+        <div class="video-reviews-section">
+            <div class="reviews-title-box">
+                <h2>Результаты применения и отзывы</h2>
+                <div class="subtitle">Реальные истории оздоровления от наших потребителей</div>
+            </div>
+            <div class="video-grid">
+                
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/czuq1igpS6c" title="Отзыв о GreenMAX и детоксе" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Очищение организма и легкий вес</h3>
+                        <p>Реальный отзыв партнера о результатах прохождения первого детокс-курса с GreenMAX и MiMAX. Избавление от шлаков и восстановление энергии.</p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/AznY0PMHHkM" title="Отзыв о FlexiMAX" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Восстановление подвижности суставов</h3>
+                        <p>История борьбы с артрозом коленных суставов. Эффект от совместного курсового применения восстанавливающего комплекса FlexiMAX и BluMAX.</p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/L-6aSILPWew" title="Комплексный отзыв" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Клеточное омоложение и сахар в норме</h3>
+                        <p>Результаты стабилизации показателей сахара в крови, улучшения общего самочувствия и состояния кожи благодаря системному подходу к питанию клеток.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
-    <!-- КНОПКА WHATSAPP (Единый номер телефона команды) -->
     <a href="https://wa.me/77758501213?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%B5%D0%B5%20%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BA%D1%83%20%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%86%D0%B8%D0%B8%20M%20International" class="whatsapp-btn" target="_blank" title="Связаться в WhatsApp">
         <svg class="whatsapp-icon" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.966C16.528 1.975 14.067 1.953 11.91 1.953c-5.438 0-9.863 4.374-9.867 9.803-.001 1.73.457 3.419 1.323 4.922l-.994 3.63 3.685-.954zm10.963-7.293c-.3-.149-1.77-.872-2.044-.973-.274-.101-.474-.149-.673.149-.198.298-.768.973-.943 1.171-.175.198-.349.223-.648.074-.3-.149-1.265-.464-2.41-1.477-.89-.789-1.492-1.764-1.666-2.062-.175-.298-.019-.459.13-.608.134-.134.3-.349.449-.523.149-.174.199-.298.299-.497.099-.198.05-.372-.025-.521-.075-.149-.674-1.62-.922-2.21-.242-.578-.487-.5-.673-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.77-.723 2.018-1.412.249-.688.249-1.278.174-1.411-.074-.134-.272-.223-.571-.372z"/>
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.456L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.966C16.528 1.975 14.067 1.953 11.91 1.953c-5.438 0-9.863 4.374-9.867 9.803-.001 1.73.457 3.419 1.323 4.922l-.994 3.63 3.685-.954zm10.963-7.293c-.3-.149-1.77-.872-2.044-.973-.274-.101-.474-.149-.673.149-.198.298-.768.973-.943 1.171-.175.198-.349.223-.648.074-.3-.149-1.265-.464-2.41-1.477-.89-.789-1.492-1.764-1.666-2.062-.175-.298-.019-.459.13-.608.134-.134.3-.349.449-.523.149-.174.199-.298.299-.497.099-.198.05-.372-.025-.521-.075-.149-.674-1.62-.922-2.21-.242-.578-.487-.5-.673-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.575 3.15 4.12 5.399l.184.281c.21.325.513.59.862.766.349.176.736.262 1.127.249.39-.013.774-.124 1.11-.324.337-.2.622-.473.832-.796.442-.679.885-1.358 1.328-2.037.199-.306.149-.694-.124-.943z"/>
         </svg>
     </a>
 
-   
+    <footer>
+        <p>&copy; 2026 M International. Все права защищены. Официальный дистрибьютор в Казахстане.</p>
+    </footer>
 
-    <!-- Логика работы слайдера-карусели -->
     <script>
-        const container = document.getElementById('sliderContainer');
+        const sliderContainer = document.getElementById('sliderContainer');
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
-        const dotsContainer = document.getElementById('sliderDots');
-        const cards = document.querySelectorAll('.product-card');
+        const sliderDots = document.getElementById('sliderDots');
+        const productCards = document.querySelectorAll('.product-card');
 
-        function getScrollStep() {
-            if (cards.length > 0) {
-                return cards[0].offsetWidth + 30; // Ширина карточки + gap
+        let currentIndex = 0;
+        const totalProducts = productCards.length;
+
+        // Создаем динамические точки-индикаторы
+        for (let i = 0; i < totalProducts; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                scrollToProduct(i);
+            });
+            sliderDots.appendChild(dot);
+        }
+
+        const dots = document.querySelectorAll('.dot');
+
+        function updateDots(index) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            if (dots[index]) {
+                dots[index].classList.add('active');
             }
-            return 390;
+        }
+
+        function scrollToProduct(index) {
+            if (index < 0 || index >= totalProducts) return;
+            currentIndex = index;
+            
+            const cardWidth = productCards[0].offsetWidth + 30; // Ширина карточки + gap (30px)
+            sliderContainer.scrollTo({
+                left: cardWidth * currentIndex,
+                behavior: 'smooth'
+            });
+            updateDots(currentIndex);
         }
 
         nextBtn.addEventListener('click', () => {
-            container.scrollLeft += getScrollStep();
+            if (currentIndex < totalProducts - 1) {
+                scrollToProduct(currentIndex + 1);
+            } else {
+                scrollToProduct(0); // Возврат к первому
+            }
         });
 
         prevBtn.addEventListener('click', () => {
-            container.scrollLeft -= getScrollStep();
+            if (currentIndex > 0) {
+                scrollToProduct(currentIndex - 1);
+            } else {
+                scrollToProduct(totalProducts - 1); // К последнему
+            }
         });
 
-        function createDots() {
-            dotsContainer.innerHTML = '';
-            cards.forEach((_, idx) => {
-                const dot = document.createElement('div');
-                dot.classList.add('dot');
-                if (idx === 0) dot.classList.add('active');
-                
-                dot.addEventListener('click', () => {
-                    container.scrollLeft = idx * getScrollStep();
-                });
-                dotsContainer.appendChild(dot);
-            });
-        }
-
-        container.addEventListener('scroll', () => {
-            const step = getScrollStep();
-            const activeIdx = Math.round(container.scrollLeft / step);
-            const dots = dotsContainer.querySelectorAll('.dot');
-            dots.forEach((dot, i) => {
-                if (i === activeIdx) dot.classList.add('active');
-                else dot.classList.remove('active');
-            });
+        // Отслеживание ручной прокрутки на мобильных
+        let isScrolling;
+        sliderContainer.addEventListener('scroll', () => {
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(() => {
+                const cardWidth = productCards[0].offsetWidth + 30;
+                const newIndex = Math.round(sliderContainer.scrollLeft / cardWidth);
+                if (newIndex !== currentIndex && newIndex >= 0 && newIndex < totalProducts) {
+                    currentIndex = newIndex;
+                    updateDots(currentIndex);
+                }
+            }, 100);
         });
-</div> </div> </div> <div class="slider-dots" id="sliderDots"></div>
-</div> <div class="container" style="padding-top: 10px; padding-bottom: 20px;">
-    <div style="background: rgba(255, 255, 255, 0.02); border: 1px dashed rgba(201, 168, 74, 0.3); padding: 25px; border-radius: 12px; text-align: center; max-width: 900px; margin: 0 auto;">
-        <p style="font-size: 16px; color: #CBD5E0; font-weight: 300; line-height: 1.6; margin: 0;">
-            🏷️ <strong>Стоимость продукции:</strong> индивидуальный расчет (зависит от приобретаемого пакета, партнерской и акционной скидки). 
-            Нажмите на зеленую кнопку связи ниже, чтобы узнать актуальную цену для г. Актобе и получить подарки по текущей акции!
-        </p>
-    </div>
-</div>
-        createDots();
     </script>
-<section style="padding: 50px 20px; background-color: #f9f9f9; font-family: sans-serif;">
-    <div style="max-width: 1000px; margin: 0 auto;">
-        <h2 style="text-align: center; font-size: 28px; color: #333; margin-bottom: 10px;">
-            Видеоотзывы наших клиентов
-        </h2>
-        <p style="text-align: center; color: #666; margin-bottom: 40px;">
-            Посмотрите реальные результаты применения продукции M International
-        </p>
-
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
-            
-            <div style="width: 100%; max-width: 360px; background-color: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
-                <div style="position: relative; width: 100%; height: 0; padding-bottom: 177.77%;">
-                    <iframe 
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-                        src="https://www.youtube.com/embed/czuq1igpS6c" 
-                        title="Результаты Greenmax - M International" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div style="padding: 20px; text-align: center;">
-                    <h3 style="font-size: 18px; color: #222; margin: 0 0 8px 0;">
-                        Результаты применения Greenmax
-                    </h3>
-                    <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.5;">
-                        Минус 10 кг, очищение организма, детокс, избавление от паразитов, выход которых наблюдался с каловыми массами, также из обоих глаз.
-                    </p>
-                </div>
-            </div>
-<div style="width: 100%; max-width: 360px; background-color: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
-                <div style="position: relative; width: 100%; height: 0; padding-bottom: 177.77%;">
-                    <iframe 
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-                        src="https://www.youtube.com/embed/L-6aSILPWew" 
-                        title="Результаты Greenmax - M International" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-    <div style="padding: 20px; text-align: center;">
-                    <h3 style="font-size: 18px; color: #222; margin: 0 0 8px 0;">
-                        Результаты применения линейки продукции компании M International
-                    </h3>
-                    <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.5;">
-                        после лечения лучевой и химио-терапий нагрузка пошла на все органы, особенно на печень - благодаря применению продукции компании организм восстановился, обследования проходили раз в полгода, после проверки в декабре 2025 года результаты показали полное восстановление всех органов.
-                    </p>
-                </div>
-            </div>
-            <div style="width: 100%; max-width: 360px; background-color: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
-                <div style="position: relative; width: 100%; height: 0; padding-bottom: 177.77%;">
-                    <iframe 
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-                        src="https://www.youtube.com/embed/AznY0PMHHkM" 
-                        title="Отзыв M International" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div style="padding: 20px; text-align: center;">
-                    <h3 style="font-size: 18px; color: #222; margin: 0 0 8px 0;">
-                        Новый отзыв о продукции
-                    </h3>
-                    <p style="color: #555; font-size: 14px; margin: 0; line-height: 1.5;">
-                        результаты применения продукции после операции, а также после лечения химиотерапией - обследование у эндокринолога в Ташкенте показало полное восстановление организма.
-                    </p>
-                </div>
-            </div>
-
-        </div> </div>
-</section>
-
-<footer>
-    <div style="max-width: 800px; margin: 0 auto 15px auto; padding: 10px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); border-radius: 6px; font-size: 12px; color: #a0aec0; letter-spacing: 0.5px;">
-        ⚠️ <strong>Важное примечание:</strong> Продукция M International (Greenmax, Bluemax, Fleximax и др.) является клеточным питанием, натуральными оздоровительными комплексами и не является лекарственным средством. Перед применением рекомендуется ознакомиться с инструкцией. Результаты могут отличаться в зависимости от индивидуальных особенностей организма.
-    </div>
-    <p style="font-size: 13px; color: #718096; margin-top: 10px;">
-        © 2026 M International Казахстан. Официальное представительство в г. Актобе. <br>
-        Работаем удаленно и доставляем продукцию по всему миру.
-    </p>
-</footer>
-    
 </body>
 </html>
