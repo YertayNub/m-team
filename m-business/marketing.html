@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Маркетинг-план M International | Ваше здоровье — Ваш успех</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --nv-dark: #1A2A50;
+            --nv-mid: #22336A;
+            --pr-dark: #5B2D8E;
+            --gold: #C9A84A;
+            --gold-light: #F4E8C1;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --text-muted: #A0AEC0;
+            /* Light section */
+            --ls-bg: #F4F6FB;
+            --ls-card: #FFFFFF;
+            --ls-border: #E2E8F0;
+            --ls-text: #1A2A50;
+            --ls-muted: #64748B;
+            --ls-gold: #A8782A;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { overflow-x: hidden; }
+        body {
+            background: radial-gradient(circle at 50% 0%, #22336A 0%, #1A2A50 50%, #0F1A34 100%);
+            color: #E2E8F0;
+            font-family: 'Jost', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #FFF; }
+
+        nav {
+            background: rgba(26, 42, 80, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #FFF; text-decoration: none; font-weight: bold; letter-spacing: 2px; }
+        nav .logo span { color: var(--gold); }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 15px; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--gold); border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
+
+        .header-banner { padding: 80px 5% 30px; text-align: center; }
+        .header-banner h1 { font-size: 44px; text-transform: uppercase; background: linear-gradient(135deg, #FFF 30%, var(--gold-light) 70%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .header-banner p { font-size: 16px; color: var(--text-muted); font-weight: 300; max-width: 600px; margin: 10px auto 0; }
+
+        .btn-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #C9A84A 0%, #AA8932 100%);
+            color: #1A2A50;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 20px auto;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(201, 168, 74, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-cta:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(201, 168, 74, 0.4); }
+
+        .rate-badge {
+            display: inline-block;
+            background: rgba(201, 168, 74, 0.1);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+        h3 { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--nv-dark); margin: 50px 0 25px; text-align: center; letter-spacing: 1px; }
+
+        .reveal { opacity: 0; transform: translateY(35px); transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Светлая зона контента */
+        .container {
+            padding: 0 5% 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .light-section {
+            background: #F5F6FA;
+            padding: 0 0 60px;
+        }
+        .light-section .container { padding-top: 0; }
+
+        /* ПАКЕТЫ */
+        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-top: 20px; }
+        .pkg-card { background: #FFFFFF; border: 1px solid #E2E6EF; padding: 30px 20px; border-radius: 16px; text-align: center; transition: 0.3s; box-shadow: 0 2px 12px rgba(26,42,80,0.06); }
+        .pkg-card:hover { transform: translateY(-3px); border-color: var(--gold); box-shadow: 0 6px 20px rgba(201,168,74,0.15); }
+        .pkg-card.business { background: linear-gradient(180deg, #F0EBF8 0%, #FFFFFF 100%); border-color: #C084FC; }
+        .pkg-card.business.supreme { background: linear-gradient(180deg, #EBF0FF 0%, #FFFFFF 100%); border-color: var(--gold); }
+        .pkg-badge { font-size: 11px; text-transform: uppercase; color: #8896B0; letter-spacing: 1px; margin-bottom: 8px; font-weight: 600; }
+        .business .pkg-badge { color: #7C3AED; }
+        .supreme .pkg-badge { color: #AA8932; }
+        .pkg-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--nv-dark); margin-bottom: 15px; font-weight: 600; }
+        .business .pkg-title { color: var(--pr-dark); }
+        .supreme .pkg-title { color: #AA8932; }
+        .pkg-info-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; border-bottom: 1px dashed #E2E6EF; font-weight: 300; }
+        .pkg-info-row:last-of-type { border-bottom: none; }
+        .pkg-info-row .label { color: #8896B0; }
+        .pkg-info-row .value { color: var(--nv-dark); font-weight: 600; }
+        .pkg-price { font-size: 22px; color: var(--gold); font-weight: 600; margin-top: 15px; }
+        .packages-note { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 10px; }
+        .p-note { background: #EEF0F7; border: 1px solid #D6DAE8; border-radius: 12px; padding: 15px; font-size: 13px; text-align: center; color: #5A6580; font-weight: 400; }
+        .p-note.biz { color: var(--pr-dark); border-color: #C084FC; background: #F5F0FF; }
+
+        /* БОНУСЫ */
+        .bonuses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .bonus-card { background: #FFFFFF; border: 1px solid #E2E6EF; padding: 25px; border-radius: 16px; position: relative; transition: 0.3s; box-shadow: 0 2px 10px rgba(26,42,80,0.05); }
+        .bonus-card:hover { border-color: var(--gold); box-shadow: 0 6px 20px rgba(201,168,74,0.12); }
+        .bonus-num { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #C9A84A 0%, #AA8932 100%); color: #FFF; font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 14px; margin-bottom: 12px; }
+        .bonus-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--nv-dark); margin-bottom: 5px; }
+        .bonus-val { display: inline-block; font-size: 12px; text-transform: uppercase; color: #AA8932; font-weight: 600; letter-spacing: 1px; background: rgba(201,168,74,0.12); padding: 3px 10px; border-radius: 6px; margin-bottom: 12px; }
+        .bonus-text { color: #4A5568; font-size: 14px; line-height: 1.6; font-weight: 400; }
+        .bonus-text strong { color: var(--nv-dark); font-weight: 600; }
+        .bonus-marker { position: absolute; top: 25px; right: 25px; font-size: 11px; text-transform: uppercase; color: var(--pr-dark); font-weight: 600; letter-spacing: 1px; background: #F0EBF8; padding: 3px 8px; border-radius: 6px; }
+        .binar-limits { background: #F0F3FA; border: 1px solid #D6DAE8; border-radius: 12px; padding: 15px; margin-top: 15px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
+        .limit-item { background: #FFFFFF; padding: 10px; border-radius: 8px; border: 1px solid #E2E6EF; }
+        .limit-item .lbl { font-size: 11px; color: #8896B0; text-transform: uppercase; }
+        .limit-item .val { font-size: 15px; font-weight: 700; color: var(--nv-dark); margin-top: 3px; }
+        .limit-item.gold-lbl .val { color: #AA8932; }
+
+        /* ТАБЛИЦЫ */
+        .tables-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; }
+        .table-wrapper { background: #FFFFFF; border: 1px solid #E2E6EF; border-radius: 16px; padding: 25px 20px; box-shadow: 0 2px 10px rgba(26,42,80,0.05); }
+        .table-wrapper h4 { font-size: 22px; color: var(--nv-dark); margin-bottom: 15px; border-bottom: 1px solid #E2E6EF; padding-bottom: 10px; line-height: 1.4; }
+        .premium-table { width: 100%; border-collapse: collapse; text-align: left; }
+        .premium-table th { font-size: 12px; text-transform: uppercase; color: #8896B0; letter-spacing: 1px; padding: 10px 12px; background: #F5F6FA; font-weight: 600; }
+        .premium-table td { padding: 10px 12px; font-size: 14px; border-bottom: 1px solid #F0F2F7; color: #4A5568; font-weight: 400; }
+        .premium-table tr:last-child td { border-bottom: none; }
+        .premium-table td strong { color: #AA8932; font-weight: 600; }
+
+        /* КАРЬЕРА */
+        .career-scroll { display: flex; gap: 12px; overflow-x: auto; padding: 10px 5px 20px; margin-top: 10px; }
+        .career-scroll::-webkit-scrollbar { height: 6px; }
+        .career-scroll::-webkit-scrollbar-track { background: #E2E6EF; border-radius: 10px; }
+        .career-scroll::-webkit-scrollbar-thumb { background: #B0B8CC; border-radius: 10px; }
+        .career-card { min-width: 135px; background: #FFFFFF; border: 2px solid #E2E6EF; border-radius: 14px; padding: 18px 12px; text-align: center; flex-shrink: 0; transition: 0.3s; box-shadow: 0 2px 8px rgba(26,42,80,0.05); overflow: hidden; position: relative; }
+        .career-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(26,42,80,0.13); }
+
+        /* Полупрозрачный металлик-фон по цветам схемы */
+        .career-card.c-sap {
+            background: linear-gradient(160deg, rgba(255,193,7,0.18) 0%, rgba(255,235,150,0.10) 50%, #fff 100%);
+            border-color: #E6AC00;
+            box-shadow: 0 2px 12px rgba(255,193,7,0.15);
+        }
+        .career-card.c-rub {
+            background: linear-gradient(160deg, rgba(38,166,154,0.18) 0%, rgba(178,235,230,0.10) 50%, #fff 100%);
+            border-color: #1E8B80;
+            box-shadow: 0 2px 12px rgba(38,166,154,0.15);
+        }
+        .career-card.c-emr {
+            background: linear-gradient(160deg, rgba(255,160,0,0.18) 0%, rgba(255,224,170,0.10) 50%, #fff 100%);
+            border-color: #E08C00;
+            box-shadow: 0 2px 12px rgba(255,160,0,0.15);
+        }
+        .career-card.c-dia {
+            background: linear-gradient(160deg, rgba(233,30,99,0.15) 0%, rgba(252,200,220,0.10) 50%, #fff 100%);
+            border-color: #C2185B;
+            box-shadow: 0 2px 12px rgba(233,30,99,0.13);
+        }
+        .career-card.c-dbldia {
+            background: linear-gradient(160deg, rgba(56,142,60,0.16) 0%, rgba(200,230,201,0.10) 50%, #fff 100%);
+            border-color: #2E7D32;
+            box-shadow: 0 2px 12px rgba(56,142,60,0.13);
+        }
+        .career-card.c-trpi {
+            background: linear-gradient(160deg, rgba(0,151,167,0.16) 0%, rgba(178,235,242,0.10) 50%, #fff 100%);
+            border-color: #00838F;
+            box-shadow: 0 2px 12px rgba(0,151,167,0.13);
+        }
+        .career-card.c-mach {
+            background: linear-gradient(160deg, rgba(96,125,139,0.18) 0%, rgba(207,216,220,0.12) 50%, #fff 100%);
+            border-color: #546E7A;
+            box-shadow: 0 2px 12px rgba(96,125,139,0.15);
+        }
+        .career-card.c-crndia {
+            background: linear-gradient(160deg, rgba(124,58,237,0.16) 0%, rgba(221,210,255,0.12) 50%, #fff 100%);
+            border-color: #6D28D9;
+            box-shadow: 0 2px 12px rgba(124,58,237,0.15);
+        }
+        .career-card.c-crnpres {
+            background: linear-gradient(160deg, rgba(27,94,32,0.18) 0%, rgba(200,230,201,0.12) 50%, #fff 100%);
+            border-color: #1B5E20;
+            box-shadow: 0 2px 12px rgba(27,94,32,0.15);
+        }
+
+        /* Металлик-полоска сверху */
+        .career-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            border-radius: 14px 14px 0 0;
+        }
+        .c-sap::before  { background: linear-gradient(90deg, #E6AC00, #FFD740, #E6AC00); }
+        .c-rub::before  { background: linear-gradient(90deg, #1E8B80, #4DB6AC, #1E8B80); }
+        .c-emr::before  { background: linear-gradient(90deg, #E08C00, #FFB300, #E08C00); }
+        .c-dia::before  { background: linear-gradient(90deg, #C2185B, #F06292, #C2185B); }
+        .c-dbldia::before { background: linear-gradient(90deg, #2E7D32, #66BB6A, #2E7D32); }
+        .c-trpi::before { background: linear-gradient(90deg, #00838F, #26C6DA, #00838F); }
+        .c-mach::before { background: linear-gradient(90deg, #546E7A, #90A4AE, #546E7A); }
+        .c-crndia::before { background: linear-gradient(90deg, #6D28D9, #A78BFA, #6D28D9); }
+        .c-crnpres::before { background: linear-gradient(90deg, #1B5E20, #4CAF50, #1B5E20); }
+
+        .c-name { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--nv-dark); letter-spacing: 0.5px; min-height: 34px; display: flex; align-items: center; justify-content: center; line-height: 1.3; margin-bottom: 10px; }
+        .c-bonus { font-size: 15px; font-weight: 700; color: #AA8932; }
+        .c-label { font-size: 9px; text-transform: uppercase; color: #8896B0; margin-bottom: 10px; }
+        .c-req { font-size: 11px; background: rgba(26,42,80,0.07); padding: 4px 6px; border-radius: 6px; color: #4A5568; font-weight: 600; }
+
+        /* CTA */
+        .cta-box { background: linear-gradient(135deg, rgba(91, 45, 142, 0.2) 0%, rgba(26, 42, 80, 0.5) 100%); border: 1px dashed var(--gold); padding: 40px; text-align: center; border-radius: 20px; margin-top: 50px; }
+        .cta-box h3 { font-size: 32px; color: var(--gold-light); margin-bottom: 10px; }
+        .cta-box p { color: #CBD5E0; font-weight: 300; }
+
+        /* FAQ */
+        .faq-section { padding: 50px 5%; background: var(--ls-bg); border-top: 1px solid var(--ls-border); }
+        .faq-section h3 { margin-top: 0; color: var(--ls-text); }
+        .faq-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        .faq-item { background: var(--ls-card); border: 1.5px solid var(--ls-border); border-radius: 12px; overflow: hidden; transition: border-color 0.3s; box-shadow: 0 1px 6px rgba(26,42,80,0.05); }
+        .faq-item:hover { border-color: var(--gold); }
+        .faq-toggle { width: 100%; background: none; border: none; padding: 18px 20px; text-align: left; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 14px; color: var(--ls-text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+        .faq-icon { font-size: 18px; color: var(--gold); transition: transform 0.3s ease; flex-shrink: 0; }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; }
+        .faq-content-inner { padding: 0 20px 18px; font-size: 13px; color: var(--ls-muted); line-height: 1.7; font-weight: 300; }
+
+        footer { background: #0F1A34; border-top: 1px solid var(--border-glass); color: #718096; text-align: center; padding: 25px; font-size: 13px; }
+        .footer-disclaimer { max-width: 800px; margin: 0 auto 15px auto; padding: 10px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); border-radius: 6px; font-size: 12px; color: #a0aec0; letter-spacing: 0.5px; }
+
+        /* ── LIGHT SECTIONS ── */
+        .light-section {
+            background: var(--ls-bg);
+            padding: 60px 5%;
+            border-top: 1px solid var(--ls-border);
+            border-bottom: 1px solid var(--ls-border);
+        }
+        .light-section .container { padding: 0; }
+        .light-section h3 {
+            color: var(--ls-text);
+            margin-top: 0;
+        }
+        /* Pkg cards light */
+        .light-section .pkg-card {
+            background: var(--ls-card);
+            border: 1.5px solid var(--ls-border);
+            box-shadow: 0 2px 12px rgba(26,42,80,0.07);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+        .light-section .pkg-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(201,168,74,0.15); }
+        .light-section .pkg-card.business {
+            background: linear-gradient(160deg, #F0EBF8 0%, #FFFFFF 100%);
+            border-color: rgba(91,45,142,0.25);
+        }
+        .light-section .pkg-card.business.supreme {
+            background: linear-gradient(160deg, #EBF0FA 0%, #FFFFFF 100%);
+            border-color: rgba(201,168,74,0.4);
+        }
+        .light-section .pkg-badge { color: var(--ls-muted); }
+        .light-section .business .pkg-badge { color: #7C3AED; }
+        .light-section .supreme .pkg-badge { color: var(--ls-gold); }
+        .light-section .pkg-title { color: var(--ls-text); }
+        .light-section .business .pkg-title { color: var(--pr-dark); }
+        .light-section .pkg-info-row { border-bottom-color: var(--ls-border); }
+        .light-section .pkg-info-row .label { color: var(--ls-muted); }
+        .light-section .pkg-info-row .value { color: var(--ls-text); }
+        .light-section .pkg-price { color: var(--ls-gold); }
+        .light-section .p-note { background: #F8FAFF; border-color: var(--ls-border); color: var(--ls-muted); }
+        .light-section .p-note.biz { color: var(--pr-dark); border-color: rgba(91,45,142,0.2); background: #F5F0FF; }
+        /* Bonus cards light */
+        .light-section .bonus-card {
+            background: var(--ls-card);
+            border: 1.5px solid var(--ls-border);
+            box-shadow: 0 2px 12px rgba(26,42,80,0.06);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+        .light-section .bonus-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(201,168,74,0.12); }
+        .light-section .bonus-name { color: var(--ls-text); }
+        .light-section .bonus-text { color: var(--ls-muted); }
+        .light-section .bonus-text strong { color: var(--ls-text); }
+        .light-section .bonus-marker { color: var(--pr-dark); }
+        .light-section .binar-limits { background: #F4F6FB; border-color: var(--ls-border); }
+        .light-section .limit-item { background: white; }
+        .light-section .limit-item .lbl { color: var(--ls-muted); }
+        .light-section .limit-item .val { color: var(--ls-text); }
+        .light-section .limit-item.gold-lbl .val { color: var(--ls-gold); }
+        /* Tables light */
+        .light-section .table-wrapper {
+            background: var(--ls-card);
+            border: 1.5px solid var(--ls-border);
+            box-shadow: 0 2px 12px rgba(26,42,80,0.06);
+            backdrop-filter: none;
+        }
+        .light-section .table-wrapper h4 { color: var(--pr-dark); border-bottom-color: var(--ls-border); }
+        .light-section .premium-table th { background: #F4F6FB; color: var(--ls-muted); }
+        .light-section .premium-table td { color: var(--ls-text); border-bottom-color: var(--ls-border); }
+        .light-section .premium-table td strong { color: var(--ls-gold); }
+        /* Career scroll light */
+        .light-section .career-card {
+            background: var(--ls-card);
+            border: 1.5px solid var(--ls-border);
+            box-shadow: 0 2px 8px rgba(26,42,80,0.06);
+        }
+        .light-section .c-name { color: var(--ls-text); }
+        .light-section .c-label { color: var(--ls-muted); }
+        .light-section .c-req { background: #F4F6FB; color: var(--ls-text); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+
+            /* Убираем горизонтальный скролл */
+            html, body { overflow-x: hidden; max-width: 100%; }
+
+            /* Навигация — гамбургер-стиль: лого сверху, ссылки снизу мелко */
+            nav {
+                flex-direction: column;
+                gap: 12px;
+                padding: 14px 4%;
+                text-align: center;
+            }
+            nav .logo { font-size: 22px; letter-spacing: 1px; }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4px 0;
+            }
+            nav ul li { margin: 0 8px; }
+            nav ul li a { font-size: 11px; letter-spacing: 1px; }
+
+            /* Шапка */
+            .header-banner { padding: 40px 4% 24px; }
+            .header-banner h1 { font-size: 26px; letter-spacing: 0; }
+            .header-banner p { font-size: 14px; }
+            .btn-cta { font-size: 13px; padding: 13px 28px; }
+
+            /* Light section padding */
+            .light-section { padding: 36px 4%; }
+
+            /* Заголовки секций */
+            h3 { font-size: 26px; margin: 30px 0 18px; }
+
+            /* Пакеты — 1 колонка */
+            .packages-grid { grid-template-columns: 1fr; gap: 14px; }
+            .packages-note { grid-template-columns: 1fr; gap: 10px; }
+
+            /* Бонусы — 1 колонка (ключевое исправление) */
+            .bonuses-grid { grid-template-columns: 1fr !important; }
+            .bonus-card[style*="span 2"] { grid-column: span 1 !important; }
+
+            /* Бинарные лимиты — 2 колонки */
+            .binar-limits { grid-template-columns: 1fr 1fr; gap: 8px; }
+
+            /* Таблицы — 1 колонка */
+            .tables-grid { grid-template-columns: 1fr; }
+            .premium-table th,
+            .premium-table td { font-size: 12px; padding: 8px 8px; }
+
+            /* Карьерный скролл — горизонтальный скролл нормально */
+            .career-scroll { gap: 10px; padding-bottom: 16px; }
+            .career-card { min-width: 110px; padding: 14px 10px; }
+            .c-bonus { font-size: 13px; }
+            .c-name { font-size: 10px; }
+
+            /* CTA блок */
+            .cta-box { padding: 30px 5% !important; margin: 30px 4% !important; }
+            .cta-box h3 { font-size: 24px; }
+
+            /* FAQ */
+            .faq-section { padding: 36px 4%; }
+            .faq-toggle { font-size: 13px; padding: 15px 14px; }
+        }
+
+        /* Планшеты */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .bonuses-grid { grid-template-columns: 1fr 1fr; }
+            .bonus-card[style*="span 2"] { grid-column: span 2; }
+            .packages-grid { grid-template-columns: 1fr 1fr; }
+            .tables-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">M <span>INTERNATIONAL</span></a>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="products.html">Продукция</a></li>
+            <li><a href="marketing.html" class="active">Маркетинг</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-banner">
+        <h1>Международный Маркетинг-план</h1>
+        <p>Сбалансированная и сверхприбыльная система выплат холдинга M International. Начните зарабатывать с первых дней.</p>
+        <div class="rate-badge">1 CP = 550 тенге или 1.1 $</div>
+        <br>
+        <a href="https://wa.me/77473573171" target="_blank" class="btn-cta">🚀 Зарегистрироваться в команду</a>
+    </div>
+
+    <div class="light-section">
+    <div class="container">
+
+        <div class="reveal">
+            <h3>Стартовые бизнес-пакеты</h3>
+            <div class="packages-grid">
+                <div class="pkg-card">
+                    <div class="pkg-badge">Потребитель</div>
+                    <div class="pkg-title">Silver</div>
+                    <div class="pkg-info-row"><span class="label">Цена</span><span class="value">120 CP</span></div>
+                    <div class="pkg-info-row"><span class="label">Продукты</span><span class="value">2 шт.</span></div>
+                    <div class="pkg-info-row"><span class="label">Объем</span><span class="value">80 BV</span></div>
+                    <div class="pkg-info-row"><span class="label">Кешбек</span><span class="value">32 DP</span></div>
+                    <div class="pkg-price">~132 $</div>
+                </div>
+                <div class="pkg-card">
+                    <div class="pkg-badge">Потребитель</div>
+                    <div class="pkg-title">Gold</div>
+                    <div class="pkg-info-row"><span class="label">Цена</span><span class="value">600 CP</span></div>
+                    <div class="pkg-info-row"><span class="label">Продукты</span><span class="value">11 шт.</span></div>
+                    <div class="pkg-info-row"><span class="label">Объем</span><span class="value">400 BV</span></div>
+                    <div class="pkg-info-row"><span class="label">Кешбек</span><span class="value">160 DP</span></div>
+                    <div class="pkg-price">~660 $</div>
+                </div>
+                <div class="pkg-card business">
+                    <div class="pkg-badge">Бизнес-пакет</div>
+                    <div class="pkg-title">Mobile</div>
+                    <div class="pkg-info-row"><span class="label">Цена</span><span class="value">1200 CP</span></div>
+                    <div class="pkg-info-row"><span class="label">Продукты</span><span class="value">22 шт.</span></div>
+                    <div class="pkg-info-row"><span class="label">Объем</span><span class="value">800 BV</span></div>
+                    <div class="pkg-info-row"><span class="label">Кешбек</span><span class="value">320 DP</span></div>
+                    <div class="pkg-price">~1 320 $</div>
+                </div>
+                <div class="pkg-card business supreme">
+                    <div class="pkg-badge">Бизнес-пакет</div>
+                    <div class="pkg-title">Supreme</div>
+                    <div class="pkg-info-row"><span class="label">Цена</span><span class="value">3600 CP</span></div>
+                    <div class="pkg-info-row"><span class="label">Продукты</span><span class="value">66 шт.</span></div>
+                    <div class="pkg-info-row"><span class="label">Объем</span><span class="value">2400 BV</span></div>
+                    <div class="pkg-info-row"><span class="label">Кешбек</span><span class="value">960 DP</span></div>
+                    <div class="pkg-price">~3 960 $</div>
+                </div>
+                <div class="packages-note">
+                    <div class="p-note">Silver и Gold — это начальные потребительские пакеты. Выплаты по некоторым бонусам имеют ограничения.</div>
+                    <div class="p-note biz">✦ Пакеты Mobile и Supreme созданы для крупного бизнеса. Открывают 100% доходов без каких-либо лимитов.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <h3>9 видов премиальных вознаграждений</h3>
+            <div class="bonuses-grid">
+                <div class="bonus-card">
+                    <div class="bonus-num">1</div>
+                    <div class="bonus-name">Возвратный бонус (Кешбек)</div>
+                    <div class="bonus-val">40% от BV партнера</div>
+                    <div class="bonus-text">Начисляется моментально в личный кабинет при регистрации. Измеряется в <strong>DP</strong> и используется для оплаты последующих личных покупок со скидкой до 50%.</div>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-num">2</div>
+                    <div class="bonus-name">Реферальный бонус</div>
+                    <div class="bonus-val">20% – 40% от BV</div>
+                    <div class="bonus-text"><strong>Для Silver/Gold:</strong> за Silver — 40%, за Gold — 30%, за Mobile/Supreme — 20%. <br><strong>Для Mobile/Supreme:</strong> всегда фиксированно <strong>40% от BV</strong> за личное приглашение любого пакета.</div>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-num">3</div>
+                    <div class="bonus-name">Реферальный бонус 2-й линии</div>
+                    <div class="bonus-val">5% от BV</div>
+                    <div class="bonus-marker">Mobile / Supreme</div>
+                    <div class="bonus-text">Доступен только для бизнес-пакетов. Вы получаете доход каждый раз, когда партнеры вашей первой линии регистрируют своих новичков: Silver (4 CP), Gold (20 CP), Mobile (40 CP), Supreme (120 CP).</div>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-num">4</div>
+                    <div class="bonus-name">Переходной бонус (Roll-up)</div>
+                    <div class="bonus-val">Разница процентов</div>
+                    <div class="bonus-marker">Mobile / Supreme</div>
+                    <div class="bonus-text">Если ваш партнер в статусе Silver приглашает крупный пакет, он получает урезанный реферальный бонус, а вся оставшаяся разница поднимается вверх по структуре именно вам.</div>
+                </div>
+                <div class="bonus-card" style="grid-column: span 2;">
+                    <div class="bonus-num">5</div>
+                    <div class="bonus-name">Бинарный бонус (Командный)</div>
+                    <div class="bonus-val">10% от BV малой ветки</div>
+                    <div class="bonus-text">Рассчитывается ежедневно по результатам оборота меньшей (левой или правой) команды. Схлопывание пар приносит: Silver — 8 CP, Gold — 40 CP, Mobile — 80 CP, Supreme — 240 CP.
+                        <div class="binar-limits">
+                            <div class="limit-item"><div class="lbl">Лимит Silver</div><div class="val">100 CP / сут.</div></div>
+                            <div class="limit-item"><div class="lbl">Лимит Gold</div><div class="val">500 CP / сут.</div></div>
+                            <div class="limit-item gold-lbl"><div class="lbl">Лимит Mobile</div><div class="val">1 000 CP / сут.</div></div>
+                            <div class="limit-item gold-lbl"><div class="lbl">Лимит Supreme</div><div class="val">3 000 CP / сут.</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-num">6</div>
+                    <div class="bonus-name">Бонус повторной активации</div>
+                    <div class="bonus-val">Повторные заказы</div>
+                    <div class="bonus-text">Для сохранения активности кабинета достаточно сделать покупку 1 раз в 45 дней. При повторном заказе начисляется: 40% кешбека покупателю + 10% спонсору за реферал + 10% идет в бинар.</div>
+                </div>
+                <div class="bonus-card">
+                    <div class="bonus-num">7</div>
+                    <div class="bonus-name">Бонус за достижение статуса</div>
+                    <div class="bonus-val">Разовые премии</div>
+                    <div class="bonus-text">Единовременные денежные вознаграждения за закрытие карьерных ступеней: от 111 CP за Sapphire до грандиозных <strong>88 888 CP</strong> при достижении высшей планки Crown President.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <h3>Лидерские привилегии</h3>
+            <div class="tables-grid">
+                <div class="table-wrapper">
+                    <h4>8. Лидерский бонус (2% от структуры)</h4>
+                    <p style="font-size:12px; color:var(--text-muted); margin-bottom:15px; font-weight:300;">Выплачивается 1-го числа каждого месяца на основе глубины поколений вашей команды:</p>
+                    <table class="premium-table">
+                        <thead>
+                            <tr><th>Ранг</th><th>Личники (L / R)</th><th>Глубина выплат</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Сапфир</td><td>2 / 2</td><td><strong>2%</strong> с 1 и 2 линии</td></tr>
+                            <tr><td>Рубин</td><td>4 / 4</td><td><strong>2%</strong> с 3 и 4 линии</td></tr>
+                            <tr><td>Изумруд</td><td>8 / 8</td><td><strong>2%</strong> с 5 и 6 линии</td></tr>
+                            <tr><td>Diamond Director</td><td>16 / 16 Mobile</td><td><strong>2%</strong> с 7 и 8 линии</td></tr>
+                            <tr><td>Double Diamond</td><td>20 / 20 Mobile</td><td><strong>2%</strong> с 9 и 10 линии</td></tr>
+                            <tr><td>Triple Diamond</td><td>26 / 26 Mobile</td><td><strong>2%</strong> до 10 поколения</td></tr>
+                            <tr><td>Crown Diamond</td><td>32 / 32 Mobile</td><td><strong>2%</strong> до 10 поколения</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-wrapper">
+                    <h4>9. Бонус за воспитание лидеров</h4>
+                    <p style="font-size:12px; color:var(--text-muted); margin-bottom:15px; font-weight:300;">Премия наставнику, когда партнеры в левой и правой ветках синхронно берут новые квалификации:</p>
+                    <table class="premium-table">
+                        <thead>
+                            <tr><th>Квалификация пары</th><th>Ветки (L + R)</th><th>Бонус куратору</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Сапфир</td><td>1 + 1</td><td><strong>100 CP</strong></td></tr>
+                            <tr><td>Рубин</td><td>1 + 1</td><td><strong>200 CP</strong></td></tr>
+                            <tr><td>Изумруд</td><td>1 + 1</td><td><strong>300 CP</strong></td></tr>
+                            <tr><td>Diamond Director</td><td>1 + 1</td><td><strong>1 000 CP</strong></td></tr>
+                            <tr><td>Double Diamond</td><td>1 + 1</td><td><strong>2 000 CP</strong></td></tr>
+                            <tr><td>Triple Diamond</td><td>1 + 1</td><td><strong>3 000 CP</strong></td></tr>
+                            <tr><td>Crown Diamond</td><td>1 + 1</td><td><strong>18 888 CP</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal">
+            <h3>Карьерная лестница и условия рангов</h3>
+            <div class="career-scroll">
+                <div class="career-card c-sap"><div class="c-name">Sapphire Manager</div><div class="c-bonus">3 888 CP</div><div class="c-label">Групповой доход</div><div class="c-req">L:2 | R:2</div></div>
+                <div class="career-card c-rub"><div class="c-name">Rubin Manager</div><div class="c-bonus">8 888 CP</div><div class="c-label">Групповой доход</div><div class="c-req">L:4 | R:4</div></div>
+                <div class="career-card c-emr"><div class="c-name">Emerald Manager</div><div class="c-bonus">18 888 CP</div><div class="c-label">Групповой доход</div><div class="c-req">L:8 | R:8</div></div>
+                <div class="career-card c-dia"><div class="c-name">Diamond Director</div><div class="c-bonus">38 888 CP</div><div class="c-label">Групповой доход</div><div class="c-req">16/16 Mobile</div></div>
+                <div class="career-card c-dbldia"><div class="c-name">Double Diamond</div><div class="c-bonus">118 888 CP</div><div class="c-label">Групповой доход</div><div class="c-req">20/20 Mobile</div></div>
+                <div class="career-card c-trpi"><div class="c-name">Triple Diamond</div><div class="c-bonus">388 888 CP</div><div class="c-label">Групповой доход</div><div class="c-req">24/24 Mobile</div></div>
+                <div class="career-card c-mach"><div class="c-name">Great Macho</div><div class="c-bonus">688 888 CP</div><div class="c-label">Групповой доход</div><div class="c-req">32/32 Mobile</div></div>
+                <div class="career-card c-crndia"><div class="c-name">Crown Diamond</div><div class="c-bonus">1 188 888 CP</div><div class="c-label">Групповой доход</div><div class="c-req">40/40 Mobile</div></div>
+                <div class="career-card c-crnpres"><div class="c-name">Crown President</div><div class="c-bonus">1 888 888 CP</div><div class="c-label">Групповой доход</div><div class="c-req">48/48 Mobile</div></div>
+            </div>
+        </div>
+
+    </div><!-- /container -->
+    </div><!-- /light-section -->
+
+
+        <div class="cta-box reveal" style="max-width:1100px; margin: 50px auto; padding: 40px 5%;">
+            <h3>Создайте свое бизнес-наследие с нами</h3>
+            <p>Успех в MLM зависит от трех факторов: идеальное время входа, сильная команда и готовая система дупликации. У нас есть всё.</p>
+            <a href="https://wa.me/77473573171" target="_blank" class="btn-cta">🚀 Зарегистрироваться в команду</a>
+        </div>
+
+
+    <div class="faq-section reveal">
+        <h3>Часто задаваемые вопросы</h3>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-toggle"><span>Как пройти регистрацию в команду M International в Актобе?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content"><div class="faq-content-inner">Регистрация в нашей команде проходит полностью дистанционно через готовую систему автоматизации. Вам необходимо связаться с нами по кнопке в WhatsApp. Мы поможем выбрать стартовый пакет, зарегистрируем Вас в компании и добавим вас в командные обучающие чаты и закрытую систему бизнес-акселерации. После чего мы вышлем вам индивидуальную реферальную ссылку для личного кабинета.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-toggle"><span>Какая стоимость бизнес-пакета Mobile в тенге?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content"><div class="faq-content-inner">Внутренний курс холдинга: 1 CP = 1.1 $ (USD) или 550 тенге. Стоимость пакета Mobile составляет 1200 CP (что равняется 1320 $). Оплата в Казахстане производится в тенге. Пакет включает в себя 22 единицы оригинального продукта (FlexiMAX, Ye-Katerina и др.) и открывает возможности 100% выплат по маркетинг-плану, включая реферальный бонус 2-й линии.</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-toggle"><span>Обязательно ли делать ежемесячные закупки (активность)?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content"><div class="faq-content-inner">Для того чтобы ваш аккаунт оставался активным и продолжал накапливать баллы (BV) со всей глубины бинарной структуры, достаточно делать повторную покупку (активацию) всего 1 раз в 45 дней. При этом за личную активность вы получаете 40% возвратного кешбэка на свой счет DP, а ваша спонсорская линия получает реферальный и бинарный бонусы. Если активность временно не сделана, накопленные баллы не сгорают, но новые до момента активации начисляться не будут (до конца года действует акция, кто активируется в данный период активация будет действовать до конца года).</div></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-toggle"><span>Как осуществляется доставка продукции по Казахстану?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content"><div class="faq-content-inner">Продукция отправляется напрямую со складов официального представительства. По городу Актобе возможен самовывоз или курьерская доставка день в день. В другие города и регионы Казахстана (Алматы, Астана, Шымкент, Уральск и др.), а также в страны СНГ доставка осуществляется проверенными курьерскими службами (СДЭК, Казпочта) прямо до дверей или до ближайшего отделения в кратчайшие сроки (обычно от 2 до 5 рабочих дней).</div></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-disclaimer">
+            ⚠️ <strong>Важное примечание:</strong> Продукция M International (Greenmax, Bluemax, Fleximax и др.) является клеточным питанием, натуральными оздоровительными комплексами и не является лекарственным средством. Перед применением рекомендуется ознакомиться с инструкцией. Результаты могут отличаться в зависимости от индивидуальных особенностей организма.
+        </div>
+        <p>© 2026 M International Казахстан. Официальное представительство в г. Актобе.<br>Работаем удаленно и доставляем продукцию по всему миру.</p>
+    </footer>
+
+    <script>
+        function reveal() {
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.faq-icon');
+                const isOpen = content.style.maxHeight;
+                document.querySelectorAll('.faq-content').forEach(c => { c.style.maxHeight = null; });
+                document.querySelectorAll('.faq-icon').forEach(i => { i.textContent = '+'; i.style.transform = 'rotate(0deg)'; });
+                if (!isOpen) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.textContent = '−';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
