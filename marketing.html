@@ -26,12 +26,14 @@
             --ls-gold: #A8782A;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { overflow-x: hidden; }
         body {
             background: radial-gradient(circle at 50% 0%, #22336A 0%, #1A2A50 50%, #0F1A34 100%);
             color: #E2E8F0;
             font-family: 'Jost', sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
+            width: 100%;
         }
         h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #FFF; }
 
@@ -160,21 +162,78 @@
         .career-scroll::-webkit-scrollbar { height: 6px; }
         .career-scroll::-webkit-scrollbar-track { background: #E2E6EF; border-radius: 10px; }
         .career-scroll::-webkit-scrollbar-thumb { background: #B0B8CC; border-radius: 10px; }
-        .career-card { min-width: 135px; background: #FFFFFF; border: 2px solid #E2E6EF; border-radius: 14px; padding: 18px 12px; text-align: center; flex-shrink: 0; transition: 0.3s; box-shadow: 0 2px 8px rgba(26,42,80,0.05); }
-        .career-card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(26,42,80,0.10); }
-        .career-card.c-sap { border-color: #FFC107; }
-        .career-card.c-rub { border-color: #26A69A; }
-        .career-card.c-emr { border-color: #FFA000; }
-        .career-card.c-dia { border-color: #E91E63; }
-        .career-card.c-dbldia { border-color: #388E3C; }
-        .career-card.c-trpi { border-color: #0097A7; }
-        .career-card.c-mach { border-color: #455A64; }
-        .career-card.c-crndia { border-color: #7C3AED; }
-        .career-card.c-crnpres { border-color: #1B5E20; }
+        .career-card { min-width: 135px; background: #FFFFFF; border: 2px solid #E2E6EF; border-radius: 14px; padding: 18px 12px; text-align: center; flex-shrink: 0; transition: 0.3s; box-shadow: 0 2px 8px rgba(26,42,80,0.05); overflow: hidden; position: relative; }
+        .career-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(26,42,80,0.13); }
+
+        /* Полупрозрачный металлик-фон по цветам схемы */
+        .career-card.c-sap {
+            background: linear-gradient(160deg, rgba(255,193,7,0.18) 0%, rgba(255,235,150,0.10) 50%, #fff 100%);
+            border-color: #E6AC00;
+            box-shadow: 0 2px 12px rgba(255,193,7,0.15);
+        }
+        .career-card.c-rub {
+            background: linear-gradient(160deg, rgba(38,166,154,0.18) 0%, rgba(178,235,230,0.10) 50%, #fff 100%);
+            border-color: #1E8B80;
+            box-shadow: 0 2px 12px rgba(38,166,154,0.15);
+        }
+        .career-card.c-emr {
+            background: linear-gradient(160deg, rgba(255,160,0,0.18) 0%, rgba(255,224,170,0.10) 50%, #fff 100%);
+            border-color: #E08C00;
+            box-shadow: 0 2px 12px rgba(255,160,0,0.15);
+        }
+        .career-card.c-dia {
+            background: linear-gradient(160deg, rgba(233,30,99,0.15) 0%, rgba(252,200,220,0.10) 50%, #fff 100%);
+            border-color: #C2185B;
+            box-shadow: 0 2px 12px rgba(233,30,99,0.13);
+        }
+        .career-card.c-dbldia {
+            background: linear-gradient(160deg, rgba(56,142,60,0.16) 0%, rgba(200,230,201,0.10) 50%, #fff 100%);
+            border-color: #2E7D32;
+            box-shadow: 0 2px 12px rgba(56,142,60,0.13);
+        }
+        .career-card.c-trpi {
+            background: linear-gradient(160deg, rgba(0,151,167,0.16) 0%, rgba(178,235,242,0.10) 50%, #fff 100%);
+            border-color: #00838F;
+            box-shadow: 0 2px 12px rgba(0,151,167,0.13);
+        }
+        .career-card.c-mach {
+            background: linear-gradient(160deg, rgba(96,125,139,0.18) 0%, rgba(207,216,220,0.12) 50%, #fff 100%);
+            border-color: #546E7A;
+            box-shadow: 0 2px 12px rgba(96,125,139,0.15);
+        }
+        .career-card.c-crndia {
+            background: linear-gradient(160deg, rgba(124,58,237,0.16) 0%, rgba(221,210,255,0.12) 50%, #fff 100%);
+            border-color: #6D28D9;
+            box-shadow: 0 2px 12px rgba(124,58,237,0.15);
+        }
+        .career-card.c-crnpres {
+            background: linear-gradient(160deg, rgba(27,94,32,0.18) 0%, rgba(200,230,201,0.12) 50%, #fff 100%);
+            border-color: #1B5E20;
+            box-shadow: 0 2px 12px rgba(27,94,32,0.15);
+        }
+
+        /* Металлик-полоска сверху */
+        .career-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            border-radius: 14px 14px 0 0;
+        }
+        .c-sap::before  { background: linear-gradient(90deg, #E6AC00, #FFD740, #E6AC00); }
+        .c-rub::before  { background: linear-gradient(90deg, #1E8B80, #4DB6AC, #1E8B80); }
+        .c-emr::before  { background: linear-gradient(90deg, #E08C00, #FFB300, #E08C00); }
+        .c-dia::before  { background: linear-gradient(90deg, #C2185B, #F06292, #C2185B); }
+        .c-dbldia::before { background: linear-gradient(90deg, #2E7D32, #66BB6A, #2E7D32); }
+        .c-trpi::before { background: linear-gradient(90deg, #00838F, #26C6DA, #00838F); }
+        .c-mach::before { background: linear-gradient(90deg, #546E7A, #90A4AE, #546E7A); }
+        .c-crndia::before { background: linear-gradient(90deg, #6D28D9, #A78BFA, #6D28D9); }
+        .c-crnpres::before { background: linear-gradient(90deg, #1B5E20, #4CAF50, #1B5E20); }
+
         .c-name { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--nv-dark); letter-spacing: 0.5px; min-height: 34px; display: flex; align-items: center; justify-content: center; line-height: 1.3; margin-bottom: 10px; }
         .c-bonus { font-size: 15px; font-weight: 700; color: #AA8932; }
         .c-label { font-size: 9px; text-transform: uppercase; color: #8896B0; margin-bottom: 10px; }
-        .c-req { font-size: 11px; background: #F0F3FA; padding: 4px 6px; border-radius: 6px; color: #4A5568; font-weight: 600; }
+        .c-req { font-size: 11px; background: rgba(26,42,80,0.07); padding: 4px 6px; border-radius: 6px; color: #4A5568; font-weight: 600; }
 
         /* CTA */
         .cta-box { background: linear-gradient(135deg, rgba(91, 45, 142, 0.2) 0%, rgba(26, 42, 80, 0.5) 100%); border: 1px dashed var(--gold); padding: 40px; text-align: center; border-radius: 20px; margin-top: 50px; }
@@ -274,13 +333,77 @@
         .light-section .c-label { color: var(--ls-muted); }
         .light-section .c-req { background: #F4F6FB; color: var(--ls-text); }
 
+        /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
-            .header-banner h1 { font-size: 32px; }
-            .packages-note { grid-template-columns: 1fr; }
+
+            /* Убираем горизонтальный скролл */
+            html, body { overflow-x: hidden; max-width: 100%; }
+
+            /* Навигация — гамбургер-стиль: лого сверху, ссылки снизу мелко */
+            nav {
+                flex-direction: column;
+                gap: 12px;
+                padding: 14px 4%;
+                text-align: center;
+            }
+            nav .logo { font-size: 22px; letter-spacing: 1px; }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4px 0;
+            }
+            nav ul li { margin: 0 8px; }
+            nav ul li a { font-size: 11px; letter-spacing: 1px; }
+
+            /* Шапка */
+            .header-banner { padding: 40px 4% 24px; }
+            .header-banner h1 { font-size: 26px; letter-spacing: 0; }
+            .header-banner p { font-size: 14px; }
+            .btn-cta { font-size: 13px; padding: 13px 28px; }
+
+            /* Light section padding */
+            .light-section { padding: 36px 4%; }
+
+            /* Заголовки секций */
+            h3 { font-size: 26px; margin: 30px 0 18px; }
+
+            /* Пакеты — 1 колонка */
+            .packages-grid { grid-template-columns: 1fr; gap: 14px; }
+            .packages-note { grid-template-columns: 1fr; gap: 10px; }
+
+            /* Бонусы — 1 колонка (ключевое исправление) */
+            .bonuses-grid { grid-template-columns: 1fr !important; }
+            .bonus-card[style*="span 2"] { grid-column: span 1 !important; }
+
+            /* Бинарные лимиты — 2 колонки */
+            .binar-limits { grid-template-columns: 1fr 1fr; gap: 8px; }
+
+            /* Таблицы — 1 колонка */
             .tables-grid { grid-template-columns: 1fr; }
-            .binar-limits { grid-template-columns: repeat(2,1fr); }
-            nav { flex-direction: column; gap: 15px; text-align: center; }
-            nav ul li { margin: 0 10px; }
+            .premium-table th,
+            .premium-table td { font-size: 12px; padding: 8px 8px; }
+
+            /* Карьерный скролл — горизонтальный скролл нормально */
+            .career-scroll { gap: 10px; padding-bottom: 16px; }
+            .career-card { min-width: 110px; padding: 14px 10px; }
+            .c-bonus { font-size: 13px; }
+            .c-name { font-size: 10px; }
+
+            /* CTA блок */
+            .cta-box { padding: 30px 5% !important; margin: 30px 4% !important; }
+            .cta-box h3 { font-size: 24px; }
+
+            /* FAQ */
+            .faq-section { padding: 36px 4%; }
+            .faq-toggle { font-size: 13px; padding: 15px 14px; }
+        }
+
+        /* Планшеты */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .bonuses-grid { grid-template-columns: 1fr 1fr; }
+            .bonus-card[style*="span 2"] { grid-column: span 2; }
+            .packages-grid { grid-template-columns: 1fr 1fr; }
+            .tables-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -300,7 +423,7 @@
     <div class="header-banner">
         <h1>Международный Маркетинг-план</h1>
         <p>Сбалансированная и сверхприбыльная система выплат холдинга M International. Начните зарабатывать с первых дней.</p>
-        <div class="rate-badge">1 CP = 1.1 $</div>
+        <div class="rate-badge">1 CP = 550 тенге или 1.1 $</div>
         <br>
         <a href="https://wa.me/77758501213" target="_blank" class="btn-cta">🚀 Зарегистрироваться в команду</a>
     </div>
