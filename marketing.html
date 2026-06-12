@@ -17,6 +17,13 @@
             --glass: rgba(255, 255, 255, 0.03);
             --border-glass: rgba(255, 255, 255, 0.08);
             --text-muted: #A0AEC0;
+            /* Light section */
+            --ls-bg: #F4F6FB;
+            --ls-card: #FFFFFF;
+            --ls-border: #E2E8F0;
+            --ls-text: #1A2A50;
+            --ls-muted: #64748B;
+            --ls-gold: #A8782A;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -175,18 +182,97 @@
         .cta-box p { color: #CBD5E0; font-weight: 300; }
 
         /* FAQ */
-        .faq-section { padding: 50px 5%; background: rgba(0,0,0,0.15); border-top: 1px solid var(--border-glass); }
-        .faq-section h3 { margin-top: 0; }
+        .faq-section { padding: 50px 5%; background: var(--ls-bg); border-top: 1px solid var(--ls-border); }
+        .faq-section h3 { margin-top: 0; color: var(--ls-text); }
         .faq-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-        .faq-item { background: rgba(255,255,255,0.02); border: 1px solid var(--border-glass); border-radius: 12px; overflow: hidden; transition: border-color 0.3s; }
-        .faq-item:hover { border-color: rgba(201,168,74,0.2); }
-        .faq-toggle { width: 100%; background: none; border: none; padding: 18px 20px; text-align: left; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 14px; color: #E2E8F0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+        .faq-item { background: var(--ls-card); border: 1.5px solid var(--ls-border); border-radius: 12px; overflow: hidden; transition: border-color 0.3s; box-shadow: 0 1px 6px rgba(26,42,80,0.05); }
+        .faq-item:hover { border-color: var(--gold); }
+        .faq-toggle { width: 100%; background: none; border: none; padding: 18px 20px; text-align: left; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 14px; color: var(--ls-text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
         .faq-icon { font-size: 18px; color: var(--gold); transition: transform 0.3s ease; flex-shrink: 0; }
         .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; }
-        .faq-content-inner { padding: 0 20px 18px; font-size: 13px; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+        .faq-content-inner { padding: 0 20px 18px; font-size: 13px; color: var(--ls-muted); line-height: 1.7; font-weight: 300; }
 
         footer { background: #0F1A34; border-top: 1px solid var(--border-glass); color: #718096; text-align: center; padding: 25px; font-size: 13px; }
         .footer-disclaimer { max-width: 800px; margin: 0 auto 15px auto; padding: 10px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); border-radius: 6px; font-size: 12px; color: #a0aec0; letter-spacing: 0.5px; }
+
+        /* ── LIGHT SECTIONS ── */
+        .light-section {
+            background: var(--ls-bg);
+            padding: 60px 5%;
+            border-top: 1px solid var(--ls-border);
+            border-bottom: 1px solid var(--ls-border);
+        }
+        .light-section .container { padding: 0; }
+        .light-section h3 {
+            color: var(--ls-text);
+            margin-top: 0;
+        }
+        /* Pkg cards light */
+        .light-section .pkg-card {
+            background: var(--ls-card);
+            border: 1.5px solid var(--ls-border);
+            box-shadow: 0 2px 12px rgba(26,42,80,0.07);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+        .light-section .pkg-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(201,168,74,0.15); }
+        .light-section .pkg-card.business {
+            background: linear-gradient(160deg, #F0EBF8 0%, #FFFFFF 100%);
+            border-color: rgba(91,45,142,0.25);
+        }
+        .light-section .pkg-card.business.supreme {
+            background: linear-gradient(160deg, #EBF0FA 0%, #FFFFFF 100%);
+            border-color: rgba(201,168,74,0.4);
+        }
+        .light-section .pkg-badge { color: var(--ls-muted); }
+        .light-section .business .pkg-badge { color: #7C3AED; }
+        .light-section .supreme .pkg-badge { color: var(--ls-gold); }
+        .light-section .pkg-title { color: var(--ls-text); }
+        .light-section .business .pkg-title { color: var(--pr-dark); }
+        .light-section .pkg-info-row { border-bottom-color: var(--ls-border); }
+        .light-section .pkg-info-row .label { color: var(--ls-muted); }
+        .light-section .pkg-info-row .value { color: var(--ls-text); }
+        .light-section .pkg-price { color: var(--ls-gold); }
+        .light-section .p-note { background: #F8FAFF; border-color: var(--ls-border); color: var(--ls-muted); }
+        .light-section .p-note.biz { color: var(--pr-dark); border-color: rgba(91,45,142,0.2); background: #F5F0FF; }
+        /* Bonus cards light */
+        .light-section .bonus-card {
+            background: var(--ls-card);
+            border: 1.5px solid var(--ls-border);
+            box-shadow: 0 2px 12px rgba(26,42,80,0.06);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+        .light-section .bonus-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(201,168,74,0.12); }
+        .light-section .bonus-name { color: var(--ls-text); }
+        .light-section .bonus-text { color: var(--ls-muted); }
+        .light-section .bonus-text strong { color: var(--ls-text); }
+        .light-section .bonus-marker { color: var(--pr-dark); }
+        .light-section .binar-limits { background: #F4F6FB; border-color: var(--ls-border); }
+        .light-section .limit-item { background: white; }
+        .light-section .limit-item .lbl { color: var(--ls-muted); }
+        .light-section .limit-item .val { color: var(--ls-text); }
+        .light-section .limit-item.gold-lbl .val { color: var(--ls-gold); }
+        /* Tables light */
+        .light-section .table-wrapper {
+            background: var(--ls-card);
+            border: 1.5px solid var(--ls-border);
+            box-shadow: 0 2px 12px rgba(26,42,80,0.06);
+            backdrop-filter: none;
+        }
+        .light-section .table-wrapper h4 { color: var(--pr-dark); border-bottom-color: var(--ls-border); }
+        .light-section .premium-table th { background: #F4F6FB; color: var(--ls-muted); }
+        .light-section .premium-table td { color: var(--ls-text); border-bottom-color: var(--ls-border); }
+        .light-section .premium-table td strong { color: var(--ls-gold); }
+        /* Career scroll light */
+        .light-section .career-card {
+            background: var(--ls-card);
+            border: 1.5px solid var(--ls-border);
+            box-shadow: 0 2px 8px rgba(26,42,80,0.06);
+        }
+        .light-section .c-name { color: var(--ls-text); }
+        .light-section .c-label { color: var(--ls-muted); }
+        .light-section .c-req { background: #F4F6FB; color: var(--ls-text); }
 
         @media (max-width: 768px) {
             .header-banner h1 { font-size: 32px; }
@@ -219,6 +305,7 @@
         <a href="https://wa.me/77758501213" target="_blank" class="btn-cta">🚀 Зарегистрироваться в команду</a>
     </div>
 
+    <div class="light-section">
     <div class="container">
 
         <div class="reveal">
@@ -381,13 +468,16 @@
             </div>
         </div>
 
-        <div class="cta-box reveal">
+    </div><!-- /container -->
+    </div><!-- /light-section -->
+
+
+        <div class="cta-box reveal" style="max-width:1100px; margin: 50px auto; padding: 40px 5%;">
             <h3>Создайте свое бизнес-наследие с нами</h3>
             <p>Успех в MLM зависит от трех факторов: идеальное время входа, сильная команда и готовая система дупликации. У нас есть всё.</p>
             <a href="https://wa.me/77758501213" target="_blank" class="btn-cta">🚀 Зарегистрироваться в команду</a>
         </div>
 
-    </div>
 
     <div class="faq-section reveal">
         <h3>Часто задаваемые вопросы</h3>
@@ -447,4 +537,3 @@
 
 </body>
 </html>
-
