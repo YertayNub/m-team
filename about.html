@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клеточное питание M International | Ваше здоровье — Ваш успех</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --nv-dark: #1A2A50;
+            --nv-mid: #22336A;
+            --pr-dark: #5B2D8E;
+            --gold: #C9A84A;
+            --gold-light: #F4E8C1;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: radial-gradient(circle at 50% 0%, #22336A 0%, #1A2A50 50%, #0F1A34 100%); color: #E2E8F0; font-family: 'Jost', sans-serif; min-height: 100vh; }
+        
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: #FFF; }
+
+        nav { background: rgba(26, 42, 80, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-glass); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        nav .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #FFF; text-decoration: none; font-weight: bold; letter-spacing: 2px; }
+        nav .logo span { color: var(--gold); }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 15px; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: var(--gold); border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
+
+        .header-banner { padding: 80px 5% 40px; text-align: center; }
+        .header-banner h1 { font-size: 44px; text-transform: uppercase; background: linear-gradient(135deg, #FFF 30%, var(--gold-light) 70%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .header-banner p { font-size: 16px; color: #A0AEC0; font-weight: 300; max-width: 600px; margin: 10px auto 0; }
+
+        .container { padding: 20px 5% 60px; max-width: 1000px; margin: 0 auto; }
+        
+        .welcome-card { background: var(--glass); border: 1px solid var(--border-glass); padding: 40px; border-radius: 20px; backdrop-filter: blur(15px); margin-bottom: 40px; box-shadow: 0 10px 30px rgba(15, 26, 52, 0.3); }
+        .welcome-card h2 { font-size: 32px; color: var(--gold); margin-bottom: 20px; }
+        .welcome-card p { color: #CBD5E0; line-height: 1.8; margin-bottom: 20px; font-weight: 300; font-size: 16px; }
+
+        h3 { font-size: 30px; color: #FFF; margin: 40px 0 20px; text-align: center; letter-spacing: 1px; }
+        
+        /* Сетка премиум-карточек системы */
+        .system-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .system-card { background: rgba(26, 42, 80, 0.3); border: 1px solid var(--border-glass); padding: 30px; border-radius: 16px; backdrop-filter: blur(10px); transition: 0.3s; }
+        .system-card:hover { transform: translateY(-5px); border-color: rgba(201, 168, 74, 0.2); }
+        .system-card h4 { color: var(--gold); font-size: 24px; margin-bottom: 12px; }
+        .system-card p { color: #CBD5E0; font-size: 14px; line-height: 1.7; font-weight: 300; }
+
+        .cta-box { background: linear-gradient(135deg, rgba(91, 45, 142, 0.2) 0%, rgba(26, 42, 80, 0.5) 100%); border: 1px dashed var(--gold); padding: 40px; text-align: center; border-radius: 20px; margin-top: 60px; }
+        .cta-box h3 { font-size: 32px; color: var(--gold-light); margin-bottom: 10px; }
+        .btn-contact { display: inline-block; background: linear-gradient(135deg, #C9A84A 0%, #AA8932 100%); color: #1A2A50; padding: 15px 40px; text-decoration: none; border-radius: 30px; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 20px; transition: 0.3s; }
+        .btn-contact:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(201, 168, 74, 0.4); }
+
+        footer { background: #0F1A34; border-top: 1px solid var(--border-glass); color: #718096; text-align: center; padding: 25px; font-size: 13px; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">M <span>INTERNATIONAL</span></a>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="products.html">Продукция</a></li>
+            <li><a href="marketing.html">Маркетинг</a></li>
+            <li><a href="about.html" class="active">О нас</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-banner">
+        <h1>Лидерский Альянс Команды</h1>
+        <p>Инструменты автоматизации, синергия опыта и международная платформа для вашей реализации</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="welcome-card">
+            <h2>Добро пожаловать в высшую лигу бизнеса</h2>
+            <p>Приветствую тебя, будущий партнер! Если ты изучаешь этот сайт, значит, в тебе живет стремление кардинально улучшить качество своей жизни, обрести абсолютное здоровье и выстроить непотопляемый источник пассивного дохода.</p>
+            <p>Наша международная команда объединяет топ-лидеров, предпринимателей и сильных экспертов со всего Казахстана и стран СНГ. Нашим стратегическим партнером стал малазийский холдинг <strong>M International</strong>. Мы выбрали его за безупречный научный подход к созданию клеточного питания, железобетонную надежность и колоссальные выплаты в бинарную структуру.</p>
+            <p>Мы не занимаемся хаотичными продажами — мы создаем элитарное бизнес-сообщество, где каждый новичок под руководством опытных наставников гарантированно доходит до топ-рангов и финансовой свободы.</p>
+        </div>
+
+        <h3>Премиальная система бизнес-акселерации</h3>
+        <p style="text-align:center; color:#A0AEC0; font-weight:300; max-width:600px; margin: 0 auto 30px;">В нашей команде полностью стерт главный страх новичка «Что мне делать дальше?». Мы разработали пошаговую систему автоматизации:</p>
+
+        <div class="system-grid">
+            <div class="system-card">
+                <h4>🚀 Экспресс Интеграция</h4>
+                <p>Проверенный алгоритм первых 72 часов после активации: запуск личного кабинета, погружение в продуктовую линейку и составление беспроигрышных бизнес-предложений.</p>
+            </div>
+            <div class="system-card">
+                <h4>📱 Цифровой Рекрутинг</h4>
+                <p>Уникальные методики работы в мессенджерах и социальных сетях. Мы обучаем выстраиванию личного бренда премиум-уровня так, чтобы целевые кандидаты первыми писали вам.</p>
+            </div>
+            <div class="system-card">
+                <h4>💎 Лидерский Коучинг</h4>
+                <p>Системные онлайн-разборы, практические тренинги по закрытию крупных сделок в бинаре и плотное персональное сопровождение до ваших первых чеков в долларах.</p>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>Создайте свое бизнес-наследие с нами</h3>
+            <p style="color: #CBD5E0;">Успех в MLM зависит от трех факторов: идеальное время входа, сильная команда и готовая система дупликации. У нас есть всё.</p>
+            <a href="contacts.html" class="btn-contact">Присоединиться к Команде</a>
+        </div>
+
+    </div>
+
+    <footer>
+       <p style="font-size: 13px; color: #718096; margin-top: 10px;">
+    © 2026 M International Казахстан. Официальное представительство в г. Актобе. <br>
+    Работаем удаленно и доставляем продукцию по всему миру.
+</p>
+    </footer>
+
+</body>
+</html>
