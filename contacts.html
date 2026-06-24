@@ -159,21 +159,59 @@
                 <h3>Экспресс-Заявка</h3>
                 <p style="font-size:14px; color:#A0AEC0; margin-bottom:20px; font-weight:300;">Оставьте ваши персональные данные для обратного звонка.</p>
                 
-                <form onsubmit="alert('Благодарим за доверие! Ваша заявка успешно верифицирована. Мы свяжемся с вами в ближайшее время.'); return false;">
+                <form id="contactForm">
                     <div class="form-group">
                         <label for="name">Ваше имя:</label>
-                        <input type="text" id="name" required placeholder="Александр">
+                        <input type="text" id="name" name="name" required placeholder="Александр">
                     </div>
                     <div class="form-group">
                         <label for="phone">Контактный телефон (WhatsApp):</label>
-                        <input type="tel" id="phone" required placeholder="+7 (775) 850-12-13">
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (775) 850-12-13">
                     </div>
                     <div class="form-group">
                         <label for="message">Ваш запрос:</label>
-                        <textarea id="message" rows="4" placeholder="Интересует покупка GreenMAX / Активация статуса Mobile..."></textarea>
+                        <textarea id="message" name="message" rows="4" placeholder="Интересует покупка GreenMAX / Активация статуса Mobile..."></textarea>
                     </div>
-                    <button type="submit" class="btn-submit">Отправить запрос</button>
+                    <button type="submit" class="btn-submit" id="submitBtn">Отправить запрос</button>
+                    <p id="formStatus" style="display:none; margin-top:15px; text-align:center; font-size:14px;"></p>
                 </form>
+                <script>
+                document.getElementById('contactForm').addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const btn = document.getElementById('submitBtn');
+                    const status = document.getElementById('formStatus');
+                    btn.disabled = true;
+                    btn.textContent = 'Отправка...';
+                    const data = {
+                        name: document.getElementById('name').value,
+                        phone: document.getElementById('phone').value,
+                        message: document.getElementById('message').value
+                    };
+                    try {
+                        const res = await fetch('https://formspree.io/f/xzzbjpwp', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                            body: JSON.stringify(data)
+                        });
+                        if (res.ok) {
+                            status.style.display = 'block';
+                            status.style.color = '#C9A84A';
+                            status.textContent = '✓ Заявка отправлена! Мы свяжемся с вами в ближайшее время.';
+                            document.getElementById('contactForm').reset();
+                            btn.textContent = 'Отправить запрос';
+                            btn.disabled = false;
+                        } else {
+                            throw new Error();
+                        }
+                    } catch {
+                        status.style.display = 'block';
+                        status.style.color = '#FC8181';
+                        status.textContent = '✗ Ошибка отправки. Пожалуйста, напишите нам в WhatsApp.';
+                        btn.textContent = 'Отправить запрос';
+                        btn.disabled = false;
+                    }
+                });
+                </script>
             </div>
             
         </div>
