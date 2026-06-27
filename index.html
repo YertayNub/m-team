@@ -29,13 +29,18 @@
             min-height: 100vh; 
         }
         /* Навигационная панель */
-        nav { background: rgba(26, 42, 80, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-glass); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        nav { background: rgba(26, 42, 80, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-glass); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
         nav .logo { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #FFF; text-decoration: none; font-weight: bold; letter-spacing: 2px; }
         nav .logo span { color: var(--gold); }
-        nav ul { display: flex; list-style: none; }
+        nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
         nav ul li { margin-left: 25px; }
         nav ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 15px; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
         nav ul li a:hover, nav ul li a.active { color: var(--gold); border-bottom: 1px solid var(--gold); padding-bottom: 4px; }
+        .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; background: none; border: none; }
+        .burger span { display: block; width: 25px; height: 2px; background: #fff; transition: 0.3s; border-radius: 2px; }
+        .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .burger.open span:nth-child(2) { opacity: 0; }
+        .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
         /* Главный баннер (Hero) */
         .hero { padding: 100px 5% 60px; text-align: center; }
@@ -100,9 +105,14 @@
         
         /* Мобильная адаптивность */
         @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 15px; padding: 15px 5%; }
-            nav ul li { margin-left: 15px; margin-right: 15px; }
-            nav ul li a { font-size: 13px; }
+            .burger { display: flex; }
+            nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(26, 42, 80, 0.98); padding: 20px 5%; gap: 0; border-top: 1px solid var(--border-glass); }
+            nav ul.open { display: flex; }
+            nav ul li { margin: 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+            nav ul li:last-child { border-bottom: none; }
+            nav ul li a { display: block; padding: 14px 0; font-size: 14px; border-bottom: none !important; }
+            nav ul li a:hover, nav ul li a.active { color: var(--gold); border-bottom: none !important; padding-bottom: 14px; }
+            nav { position: sticky; flex-wrap: wrap; }
             .hero h1 { font-size: 34px; }
             .hero p { font-size: 15px; }
             .story-wrapper { padding: 25px; gap: 25px; }
@@ -115,7 +125,10 @@
     <!-- НАВИГАЦИЯ -->
     <nav>
         <a href="index.html" class="logo">M <span>INTERNATIONAL</span></a>
-        <ul>
+        <button class="burger" id="burger" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
+        <ul id="navMenu">
             <li><a href="index.html" class="active">Главная</a></li>
             <li><a href="products.html">Продукция</a></li>
             <li><a href="marketing.html">Маркетинг</a></li>
@@ -123,6 +136,20 @@
             <li><a href="contacts.html">Контакты</a></li>
         </ul>
     </nav>
+    <script>
+        const burger = document.getElementById('burger');
+        const navMenu = document.getElementById('navMenu');
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('open');
+            navMenu.classList.toggle('open');
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('open');
+                navMenu.classList.remove('open');
+            });
+        });
+    </script>
 
     <!-- ГЛАВНЫЙ БАННЕР -->
     <section class="hero">
