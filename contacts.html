@@ -78,12 +78,28 @@
         .btn-submit:hover { background: linear-gradient(135deg, #D4B55B 0%, #C9A84A 100%); box-shadow: 0 4px 15px rgba(201, 168, 74, 0.3); }
 
         footer { background: #0F1A34; border-top: 1px solid var(--border-glass); color: #718096; text-align: center; padding: 25px; font-size: 13px; width: 100%; margin-top: 60px; }
+    
+        .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; background: none; border: none; }
+        .burger span { display: block; width: 25px; height: 2px; background: #fff; transition: 0.3s; border-radius: 2px; }
+        .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .burger.open span:nth-child(2) { opacity: 0; }
+        .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    
+        @media (max-width: 768px) {
+            .burger { display: flex; }
+            nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(26, 42, 80, 0.98); padding: 20px 5%; gap: 0; border-top: 1px solid rgba(255,255,255,0.1); }
+            nav ul.open { display: flex; }
+            nav ul li { margin: 0 !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+            nav ul li:last-child { border-bottom: none; }
+            nav ul li a { display: block; padding: 14px 0 !important; font-size: 14px !important; border-bottom: none !important; letter-spacing: 1px !important; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <a href="index.html" class="logo">M <span>INTERNATIONAL</span></a>
+        <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
         <ul>
             <li><a href="index.html">Главная</a></li>
             <li><a href="products.html">Продукция</a></li>
@@ -225,5 +241,21 @@
 </p>
     </footer>
 
+    <script>
+        const burger = document.getElementById('burger');
+        const navMenu = document.getElementById('navMenu');
+        if (burger && navMenu) {
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('open');
+                navMenu.classList.toggle('open');
+            });
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    burger.classList.remove('open');
+                    navMenu.classList.remove('open');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
