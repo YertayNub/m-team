@@ -334,32 +334,22 @@
         .light-section .c-req { background: #F4F6FB; color: var(--ls-text); }
 
         /* ── RESPONSIVE ── */
+        .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; background: none; border: none; }
+        .burger span { display: block; width: 25px; height: 2px; background: #fff; transition: 0.3s; border-radius: 2px; }
+        .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .burger.open span:nth-child(2) { opacity: 0; }
+        .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
         @media (max-width: 768px) {
-            .burger { display: flex; }
-            nav ul { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(26, 42, 80, 0.98); padding: 20px 5%; gap: 0; border-top: 1px solid rgba(255,255,255,0.1); }
-            nav ul.open { display: flex; }
+            .burger { display: flex !important; }
+            nav { position: relative; }
+            nav ul { display: none !important; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(26, 42, 80, 0.98); padding: 20px 5%; gap: 0; border-top: 1px solid rgba(255,255,255,0.1); z-index: 999; }
+            nav ul.open { display: flex !important; }
             nav ul li { margin: 0 !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
             nav ul li:last-child { border-bottom: none; }
             nav ul li a { display: block; padding: 14px 0 !important; font-size: 14px !important; border-bottom: none !important; letter-spacing: 1px !important; }
 
             /* Убираем горизонтальный скролл */
             html, body { overflow-x: hidden; max-width: 100%; }
-
-            /* Навигация — гамбургер-стиль: лого сверху, ссылки снизу мелко */
-            nav {
-                flex-direction: column;
-                gap: 12px;
-                padding: 14px 4%;
-                text-align: center;
-            }
-            nav .logo { font-size: 22px; letter-spacing: 1px; }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 4px 0;
-            }
-            nav ul li { margin: 0 8px; }
-            nav ul li a { font-size: 11px; letter-spacing: 1px; }
 
             /* Шапка */
             .header-banner { padding: 40px 4% 24px; }
@@ -412,11 +402,6 @@
             .tables-grid { grid-template-columns: 1fr; }
         }
     
-        .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; background: none; border: none; }
-        .burger span { display: block; width: 25px; height: 2px; background: #fff; transition: 0.3s; border-radius: 2px; }
-        .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .burger.open span:nth-child(2) { opacity: 0; }
-        .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     </style>
 </head>
 <body>
